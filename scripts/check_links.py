@@ -6,10 +6,16 @@
 
 Ссылки делятся на три группы, и это принципиально:
 
-  живые       2xx или редирект на осмысленный адрес
-  закрытые    403 / 405 / 429 или ошибка TLS — сайт отбивает автоматику.
-              Это не значит, что страница мертва, поэтому CI на таких не падает.
-  мёртвые     404 / 410, домен не резолвится, соединение отвергнуто.
+  живые       2xx или редирект
+  закрытые    сайт не дал ответа по существу: 403 / 429 / 5xx, ошибка TLS,
+              таймаут. Это НЕ доказательство того, что страница мертва —
+              крупные сайты режут автоматику, а медленные просто не успевают.
+              CI на таких не падает.
+  мёртвые     сервер ответил определённым «нет»: 404 или 410, либо домена
+              не существует. Только это считается поломкой.
+
+Разделение принципиальное: если считать таймаут поломкой, CI начнёт падать
+на живых ссылках, и его перестанут читать.
 
 Из зависимостей — только pyyaml.
 """
@@ -26,9 +32,12 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
-TIMEOUT = 20
+TIMEOUT = 25
 LINK_FIELDS = ("url", "docs", "repo", "key_url")
-BLOCKING_CODES = {401, 403, 405, 406, 429, 503}
+# определённое «такой страницы нет» — только это считаем поломкой
+DEAD_CODES = {404, 410}
+DEAD_DNS = ("nodename nor servname", "name or service not known",
+            "no address associated", "getaddrinfo failed")
 CTX = ssl.create_default_context()
 
 ALIVE, BLOCKED, DEAD = "alive", "blocked", "dead"
@@ -50,7 +59,9 @@ def probe(url, method, follow):
 
 def check(item):
     tool_id, field, url = item
-    last = "не удалось получить ответ"
+    last = "ответа не получено"
+    # HEAD дешевле, но многие его не любят; GET без редиректов — на случай,
+    # когда сервер отдаёт 3xx и обрывает соединение
     for method, follow in (("HEAD", True), ("GET", True), ("GET", False)):
         try:
             code = probe(url, method, follow)
@@ -59,19 +70,22 @@ def check(item):
         except urllib.error.HTTPError as e:
             if 300 <= e.code < 400:
                 return (tool_id, field, url, ALIVE, e.code)
-            if e.code in BLOCKING_CODES:
-                return (tool_id, field, url, BLOCKED, "HTTP {}".format(e.code))
+            if e.code in DEAD_CODES:
+                return (tool_id, field, url, DEAD, "HTTP {}".format(e.code))
+            # 403, 429, 5xx и прочее — сервер жив, но говорить не хочет
             last = "HTTP {}".format(e.code)
-            if e.code in (404, 410):
-                return (tool_id, field, url, DEAD, last)
         except urllib.error.URLError as e:
             reason = str(getattr(e, "reason", e))
-            if "SSL" in reason or "CERTIFICATE" in reason.upper():
+            low = reason.lower()
+            if any(m in low for m in DEAD_DNS):
+                return (tool_id, field, url, DEAD, "домен не существует")
+            if "ssl" in low or "certificate" in low:
                 return (tool_id, field, url, BLOCKED, "TLS: " + reason[:70])
             last = reason[:90]
-        except Exception as e:  # noqa: BLE001
+        except Exception as e:  # noqa: BLE001 — сеть, прилететь может что угодно
             last = type(e).__name__ + ": " + str(e)[:80]
-    return (tool_id, field, url, DEAD, last)
+    # сюда попадают таймауты и всё, что не дало определённого ответа
+    return (tool_id, field, url, BLOCKED, last)
 
 
 def main():
@@ -97,7 +111,8 @@ def main():
             print("  ✗ {:<24} {:<8} {}\n      {}".format(tool_id, field, url, info))
         print()
     if blocked:
-        print("Не удалось проверить (сайт отбивает автоматику — проверь глазами):")
+        print("Не удалось проверить — сайт режет автоматику, медленно отвечает")
+        print("или отдал 5xx. Проверь глазами, но на поломку это не тянет:")
         for tool_id, field, url, _s, info in blocked:
             print("  ? {:<24} {:<8} {}  → {}".format(tool_id, field, url, info))
         print()
