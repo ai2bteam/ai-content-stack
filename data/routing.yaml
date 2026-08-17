@@ -246,6 +246,21 @@ routing:
       - task: "Вычистить звук: эхо, шум, разная громкость"
         tools: [adobe-podcast, auphonic, demucs]
 
+      - task: "Подогнать съехавшие субтитры под звук"
+        tools: [ffsubsync, stable-ts, aegisub]
+        note: "Нужно каждый раз, когда видео перемонтировали после того, как субтитры уже сделали."
+
+      - task: "Расшифровать интервью с несколькими голосами"
+        tools: [otter, sonix, trint, assemblyai, pyannote]
+
+      - task: "Перевести и озвучить на другой язык"
+        tools: [rask, dubverse, heygen, elevenlabs, deepl]
+        note: "Один ролик открывает несколько рынков — самый дешёвый рост из возможных."
+
+      - task: "Разложить готовое по площадкам"
+        tools: [postiz, buffer, metricool, publer, repurpose-io]
+        note: "Postiz и Mixpost ставятся на свой сервер — единственные без подписки."
+
   - group: "Сделать превью"
     rows:
       - task: "Собрать обложку руками"
@@ -323,3 +338,36 @@ routing:
       - task: "Вопросы, которые люди реально задают"
         tools: [answer-the-public, alsoasked]
         note: "AlsoAsked строит дерево вопросов — готовая структура разделов сценария."
+
+  - group: "Автоматизировать конвейер"
+    rows:
+      - task: "Где вообще запускать агента"
+        tools: [claude-code, claude-desktop, cursor, cline, zed, opencode]
+        note: "Все понимают MCP — серверы из каталога подключаются к любому."
+
+      - task: "Найти готовый MCP-сервер под задачу"
+        tools: [smithery, glama, mcp-registry, docker-mcp, pulsemcp]
+        note: "Glama показывает оценку качества и безопасности, а не просто список."
+
+      - task: "Написать свой MCP-сервер, если готового нет"
+        tools: [fastmcp, mcp-inspector]
+        note: "Inspector — первое, что запускаешь, когда сервер молчит."
+
+      - task: "Связать шаги в конвейер без кода"
+        tools: [n8n, activepieces, make, windmill, node-red]
+        note: "n8n, Activepieces и Windmill ставятся на свой сервер."
+
+      - task: "Собрать команду агентов под роли"
+        tools: [crewai, langgraph, autogen, mastra]
+        note: "Ложится на производство ролика: ресёрчер, сценарист, редактор."
+
+      - task: "Прогнать долгий рендер фоном, без таймаутов"
+        tools: [trigger-dev, windmill, modal, runpod]
+
+      - task: "Проверить структуру ответа модели"
+        tools: [pydantic-ai]
+        note: "Типизированный ответ не даст вернуть мусор вместо данных для сцены."
+
+      - task: "Понять, что агент делал и сколько потратил"
+        tools: [langfuse]
+        note: "Без трассировки длинный пайплайн отлаживается вслепую."

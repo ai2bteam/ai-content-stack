@@ -80,9 +80,9 @@ categories:
     blurb: "Где всё склеивается в готовый файл."
 
   - id: repurpose
-    name: "Переупаковка и субтитры"
+    name: "Переупаковка, субтитры, раскладка"
     emoji: "✂️"
-    blurb: "Длинное видео в короткие, автонарезка, субтитры, чистка речи. Самый дешёвый способ получить больше контента из уже снятого."
+    blurb: "Выжать из снятого максимум: нарезать на короткие, вычистить речь, сделать субтитры, перевести и разложить по площадкам. Самый дешёвый контент — тот, что уже снят."
 
   - id: thumbnail
     name: "Превью, обложки, статика"
@@ -5455,3 +5455,649 @@ tools:
     tagline: "История рекламных и органических запросов конкурентов на годы назад. Фактура для роликов про бизнес."
     status: listed
     tags: [competitors, ads, history]
+
+  # ═══════ переупаковка: нарезка на клипы ═══════
+
+  - id: munch
+    name: "Munch"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://www.getmunch.com/"
+    tagline: "Режет на клипы, опираясь на данные о трендах, а не только на всплески речи. Объясняет, почему выбрал именно этот кусок."
+    status: listed
+    tags: [shorts, trends, auto-editing]
+
+  - id: twoshort
+    name: "2short.ai"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://2short.ai/"
+    tagline: "Простая нарезка с бесплатным лимитом. Хорош, чтобы проверить формат до покупки подписки."
+    status: listed
+    tags: [shorts, free-tier]
+
+  - id: spikes-studio
+    name: "Spikes Studio"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://spikes.studio/"
+    tagline: "Нарезка со стилями субтитров и авто-кадрированием под лицо в кадре."
+    status: listed
+    tags: [shorts, subtitles, reframing]
+
+  - id: wisecut
+    name: "Wisecut"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.wisecut.video/"
+    tagline: "Вырезает паузы и сам подкладывает музыку с автопригасом под речь. Два шага монтажа за один проход."
+    status: listed
+    tags: [silence-removal, music, auto-editing]
+
+  - id: vidyo-ai
+    name: "vidyo.ai"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://vidyo.ai/"
+    tagline: "Клипы плюс готовые подписи под каждую площадку. Закрывает и нарезку, и текст к посту."
+    status: listed
+    tags: [shorts, captions, social]
+
+  - id: recut
+    name: "Recut"
+    category: repurpose
+    kind: app
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://getrecut.com/"
+    tagline: "Вырезает тишину локально и отдаёт готовый проект в Premiere, Resolve или Final Cut. Разовая покупка."
+    status: listed
+    tags: [silence-removal, local, nle-export]
+
+  - id: timebolt
+    name: "TimeBolt"
+    category: repurpose
+    kind: app
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://www.timebolt.io/"
+    tagline: "Убирает паузы и слова-паразиты пачкой. Считает сэкономленные минуты — видно, окупился ли."
+    status: listed
+    tags: [silence-removal, batch, local]
+
+  # ═══════ переупаковка: субтитры ═══════
+
+  - id: aegisub
+    name: "Aegisub"
+    category: repurpose
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://aegisub.org/"
+    tagline: "Ветеран субтитров с покадровым таймингом и стилями. Когда нужен полный контроль, а не автомат."
+    status: listed
+    tags: [subtitles, local, precise]
+
+  - id: ffsubsync
+    name: "ffsubsync"
+    category: repurpose
+    kind: cli
+    agent: cli
+    pricing: oss
+    key: none
+    install: "pip install ffsubsync"
+    url: "https://github.com/smacke/ffsubsync"
+    repo: "https://github.com/smacke/ffsubsync"
+    tagline: "Подгоняет съехавшие субтитры под звуковую дорожку автоматически. Спасает, когда видео перемонтировали."
+    status: listed
+    tags: [subtitles, sync, cli]
+
+  - id: stable-ts
+    name: "stable-ts"
+    category: repurpose
+    kind: library
+    agent: cli
+    pricing: oss
+    key: none
+    install: "pip install stable-ts"
+    url: "https://github.com/jianfch/stable-ts"
+    repo: "https://github.com/jianfch/stable-ts"
+    tagline: "Делает тайминги Whisper устойчивыми и точными по словам. То, из чего собираются «прыгающие» субтитры."
+    status: listed
+    tags: [subtitles, whisper, word-timestamps]
+
+  - id: zubtitle
+    name: "Zubtitle"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://zubtitle.com/"
+    tagline: "Субтитры, ресайз и заголовок в кадре одним прогоном. Заточен под соцсети."
+    status: listed
+    tags: [subtitles, resize, social]
+
+  # ═══════ переупаковка: перевод и дубляж ═══════
+
+  - id: rask
+    name: "Rask AI"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://www.rask.ai/"
+    tagline: "Дубляж на десятки языков с сохранением голоса и липсинком. Один ролик открывает несколько рынков."
+    status: listed
+    tags: [dubbing, lipsync, multilingual]
+
+  - id: dubverse
+    name: "Dubverse"
+    category: repurpose
+    kind: service
+    agent: api
+    pricing: freemium
+    key: required
+    url: "https://dubverse.ai/"
+    tagline: "Дубляж с сильной поддержкой индийских языков и API. Ниша, которую западные сервисы закрывают плохо."
+    status: listed
+    tags: [dubbing, multilingual, api]
+
+  - id: deepl
+    name: "DeepL"
+    category: repurpose
+    kind: api
+    agent: api
+    pricing: freemium
+    key: required
+    key_url: "https://www.deepl.com/pro-api"
+    url: "https://www.deepl.com/"
+    tagline: "Перевод, который заметно живее машинного. Для субтитров разница слышна сразу."
+    status: listed
+    tags: [translation, api, quality]
+
+  - id: sonix
+    name: "Sonix"
+    category: repurpose
+    kind: service
+    agent: api
+    pricing: paid
+    key: required
+    url: "https://sonix.ai/"
+    tagline: "Расшифровка и перевод в 50+ языков с редактором. Берут, когда важна точность на именах и терминах."
+    status: listed
+    tags: [transcription, translation, editing]
+
+  - id: trint
+    name: "Trint"
+    category: repurpose
+    kind: service
+    agent: api
+    pricing: paid
+    key: required
+    url: "https://trint.com/"
+    tagline: "Расшифровка с редакторской вычиткой, заточенная под журналистику. Текст правится вместе со звуком."
+    status: listed
+    tags: [transcription, editorial]
+
+  - id: otter
+    name: "Otter.ai"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://otter.ai/"
+    tagline: "Расшифровка встреч и интервью в реальном времени. Бесплатного лимита хватает на разовые задачи."
+    status: listed
+    tags: [transcription, realtime, meetings]
+
+  # ═══════ переупаковка: раскладка по площадкам ═══════
+
+  - id: postiz
+    name: "Postiz"
+    category: repurpose
+    kind: app
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://postiz.com/"
+    repo: "https://github.com/gitroomhq/postiz-app"
+    tagline: "Открытый планировщик постов, который ставится на свой сервер. Единственный в категории без подписки."
+    status: listed
+    tags: [scheduling, self-hosted, open-source]
+
+  - id: mixpost
+    name: "Mixpost"
+    category: repurpose
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://mixpost.app/"
+    tagline: "Самохостимый планировщик с разовой лицензией. Данные аккаунтов остаются у тебя."
+    status: listed
+    tags: [scheduling, self-hosted]
+
+  - id: buffer
+    name: "Buffer"
+    category: repurpose
+    kind: service
+    agent: api
+    pricing: freemium
+    key: required
+    url: "https://buffer.com/"
+    tagline: "Классический планировщик с щедрым бесплатным тарифом. Ставится за пять минут."
+    status: listed
+    tags: [scheduling, social]
+
+  - id: later
+    name: "Later"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://later.com/"
+    tagline: "Планировщик с визуальной сеткой ленты. Видно, как профиль будет выглядеть целиком."
+    status: listed
+    tags: [scheduling, instagram, visual]
+
+  - id: metricool
+    name: "Metricool"
+    category: repurpose
+    kind: service
+    agent: api
+    pricing: freemium
+    key: required
+    url: "https://metricool.com/"
+    tagline: "Планирование и аналитика в одном окне, включая TikTok и YouTube. Бесплатный тариф рабочий."
+    status: listed
+    tags: [scheduling, analytics]
+
+  - id: publer
+    name: "Publer"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://publer.com/"
+    tagline: "Много площадок и массовая загрузка расписания из таблицы. Удобно, когда постов десятки."
+    status: listed
+    tags: [scheduling, bulk]
+
+  - id: repurpose-io
+    name: "Repurpose.io"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://repurpose.io/"
+    tagline: "Автоматически перекидывает вышедший ролик на другие площадки с нужным форматом. Настроил один раз — работает само."
+    status: listed
+    tags: [automation, cross-posting]
+
+  # ═══════ агенты: где живёт агент ═══════
+
+  - id: claude-desktop
+    name: "Claude Desktop"
+    category: agents
+    kind: app
+    agent: mcp
+    pricing: freemium
+    key: none
+    url: "https://claude.ai/download"
+    tagline: "Настольное приложение с поддержкой MCP. Для тех, кому терминал не нужен, а Palmier и Blender подключить хочется."
+    status: verified
+    tags: [desktop, mcp]
+
+  - id: cline
+    name: "Cline"
+    category: agents
+    kind: app
+    agent: mcp
+    pricing: oss
+    key: required
+    url: "https://cline.bot/"
+    repo: "https://github.com/cline/cline"
+    tagline: "Открытый агент внутри VS Code со своим ключом от любой модели. Умеет ставить MCP-серверы сам."
+    status: listed
+    tags: [vscode, mcp, open-source]
+
+  - id: roo-code
+    name: "Roo Code"
+    category: agents
+    kind: app
+    agent: mcp
+    pricing: oss
+    key: required
+    url: "https://roocode.com/"
+    repo: "https://github.com/RooCodeInc/Roo-Code"
+    tagline: "Форк Cline с режимами под разные роли. Полезно, когда один агент пишет сценарий, а другой — код сцены."
+    status: listed
+    tags: [vscode, mcp, modes]
+
+  - id: continue-dev
+    name: "Continue"
+    category: agents
+    kind: app
+    agent: mcp
+    pricing: oss
+    key: optional
+    url: "https://continue.dev/"
+    repo: "https://github.com/continuedev/continue"
+    tagline: "Открытый ассистент для VS Code и JetBrains, работает и с локальными моделями через Ollama."
+    status: listed
+    tags: [ide, local-models, open-source]
+
+  - id: windsurf
+    name: "Windsurf"
+    category: agents
+    kind: app
+    agent: mcp
+    pricing: freemium
+    key: none
+    url: "https://windsurf.com/"
+    tagline: "Редактор с агентом, конкурент Cursor. Тоже понимает MCP — серверы из каталога подключаются и сюда."
+    status: listed
+    tags: [ide, mcp]
+
+  - id: zed
+    name: "Zed"
+    category: agents
+    kind: app
+    agent: mcp
+    pricing: freemium
+    key: optional
+    url: "https://zed.dev/"
+    repo: "https://github.com/zed-industries/zed"
+    tagline: "Очень быстрый открытый редактор на Rust с агентом и MCP. Заметно легче Electron-собратьев."
+    status: listed
+    tags: [ide, rust, mcp, open-source]
+
+  - id: opencode
+    name: "OpenCode"
+    category: agents
+    kind: app
+    agent: mcp
+    pricing: oss
+    key: required
+    url: "https://opencode.ai/"
+    repo: "https://github.com/sst/opencode"
+    tagline: "Открытый терминальный агент, не привязанный к одному провайдеру моделей."
+    status: listed
+    tags: [cli, open-source, multi-provider]
+
+  - id: goose
+    name: "Goose"
+    category: agents
+    kind: app
+    agent: mcp
+    pricing: oss
+    key: required
+    url: "https://block.github.io/goose/"
+    repo: "https://github.com/block/goose"
+    tagline: "Открытый агент от Block с расширениями поверх MCP. Работает и в терминале, и с интерфейсом."
+    status: listed
+    tags: [cli, mcp, open-source]
+
+  # ═══════ агенты: каркасы многоагентности ═══════
+
+  - id: langgraph
+    name: "LangGraph"
+    category: agents
+    kind: library
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://www.langchain.com/langgraph"
+    repo: "https://github.com/langchain-ai/langgraph"
+    tagline: "Агент как граф состояний с циклами и ветвлениями. Когда пайплайн должен уметь возвращаться на шаг назад."
+    status: listed
+    tags: [framework, graph, python]
+
+  - id: crewai
+    name: "CrewAI"
+    category: agents
+    kind: library
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://www.crewai.com/"
+    repo: "https://github.com/crewAIInc/crewAI"
+    tagline: "Команда агентов с ролями и задачами. Ложится на производство ролика: сценарист, ресёрчер, редактор."
+    status: listed
+    tags: [framework, multi-agent, roles]
+
+  - id: autogen
+    name: "AutoGen"
+    category: agents
+    kind: library
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://microsoft.github.io/autogen/"
+    repo: "https://github.com/microsoft/autogen"
+    tagline: "Каркас Microsoft для разговаривающих между собой агентов. Сильная сторона — проверка работы друг друга."
+    status: listed
+    tags: [framework, multi-agent, microsoft]
+
+  - id: llamaindex
+    name: "LlamaIndex"
+    category: agents
+    kind: library
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://www.llamaindex.ai/"
+    repo: "https://github.com/run-llama/llama_index"
+    tagline: "Подключает агента к своим документам и базам. Отсюда берётся ответ по архиву сценариев, а не по интернету."
+    status: listed
+    tags: [framework, rag, retrieval]
+
+  - id: pydantic-ai
+    name: "Pydantic AI"
+    category: agents
+    kind: library
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://ai.pydantic.dev/"
+    repo: "https://github.com/pydantic/pydantic-ai"
+    tagline: "Агенты с типизированным ответом, который валидируется. Модель не может вернуть мусор вместо структуры."
+    status: listed
+    tags: [framework, python, typed]
+
+  - id: mastra
+    name: "Mastra"
+    category: agents
+    kind: library
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://mastra.ai/"
+    repo: "https://github.com/mastra-ai/mastra"
+    tagline: "Каркас агентов на TypeScript. Тот же язык, что у Remotion — пайплайн не разъезжается по двум экосистемам."
+    status: listed
+    tags: [framework, typescript]
+
+  # ═══════ агенты: визуальные конструкторы ═══════
+
+  - id: dify
+    name: "Dify"
+    category: agents
+    kind: app
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://dify.ai/"
+    repo: "https://github.com/langgenius/dify"
+    tagline: "Визуальный конструктор AI-приложений, который ставится на свой сервер. Пайплайн собирается мышкой."
+    status: listed
+    tags: [low-code, self-hosted, workflow]
+
+  - id: flowise
+    name: "Flowise"
+    category: agents
+    kind: app
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://flowiseai.com/"
+    repo: "https://github.com/FlowiseAI/Flowise"
+    tagline: "Нодовый редактор цепочек и агентов. Быстро проверить идею до того, как писать код."
+    status: listed
+    tags: [low-code, nodes, self-hosted]
+
+  - id: langflow
+    name: "Langflow"
+    category: agents
+    kind: app
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://www.langflow.org/"
+    repo: "https://github.com/langflow-ai/langflow"
+    tagline: "Визуальная сборка потоков с экспортом в код. Мостик между прототипом на мышке и рабочим скриптом."
+    status: listed
+    tags: [low-code, nodes, export]
+
+  # ═══════ агенты: запуск по расписанию и событиям ═══════
+
+  - id: windmill
+    name: "Windmill"
+    category: agents
+    kind: app
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://www.windmill.dev/"
+    repo: "https://github.com/windmill-labs/windmill"
+    tagline: "Свои скрипты на Python или TypeScript превращаются в задачи с расписанием и интерфейсом. Самохостится."
+    status: listed
+    tags: [automation, self-hosted, scripts]
+
+  - id: trigger-dev
+    name: "Trigger.dev"
+    category: agents
+    kind: service
+    agent: api
+    pricing: oss
+    key: optional
+    url: "https://trigger.dev/"
+    repo: "https://github.com/triggerdotdev/trigger.dev"
+    tagline: "Долгие фоновые задачи без таймаутов и с ретраями. Под рендер, который идёт полчаса."
+    status: listed
+    tags: [background-jobs, long-running, typescript]
+
+  - id: pipedream
+    name: "Pipedream"
+    category: agents
+    kind: service
+    agent: api
+    pricing: freemium
+    key: required
+    url: "https://pipedream.com/"
+    tagline: "Интеграции со вставками своего кода между шагами. Гибче Zapier там, где нужна логика."
+    status: listed
+    tags: [automation, code-steps]
+
+  - id: node-red
+    name: "Node-RED"
+    category: agents
+    kind: app
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://nodered.org/"
+    tagline: "Проводной редактор потоков, живущий с 2013 года. Крутится хоть на Raspberry Pi рядом со студией."
+    status: listed
+    tags: [automation, nodes, self-hosted]
+
+  # ═══════ агенты: разработка и отладка MCP ═══════
+
+  - id: fastmcp
+    name: "FastMCP"
+    category: agents
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    install: "pip install fastmcp"
+    url: "https://github.com/jlowin/fastmcp"
+    repo: "https://github.com/jlowin/fastmcp"
+    tagline: "Свой MCP-сервер на Python в несколько десятков строк. Так закрывают дыру, когда готового сервера нет."
+    status: listed
+    tags: [mcp, development, python]
+
+  - id: mcp-inspector
+    name: "MCP Inspector"
+    category: agents
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    install: "npx @modelcontextprotocol/inspector"
+    url: "https://github.com/modelcontextprotocol/inspector"
+    repo: "https://github.com/modelcontextprotocol/inspector"
+    tagline: "Отладчик MCP-серверов: видно инструменты, аргументы и ответы. Первое, что запускаешь, когда сервер молчит."
+    status: listed
+    tags: [mcp, debugging]
+
+  - id: glama
+    name: "Glama MCP Directory"
+    category: agents
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://glama.ai/mcp/servers"
+    tagline: "Каталог MCP-серверов с оценкой качества и безопасности. Полезнее голого списка на GitHub."
+    status: listed
+    tags: [mcp, registry, quality]
+
+  - id: pulsemcp
+    name: "PulseMCP"
+    category: agents
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://www.pulsemcp.com/"
+    tagline: "Новости и свежие MCP-серверы с рассылкой. Способ не пропустить появление нужного сервера."
+    status: listed
+    tags: [mcp, registry, news]
+
+  - id: langfuse
+    name: "Langfuse"
+    category: agents
+    kind: app
+    agent: api
+    pricing: oss
+    key: optional
+    url: "https://langfuse.com/"
+    repo: "https://github.com/langfuse/langfuse"
+    tagline: "Видно, что агент реально делал, сколько потратил и где сломался. Без этого длинный пайплайн отлаживается вслепую."
+    status: listed
+    tags: [observability, tracing, self-hosted]
