@@ -4,7 +4,7 @@
 
 > Каталог инструментов для производства контента с помощью ИИ — что берём, чем управляем из агента, как ставится.
 
-**376 инструментов · 14 категорий · 48 подключаются к агенту по MCP · 221 бесплатны или open source**
+**421 инструментов · 14 категорий · 50 подключаются к агенту по MCP · 236 бесплатны или open source**
 
 ---
 
@@ -34,9 +34,20 @@
 |---|---|---|
 | Собрать фактуру по теме | [Perplexity](https://www.perplexity.ai/) · [Exa](https://exa.ai/) · [NotebookLM](https://notebooklm.google.com/) · [Firecrawl MCP](https://github.com/firecrawl/firecrawl-mcp-server) | NotebookLM отвечает только по загруженным источникам — сценарий не уплывает в выдумку. |
 | Найти, что реально болит у аудитории | [GummySearch](https://gummysearch.com/) · [AnswerThePublic](https://answerthepublic.com/) · [YouTube Transcript MCP](https://github.com/jkawamoto/mcp-youtube-transcript) |  |
-| Проверить утверждение по исследованиям | [Consensus](https://consensus.app/) · [Elicit](https://elicit.com/) · [Our World in Data](https://ourworldindata.org/) | Нужно, если в ролике звучит «учёные доказали». |
-| Написать и выстроить текст | [Claude](https://claude.ai/) |  |
-| Вычитать текст под озвучку | [Hemingway Editor](https://hemingwayapp.com/) · [LanguageTool](https://languagetool.org/) | Текст для диктора проверяется чтением вслух — Hemingway ловит то, обо что споткнёшься. |
+| Проверить утверждение по исследованиям | [Consensus](https://consensus.app/) · [Elicit](https://elicit.com/) · [Semantic Scholar](https://www.semanticscholar.org/) · [OpenAlex](https://openalex.org/) · [Google Scholar](https://scholar.google.com/) | Нужно, если в ролике звучит «учёные доказали». OpenAlex — без ключа и лимитов. |
+| Размотать тему от одной статьи ко всем связанным | [Connected Papers](https://www.connectedpapers.com/) · [Research Rabbit](https://www.researchrabbit.ai/) |  |
+| Доказать, что компания это обещала и потом убрала | [Wayback Machine](https://web.archive.org/) | Архив страницы — сильный аргумент в разоблачающем ролике. |
+| Не пересказать одну точку зрения как факт | [Ground News](https://ground.news/) · [Our World in Data](https://ourworldindata.org/) |  |
+| Найти свои цифры вместо чужой инфографики | [Google Dataset Search](https://datasetsearch.research.google.com/) · [Kaggle Datasets](https://www.kaggle.com/datasets) · [World Bank Data](https://data.worldbank.org/) · [FRED](https://fred.stlouisfed.org/) |  |
+| Копить фактуру между роликами | [Obsidian](https://obsidian.md/) · [Readwise Reader](https://readwise.io/) · [Raindrop.io](https://raindrop.io/) · [Zotero](https://www.zotero.org/) · [Logseq](https://logseq.com/) | Obsidian хранит всё в markdown на диске и умеет MCP — агент дотягивается до базы напрямую. |
+| Разложить структуру до написания | [Milanote](https://milanote.com/) · [Arc Studio](https://www.arcstudiopro.com/) · [Celtx](https://www.celtx.com/) |  |
+| Написать и выстроить текст | [Claude](https://claude.ai/) · [Trelby](https://www.trelby.org/) |  |
+| Вычитать текст под озвучку | [Hemingway Editor](https://hemingwayapp.com/) · [LanguageTool](https://languagetool.org/) · [ProWritingAid](https://prowritingaid.com/) | Текст для диктора проверяется чтением вслух — Hemingway ловит то, обо что споткнёшься. |
+| Почистить русский текст | [Главред](https://glvrd.ru/) · [Орфограммка](https://orfogrammka.ru/) · [Тургенев](https://turgenev.ashmanov.com/) | Главред режет канцелярит и воду — в озвучке разница слышна сразу. |
+| Переформулировать абзац, который не звучит | [QuillBot](https://quillbot.com/) |  |
+| Убедиться, что текст не читается машинным | [GPTZero](https://gptzero.me/) |  |
+| Прочитать текст на камеру | [QPrompt](https://qprompt.app/) | Последнее звено между готовым сценарием и записью. |
+| Оценить заголовок | [vidIQ](https://vidiq.com/) · [CoSchedule Headline Analyzer](https://coschedule.com/headline-analyzer) |  |
 
 ### Найти готовое
 
@@ -125,17 +136,25 @@
 
 | Задача | Чем делать | Комментарий |
 |---|---|---|
-| Ниши, конкуренты, ключевые слова | [vidIQ](https://vidiq.com/) · [Nexlev](https://nexlev.io/) |  |
-| Статистика видео и каналов из первоисточника | [YouTube Data API](https://developers.google.com/youtube/v3) |  |
+| Найти чужой ролик, выстреливший выше нормы канала | [1of10](https://1of10.com/) · [vidIQ](https://vidiq.com/) · [Nexlev](https://nexlev.io/) · [ViewStats](https://www.viewstats.com/) | Ищем сработавший формат, а не просто популярный канал. |
+| Найти молодые каналы в нише, пока их не видно | [Channel Crawler](https://www.channelcrawler.com/) · [Nexlev](https://nexlev.io/) |  |
+| Понять, есть ли шанс пробиться по запросу | [Morningfa.me](https://morningfa.me/) · [Ahrefs](https://ahrefs.com/) · [Semrush](https://www.semrush.com/) | Отговаривает от тем, где против тебя играют каналы на порядок крупнее. |
+| Ниши, конкуренты, ключевые слова | [vidIQ](https://vidiq.com/) · [TubeBuddy](https://www.tubebuddy.com/) · [Keywords Everywhere](https://keywordseverywhere.com/) · [Google Keyword Planner](https://ads.google.com/home/tools/keyword-planner/) |  |
+| Статистика видео и каналов из первоисточника | [YouTube Data API](https://developers.google.com/youtube/v3) · [Playboard](https://playboard.co/) |  |
+| Понять, где водится моя аудитория | [SparkToro](https://sparktoro.com/) · [GummySearch](https://gummysearch.com/) |  |
+| Проверить блогера перед интеграцией | [HypeAuditor](https://hypeauditor.com/) · [NoxInfluencer](https://www.noxinfluencer.com/) | Накрутка вскрывается до оплаты, а не после. |
+| Разобрать чужой сайт или компанию для ролика | [Similarweb](https://www.similarweb.com/) · [SpyFu](https://www.spyfu.com/) · [BuzzSumo](https://buzzsumo.com/) · [Wayback Machine](https://web.archive.org/) |  |
 | Живые данные в кадр — курсы, погода, новости | [Public APIs](https://github.com/public-apis/public-apis) · [CoinGecko API](https://www.coingecko.com/en/api) · [Open-Meteo](https://open-meteo.com/) |  |
 | Графики из этих данных | [Recharts](https://recharts.org/) · [Chart.js](https://www.chartjs.org/) · [visx](https://airbnb.io/visx/) · [Apache ECharts](https://echarts.apache.org/) | Recharts — дефолт для React. ECharts — если нужны карты или десятки тысяч точек. |
-| Проверить, не поздно ли снимать тему | [Google Trends](https://trends.google.com/) · [Exploding Topics](https://explodingtopics.com/) |  |
-| Вопросы, которые люди реально задают | [AnswerThePublic](https://answerthepublic.com/) | Прямой источник заголовков и структуры сценария. |
+| Что в тренде прямо сейчас | [Google Trends: Trending Now](https://trends.google.com/trending) · [TikTok Creative Center](https://ads.tiktok.com/business/creativecenter) · [Glimpse](https://meetglimpse.com/) | Creative Center отдаёт официальные данные TikTok бесплатно и без рекламного кабинета. |
+| Поймать тему до пика, а не на пике | [Pinterest Trends](https://trends.pinterest.com/) · [Exploding Topics](https://explodingtopics.com/) | В Pinterest сезонные темы всплывают за месяцы до всплеска в поиске. |
+| Проверить, не поздно ли снимать тему | [Google Trends](https://trends.google.com/) · [Glimpse](https://meetglimpse.com/) |  |
+| Вопросы, которые люди реально задают | [AnswerThePublic](https://answerthepublic.com/) · [AlsoAsked](https://alsoasked.com/) | AlsoAsked строит дерево вопросов — готовая структура разделов сценария. |
 
 ## Категории
 
 - 🤖 **[Агенты и оркестрация](#cat-agents)** — Среда, из которой всё запускается. Агент читает задачу и сам дёргает нужные инструменты. _(15)_
-- 📝 **[Сценарий и текст](#cat-script)** — Первый шаг любого ролика. Ресёрч темы, структура, текст под озвучку, заголовки и описание. _(9)_
+- 📝 **[Сценарий и текст](#cat-script)** — Первый шаг любого ролика. Ресёрч темы, структура, текст под озвучку, заголовки и описание. _(34)_
 - 🔌 **[MCP-серверы](#cat-mcp)** — Инструменты, подключаемые к агенту по протоколу MCP. Агент управляет ими напрямую — без копипасты и ручного клика. _(34)_
 - 🎬 **[Генерация видео](#cat-video)** — text→video и image→video. Основной расходник — деньги и время рендера, поэтому сначала смотри, нет ли готового стока. _(27)_
 - 🖼️ **[Картинки: генерация и редактирование](#cat-image)** — Генерация с нуля, img2img, инпейнт, удаление фона, апскейл. _(38)_
@@ -147,7 +166,7 @@
 - 🎨 **[Превью, обложки, статика](#cat-thumbnail)** — Кадр, который решает, посмотрят ролик или нет. Плюс всё остальное, что не двигается. _(29)_
 - 📦 **[Стоки и готовые ассеты](#cat-assets)** — Фото, видео, GIF, шрифты, иконки, логотипы. Правило: сначала сток, потом генерация — быстрее и без лимитов. _(55)_
 - 📊 **[Данные для контента](#cat-data)** — Живые цифры для data-driven роликов: курсы, погода, новости, статистика. _(27)_
-- 🔍 **[Research и аналитика](#cat-research)** — Что снимать: ниши, конкуренты, ключевики, выбросы по просмотрам. _(11)_
+- 🔍 **[Research и аналитика](#cat-research)** — Что снимать: ниши, конкуренты, ключевики, выбросы по просмотрам. _(31)_
 
 ---
 
@@ -185,15 +204,40 @@
 
 | Инструмент | Что делает | Тип | Цена | Из агента | Ключ |
 |---|---|---|---|---|---|
+| **[Arc Studio](https://www.arcstudiopro.com/)** | Сценарный редактор с доской сюжетных линий. Видно структуру целиком, а не только текущую страницу. | сервис | 🟡 freemium | — | — |
+| **[Celtx](https://www.celtx.com/)** | Сценарий, раскадровка и план съёмки в одном месте. Для роликов, где есть постановка. | сервис | 🟡 freemium | — | — |
 | **[Claude](https://claude.ai/)** ⭐ | Длинный контекст и внятная работа со структурой. Держит сценарий целиком, а не абзац за абзацем. | сервис | 🟡 freemium | `API` | опц. |
+| **[Connected Papers](https://www.connectedpapers.com/)** | Строит карту связанных работ вокруг одной статьи. Видно, что было до и что выросло после. | сервис | 🟡 freemium | — | — |
 | **[Consensus](https://consensus.app/)** | Показывает, что говорит совокупность исследований по вопросу, а не одна удобная статья. | сервис | 🟡 freemium | — | — |
+| **[CoSchedule Headline Analyzer](https://coschedule.com/headline-analyzer)** | Оценивает заголовок по балансу слов и эмоций. Второе мнение к оценке заголовка от vidIQ. | сервис | 🟡 freemium | — | — |
 | **[Elicit](https://elicit.com/)** | Ресёрч по научным статьям с выжимкой методов и выводов. Для роликов, где нужен не блог, а исследование. | сервис | 🟡 freemium | — | — |
 | **[Exa](https://exa.ai/)** | Поиск по смыслу, а не по ключевым словам, и сразу с MCP. Находит статьи, которые Google прячет на пятой странице. | API | 🟡 freemium | `MCP` | нужен |
+| **[Google Dataset Search](https://datasetsearch.research.google.com/)** | Поиск по опубликованным датасетам. Когда для ролика нужны свои цифры, а не чужая инфографика. | сервис | 🟢 бесплатно | — | — |
+| **[Google Scholar](https://scholar.google.com/)** | Самый широкий охват научных публикаций. Число цитирований сразу показывает вес работы. | сервис | 🟢 бесплатно | — | — |
+| **[GPTZero](https://gptzero.me/)** | Показывает, насколько текст читается как машинный. Не приговор, но сигнал переписать живее. | сервис | 🟡 freemium | `API` | опц. |
+| **[Ground News](https://ground.news/)** | Показывает, как одну новость подают разные стороны. Защита от пересказа одной точки зрения как факта. | сервис | 🟡 freemium | — | — |
 | **[GummySearch](https://gummysearch.com/)** | Ищет боль и вопросы аудитории по реддиту. Источник тем, которые людей реально жгут. | сервис | 🟡 freemium | — | — |
 | **[Hemingway Editor](https://hemingwayapp.com/)** | Подсвечивает длинные предложения и пассив. Текст под озвучку должен читаться вслух — это и проверяет. | сервис | 🟡 freemium | — | — |
 | **[LanguageTool](https://languagetool.org/)** | Проверка грамматики, в том числе русской, с открытым кодом и возможностью поднять у себя. | сервис | 🟡 freemium | `API` | опц. |
+| **[Logseq](https://logseq.com/)** | Заметки блоками со связями, полностью открытые и локальные. Удобно копить куски будущих сценариев. | приложение | 🔵 open source | — | — |
+| **[Milanote](https://milanote.com/)** | Доска для раскладывания идей, референсов и порядка сцен. Этап между «есть тема» и «есть сценарий». | сервис | 🟡 freemium | — | — |
 | **[NotebookLM](https://notebooklm.google.com/)** | Загружаешь источники — отвечает только по ним, со ссылками на конкретное место. Сценарий не уплывает в выдумку. | сервис | 🟡 freemium | — | — |
+| **[Obsidian](https://obsidian.md/)** | База идей в обычных markdown-файлах на диске. Есть MCP — агент читает и пополняет её напрямую. | приложение | 🟡 freemium | `MCP` | — |
+| **[OpenAlex](https://openalex.org/)** | Открытый граф всей научной литературы: статьи, авторы, цитирования. Без ключа и без лимитов. | API | 🟢 бесплатно | `API` | — |
 | **[Perplexity](https://www.perplexity.ai/)** | Поисковый ресёрч со ссылками на источник каждого утверждения. Быстрый сбор фактуры под сценарий. | сервис | 🟡 freemium | `API` | опц. |
+| **[ProWritingAid](https://prowritingaid.com/)** | Разбор стиля английского текста: ритм, повторы, длина фраз. Глубже Grammarly, но и медленнее. | сервис | 🟡 freemium | — | — |
+| **[QPrompt](https://qprompt.app/)** | Открытый телесуфлёр с зеркальным режимом. Последнее звено между готовым текстом и записью. | приложение | 🔵 open source | — | — |
+| **[QuillBot](https://quillbot.com/)** | Переписывает фразу в нескольких вариантах. Спасает, когда абзац упёрся и не звучит. | сервис | 🟡 freemium | — | — |
+| **[Raindrop.io](https://raindrop.io/)** | Закладки с полнотекстовым поиском и API. Референсы и источники по темам будущих роликов. | сервис | 🟡 freemium | `API` | опц. |
+| **[Readwise Reader](https://readwise.io/)** | Собирает всё прочитанное и выделенное в одно место с API. Фактура для сценария копится сама. | сервис | 🔴 платно | `API` | нужен |
+| **[Research Rabbit](https://www.researchrabbit.ai/)** | Ресёрч по цепочке цитирований с уведомлениями о новых работах. Бесплатно. | сервис | 🟢 бесплатно | — | — |
+| **[Semantic Scholar](https://www.semanticscholar.org/)** | Поиск по научным статьям с бесплатным API и выжимками. Первоисточник вместо пересказа в блоге. | API | 🟢 бесплатно | `API` | опц. |
+| **[Trelby](https://www.trelby.org/)** | Открытый сценарный редактор с индустриальным форматированием. Бесплатная замена Final Draft. | приложение | 🔵 open source | — | — |
+| **[Wayback Machine](https://web.archive.org/)** | Как страница выглядела раньше. Доказательство, что компания что-то обещала и потом убрала. | API | 🟢 бесплатно | `API` | — |
+| **[Zotero](https://www.zotero.org/)** | Менеджер источников: сохраняет страницу, PDF и выходные данные одним кликом. Ссылки в описании ролика собираются сами. | приложение | 🔵 open source | — | — |
+| **[Главред](https://glvrd.ru/)** | Чистит русский текст от штампов, воды и канцелярита по информационному стилю. Прямо слышно в озвучке. | сервис | 🟢 бесплатно | — | — |
+| **[Орфограммка](https://orfogrammka.ru/)** | Русская грамматика, пунктуация и типографика в одном проходе. Заметно строже встроенных проверок. | сервис | 🟡 freemium | — | — |
+| **[Тургенев](https://turgenev.ashmanov.com/)** | Проверяет русский текст на переспам и заумность. Полезно для описаний, которые читают поисковики. | сервис | 🟡 freemium | — | — |
 
 → [Подробные карточки: установка, ключи, заметки](catalog/script.md)
 
@@ -667,14 +711,34 @@
 
 | Инструмент | Что делает | Тип | Цена | Из агента | Ключ |
 |---|---|---|---|---|---|
+| **[1of10](https://1of10.com/)** | Ищет ролики, обогнавшие средние просмотры канала в разы. Форматы, которые сработали, а не просто популярные каналы. | сервис | 🔴 платно | — | — |
 | **[Ahrefs](https://ahrefs.com/)** | Поисковый спрос вокруг темы. Полезно, когда ролик должен ловить трафик и из Google тоже. | сервис | 🔴 платно | `MCP` | нужен |
+| **[AlsoAsked](https://alsoasked.com/)** | Дерево вопросов «Люди также спрашивают». Готовая структура разделов сценария. | сервис | 🟡 freemium | — | — |
 | **[AnswerThePublic](https://answerthepublic.com/)** | Реальные вопросы людей вокруг темы. Прямой источник заголовков и структуры сценария. | сервис | 🟡 freemium | — | — |
+| **[BuzzSumo](https://buzzsumo.com/)** | Показывает, какой контент по теме собрал больше всего репостов. Проверка, что тема вообще расходится. | сервис | 🔴 платно | — | — |
+| **[Channel Crawler](https://www.channelcrawler.com/)** | Поиск каналов по нише, размеру, языку и дате создания. Находит молодых конкурентов, которых ещё не видно в выдаче. | сервис | 🟡 freemium | — | — |
 | **[Exploding Topics](https://explodingtopics.com/)** | Темы на подъёме, пока они ещё не в мейнстриме. Ловит волну раньше, чем Trends её покажет. | сервис | 🟡 freemium | — | — |
+| **[Glimpse](https://meetglimpse.com/)** | Надстройка над Google Trends: показывает абсолютные цифры вместо относительных. Видно масштаб, а не только форму кривой. | сервис | 🟡 freemium | — | — |
+| **[Google Keyword Planner](https://ads.google.com/home/tools/keyword-planner/)** | Данные о спросе от самого Google. Бесплатно, но нужен рекламный аккаунт, а объёмы показываются диапазонами. | сервис | 🟢 бесплатно | — | — |
 | **[Google Trends](https://trends.google.com/)** | Сезонность и всплески интереса к теме. Проверить, не поздно ли снимать, до того как писать сценарий. | сервис | 🟢 бесплатно | — | — |
+| **[Google Trends: Trending Now](https://trends.google.com/trending)** | Что ищут прямо сейчас, с разбивкой по странам. Источник тем для быстрых реактивных роликов. | сервис | 🟢 бесплатно | — | — |
+| **[HypeAuditor](https://hypeauditor.com/)** | Проверяет аудиторию на накрутку. Нужно до того, как заплатишь за интеграцию. | сервис | 🔴 платно | — | — |
 | **[Keyword Tool](https://keywordtool.io/)** | Подсказки поиска YouTube без входа в аккаунт. Реальные формулировки запросов зрителей. | сервис | 🟡 freemium | — | — |
+| **[Keywords Everywhere](https://keywordseverywhere.com/)** | Показывает объёмы запросов прямо в поиске YouTube и Google. Ресёрч не отвлекаясь на отдельную вкладку. | приложение | 🔴 платно | — | — |
+| **[Morningfa.me](https://morningfa.me/)** | Считает, есть ли у канала реальный шанс пробиться по конкретному запросу. Отговаривает от заведомо проигранных тем. | сервис | 🔴 платно | — | — |
 | **[Nexlev](https://nexlev.io/)** ⭐ | База каналов с оценкой дохода, RPM и outlier-скором. Заточен под поиск faceless-ниш. | сервис | 🔴 платно | `MCP` | нужен |
+| **[NoxInfluencer](https://www.noxinfluencer.com/)** | Оценка канала, динамика и прикидка стоимости интеграции. Полезно, когда ищешь, с кем коллабиться. | сервис | 🟡 freemium | — | — |
+| **[Pinterest Trends](https://trends.pinterest.com/)** | Сезонный спрос с опережением: в Pinterest темы всплывают за месяцы до пика. Ранний сигнал бесплатно. | сервис | 🟢 бесплатно | — | — |
+| **[Playboard](https://playboard.co/)** | Рейтинги каналов по странам и категориям с оценкой дохода. Силён по азиатскому рынку. | сервис | 🟡 freemium | — | — |
+| **[Semrush](https://www.semrush.com/)** | Тяжёлый SEO-комбайн с данными по конкурентам. Основной соперник Ahrefs — выбирают по интерфейсу и цене. | сервис | 🔴 платно | — | — |
+| **[Similarweb](https://www.similarweb.com/)** | Трафик и источники чужого сайта. Нужно, если делаешь ролик-разбор про компанию. | сервис | 🟡 freemium | `MCP` | нужен |
 | **[Social Blade](https://socialblade.com/)** | Публичная история роста любого канала. Смотреть чужую динамику, не имея доступа к их аналитике. | сервис | 🟡 freemium | — | — |
+| **[SparkToro](https://sparktoro.com/)** | Показывает, что аудитория ещё читает, слушает и смотрит. Отвечает на вопрос «где мои зрители водятся». | сервис | 🟡 freemium | — | — |
+| **[SpyFu](https://www.spyfu.com/)** | История рекламных и органических запросов конкурентов на годы назад. Фактура для роликов про бизнес. | сервис | 🔴 платно | — | — |
+| **[TikTok Creative Center](https://ads.tiktok.com/business/creativecenter)** | Официальные данные TikTok по трендам, звукам и хэштегам — бесплатно и без рекламного кабинета. | сервис | 🟢 бесплатно | — | — |
 | **[TubeBuddy](https://www.tubebuddy.com/)** | Расширение к YouTube Studio: теги, A/B-тесты превью, массовые правки. Основной конкурент vidIQ. | сервис | 🟡 freemium | — | — |
+| **[Tubular Labs](https://tubularlabs.com/)** | Кросс-платформенная аналитика видео уровня агентств. Дорого, зато данные по всем площадкам сразу. | сервис | 🔴 платно | — | — |
+| **[Ubersuggest](https://neilpatel.com/ubersuggest/)** | Бюджетный SEO-инструмент с бесплатным дневным лимитом. Хватает, чтобы проверить пару тем. | сервис | 🟡 freemium | — | — |
 | **[vidIQ](https://vidiq.com/)** ⭐ | Ключевики, конкуренты, оценка заголовков и превью. Есть MCP — research идёт прямо из чата. | сервис | 🟡 freemium | `MCP` | нужен |
 | **[ViewStats](https://www.viewstats.com/)** | Аналитика чужих каналов с историей превью и заголовков. Видно, что они меняли и что после этого выстрелило. | сервис | 🟡 freemium | — | — |
 | **[YouTube Data API](https://developers.google.com/youtube/v3)** | Первоисточник по статистике видео и каналов. Квоты жёсткие, зато данные не оценочные. | API | 🟢 бесплатно | `API` | нужен |

@@ -14,15 +14,52 @@ routing:
         tools: [gummysearch, answer-the-public, youtube-transcript-mcp]
 
       - task: "Проверить утверждение по исследованиям"
-        tools: [consensus, elicit, our-world-in-data]
-        note: "Нужно, если в ролике звучит «учёные доказали»."
+        tools: [consensus, elicit, semantic-scholar, openalex, google-scholar]
+        note: "Нужно, если в ролике звучит «учёные доказали». OpenAlex — без ключа и лимитов."
+
+      - task: "Размотать тему от одной статьи ко всем связанным"
+        tools: [connected-papers, researchrabbit]
+
+      - task: "Доказать, что компания это обещала и потом убрала"
+        tools: [wayback]
+        note: "Архив страницы — сильный аргумент в разоблачающем ролике."
+
+      - task: "Не пересказать одну точку зрения как факт"
+        tools: [ground-news, our-world-in-data]
+
+      - task: "Найти свои цифры вместо чужой инфографики"
+        tools: [dataset-search, kaggle, world-bank, fred]
+
+      - task: "Копить фактуру между роликами"
+        tools: [obsidian, readwise, raindrop, zotero, logseq]
+        note: "Obsidian хранит всё в markdown на диске и умеет MCP — агент дотягивается до базы напрямую."
+
+      - task: "Разложить структуру до написания"
+        tools: [milanote, arc-studio, celtx]
 
       - task: "Написать и выстроить текст"
-        tools: [claude-ai]
+        tools: [claude-ai, trelby]
 
       - task: "Вычитать текст под озвучку"
-        tools: [hemingway, languagetool]
+        tools: [hemingway, languagetool, prowritingaid]
         note: "Текст для диктора проверяется чтением вслух — Hemingway ловит то, обо что споткнёшься."
+
+      - task: "Почистить русский текст"
+        tools: [glvrd, orfogrammka, turgenev]
+        note: "Главред режет канцелярит и воду — в озвучке разница слышна сразу."
+
+      - task: "Переформулировать абзац, который не звучит"
+        tools: [quillbot]
+
+      - task: "Убедиться, что текст не читается машинным"
+        tools: [gptzero]
+
+      - task: "Прочитать текст на камеру"
+        tools: [qprompt]
+        note: "Последнее звено между готовым сценарием и записью."
+
+      - task: "Оценить заголовок"
+        tools: [vidiq, coschedule-headline]
 
   - group: "Найти готовое"
     rows:
@@ -238,11 +275,32 @@ routing:
 
   - group: "Понять, что снимать"
     rows:
+      - task: "Найти чужой ролик, выстреливший выше нормы канала"
+        tools: [oneof10, vidiq, nexlev, viewstats]
+        note: "Ищем сработавший формат, а не просто популярный канал."
+
+      - task: "Найти молодые каналы в нише, пока их не видно"
+        tools: [channel-crawler, nexlev]
+
+      - task: "Понять, есть ли шанс пробиться по запросу"
+        tools: [morningfame, ahrefs, semrush]
+        note: "Отговаривает от тем, где против тебя играют каналы на порядок крупнее."
+
       - task: "Ниши, конкуренты, ключевые слова"
-        tools: [vidiq, nexlev]
+        tools: [vidiq, tubebuddy, keywords-everywhere, keyword-planner]
 
       - task: "Статистика видео и каналов из первоисточника"
-        tools: [youtube-data-api]
+        tools: [youtube-data-api, playboard]
+
+      - task: "Понять, где водится моя аудитория"
+        tools: [sparktoro, gummysearch]
+
+      - task: "Проверить блогера перед интеграцией"
+        tools: [hypeauditor, noxinfluencer]
+        note: "Накрутка вскрывается до оплаты, а не после."
+
+      - task: "Разобрать чужой сайт или компанию для ролика"
+        tools: [similarweb, spyfu, buzzsumo, wayback]
 
       - task: "Живые данные в кадр — курсы, погода, новости"
         tools: [public-apis, coingecko, open-meteo]
@@ -251,9 +309,17 @@ routing:
         tools: [recharts, chartjs, visx, echarts]
         note: "Recharts — дефолт для React. ECharts — если нужны карты или десятки тысяч точек."
 
+      - task: "Что в тренде прямо сейчас"
+        tools: [google-trends-trending, tiktok-creative-center, glimpse]
+        note: "Creative Center отдаёт официальные данные TikTok бесплатно и без рекламного кабинета."
+
+      - task: "Поймать тему до пика, а не на пике"
+        tools: [pinterest-trends, exploding-topics]
+        note: "В Pinterest сезонные темы всплывают за месяцы до всплеска в поиске."
+
       - task: "Проверить, не поздно ли снимать тему"
-        tools: [google-trends, exploding-topics]
+        tools: [google-trends, glimpse]
 
       - task: "Вопросы, которые люди реально задают"
-        tools: [answer-the-public]
-        note: "Прямой источник заголовков и структуры сценария."
+        tools: [answer-the-public, alsoasked]
+        note: "AlsoAsked строит дерево вопросов — готовая структура разделов сценария."

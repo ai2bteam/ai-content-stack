@@ -4899,3 +4899,559 @@ tools:
     tagline: "Мост к Midjourney, Kling, Suno и другим закрытым сервисам. Обходит отсутствие у них официального API."
     status: listed
     tags: [bridge, midjourney, aggregator]
+
+  # ═══════ сценарий: ресёрч и проверка фактов ═══════
+
+  - id: semantic-scholar
+    name: "Semantic Scholar"
+    category: script
+    kind: api
+    agent: api
+    pricing: free
+    key: optional
+    url: "https://www.semanticscholar.org/"
+    tagline: "Поиск по научным статьям с бесплатным API и выжимками. Первоисточник вместо пересказа в блоге."
+    status: listed
+    tags: [research, academic, api]
+
+  - id: openalex
+    name: "OpenAlex"
+    category: script
+    kind: api
+    agent: api
+    pricing: free
+    key: none
+    url: "https://openalex.org/"
+    tagline: "Открытый граф всей научной литературы: статьи, авторы, цитирования. Без ключа и без лимитов."
+    status: listed
+    tags: [research, academic, keyless, api]
+
+  - id: connected-papers
+    name: "Connected Papers"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.connectedpapers.com/"
+    tagline: "Строит карту связанных работ вокруг одной статьи. Видно, что было до и что выросло после."
+    status: listed
+    tags: [research, visualization, academic]
+
+  - id: researchrabbit
+    name: "Research Rabbit"
+    category: script
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://www.researchrabbit.ai/"
+    tagline: "Ресёрч по цепочке цитирований с уведомлениями о новых работах. Бесплатно."
+    status: listed
+    tags: [research, academic, free]
+
+  - id: google-scholar
+    name: "Google Scholar"
+    category: script
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://scholar.google.com/"
+    tagline: "Самый широкий охват научных публикаций. Число цитирований сразу показывает вес работы."
+    status: listed
+    tags: [research, academic]
+
+  - id: dataset-search
+    name: "Google Dataset Search"
+    category: script
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://datasetsearch.research.google.com/"
+    tagline: "Поиск по опубликованным датасетам. Когда для ролика нужны свои цифры, а не чужая инфографика."
+    status: listed
+    tags: [research, datasets]
+
+  - id: wayback
+    name: "Wayback Machine"
+    category: script
+    kind: api
+    agent: api
+    pricing: free
+    key: none
+    url: "https://web.archive.org/"
+    tagline: "Как страница выглядела раньше. Доказательство, что компания что-то обещала и потом убрала."
+    status: listed
+    tags: [research, archive, evidence]
+
+  - id: ground-news
+    name: "Ground News"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://ground.news/"
+    tagline: "Показывает, как одну новость подают разные стороны. Защита от пересказа одной точки зрения как факта."
+    status: listed
+    tags: [news, bias, fact-checking]
+
+  # ═══════ сценарий: заметки и база знаний ═══════
+
+  - id: obsidian
+    name: "Obsidian"
+    category: script
+    kind: app
+    agent: mcp
+    pricing: freemium
+    key: none
+    url: "https://obsidian.md/"
+    tagline: "База идей в обычных markdown-файлах на диске. Есть MCP — агент читает и пополняет её напрямую."
+    status: listed
+    tags: [notes, markdown, local, mcp]
+
+  - id: logseq
+    name: "Logseq"
+    category: script
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://logseq.com/"
+    tagline: "Заметки блоками со связями, полностью открытые и локальные. Удобно копить куски будущих сценариев."
+    status: listed
+    tags: [notes, outliner, local]
+
+  - id: zotero
+    name: "Zotero"
+    category: script
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://www.zotero.org/"
+    tagline: "Менеджер источников: сохраняет страницу, PDF и выходные данные одним кликом. Ссылки в описании ролика собираются сами."
+    status: listed
+    tags: [references, citations, local]
+
+  - id: readwise
+    name: "Readwise Reader"
+    category: script
+    kind: service
+    agent: api
+    pricing: paid
+    key: required
+    url: "https://readwise.io/"
+    tagline: "Собирает всё прочитанное и выделенное в одно место с API. Фактура для сценария копится сама."
+    status: listed
+    tags: [highlights, reading, api]
+
+  - id: raindrop
+    name: "Raindrop.io"
+    category: script
+    kind: service
+    agent: api
+    pricing: freemium
+    key: optional
+    url: "https://raindrop.io/"
+    tagline: "Закладки с полнотекстовым поиском и API. Референсы и источники по темам будущих роликов."
+    status: listed
+    tags: [bookmarks, api]
+
+  # ═══════ сценарий: письмо и редактура ═══════
+
+  - id: glvrd
+    name: "Главред"
+    category: script
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://glvrd.ru/"
+    tagline: "Чистит русский текст от штампов, воды и канцелярита по информационному стилю. Прямо слышно в озвучке."
+    status: listed
+    tags: [russian, editing, info-style]
+
+  - id: turgenev
+    name: "Тургенев"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://turgenev.ashmanov.com/"
+    tagline: "Проверяет русский текст на переспам и заумность. Полезно для описаний, которые читают поисковики."
+    status: listed
+    tags: [russian, seo, readability]
+
+  - id: orfogrammka
+    name: "Орфограммка"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://orfogrammka.ru/"
+    tagline: "Русская грамматика, пунктуация и типографика в одном проходе. Заметно строже встроенных проверок."
+    status: listed
+    tags: [russian, grammar, proofreading]
+
+  - id: prowritingaid
+    name: "ProWritingAid"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://prowritingaid.com/"
+    tagline: "Разбор стиля английского текста: ритм, повторы, длина фраз. Глубже Grammarly, но и медленнее."
+    status: listed
+    tags: [english, style, editing]
+
+  - id: quillbot
+    name: "QuillBot"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://quillbot.com/"
+    tagline: "Переписывает фразу в нескольких вариантах. Спасает, когда абзац упёрся и не звучит."
+    status: listed
+    tags: [paraphrasing, editing]
+
+  - id: coschedule-headline
+    name: "CoSchedule Headline Analyzer"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://coschedule.com/headline-analyzer"
+    tagline: "Оценивает заголовок по балансу слов и эмоций. Второе мнение к оценке заголовка от vidIQ."
+    status: listed
+    tags: [headlines, titles]
+
+  - id: gptzero
+    name: "GPTZero"
+    category: script
+    kind: service
+    agent: api
+    pricing: freemium
+    key: optional
+    url: "https://gptzero.me/"
+    tagline: "Показывает, насколько текст читается как машинный. Не приговор, но сигнал переписать живее."
+    status: listed
+    tags: [ai-detection, editing]
+
+  # ═══════ сценарий: структура и съёмка ═══════
+
+  - id: trelby
+    name: "Trelby"
+    category: script
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://www.trelby.org/"
+    tagline: "Открытый сценарный редактор с индустриальным форматированием. Бесплатная замена Final Draft."
+    status: listed
+    tags: [screenwriting, local, free]
+
+  - id: celtx
+    name: "Celtx"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.celtx.com/"
+    tagline: "Сценарий, раскадровка и план съёмки в одном месте. Для роликов, где есть постановка."
+    status: listed
+    tags: [screenwriting, storyboard, production]
+
+  - id: arc-studio
+    name: "Arc Studio"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.arcstudiopro.com/"
+    tagline: "Сценарный редактор с доской сюжетных линий. Видно структуру целиком, а не только текущую страницу."
+    status: listed
+    tags: [screenwriting, structure]
+
+  - id: milanote
+    name: "Milanote"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://milanote.com/"
+    tagline: "Доска для раскладывания идей, референсов и порядка сцен. Этап между «есть тема» и «есть сценарий»."
+    status: listed
+    tags: [moodboard, planning, structure]
+
+  - id: qprompt
+    name: "QPrompt"
+    category: script
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://qprompt.app/"
+    tagline: "Открытый телесуфлёр с зеркальным режимом. Последнее звено между готовым текстом и записью."
+    status: listed
+    tags: [teleprompter, recording, free]
+
+  # ═══════ research: чужие каналы и выбросы ═══════
+
+  - id: oneof10
+    name: "1of10"
+    category: research
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://1of10.com/"
+    tagline: "Ищет ролики, обогнавшие средние просмотры канала в разы. Форматы, которые сработали, а не просто популярные каналы."
+    status: listed
+    tags: [youtube, outliers, formats]
+
+  - id: channel-crawler
+    name: "Channel Crawler"
+    category: research
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.channelcrawler.com/"
+    tagline: "Поиск каналов по нише, размеру, языку и дате создания. Находит молодых конкурентов, которых ещё не видно в выдаче."
+    status: listed
+    tags: [youtube, discovery, competitors]
+
+  - id: playboard
+    name: "Playboard"
+    category: research
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://playboard.co/"
+    tagline: "Рейтинги каналов по странам и категориям с оценкой дохода. Силён по азиатскому рынку."
+    status: listed
+    tags: [youtube, rankings, revenue]
+
+  - id: noxinfluencer
+    name: "NoxInfluencer"
+    category: research
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.noxinfluencer.com/"
+    tagline: "Оценка канала, динамика и прикидка стоимости интеграции. Полезно, когда ищешь, с кем коллабиться."
+    status: listed
+    tags: [youtube, influencer, pricing]
+
+  - id: hypeauditor
+    name: "HypeAuditor"
+    category: research
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://hypeauditor.com/"
+    tagline: "Проверяет аудиторию на накрутку. Нужно до того, как заплатишь за интеграцию."
+    status: listed
+    tags: [fraud-detection, influencer, audience]
+
+  - id: morningfame
+    name: "Morningfa.me"
+    category: research
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://morningfa.me/"
+    tagline: "Считает, есть ли у канала реальный шанс пробиться по конкретному запросу. Отговаривает от заведомо проигранных тем."
+    status: listed
+    tags: [youtube, keywords, competition]
+
+  - id: tubular
+    name: "Tubular Labs"
+    category: research
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://tubularlabs.com/"
+    tagline: "Кросс-платформенная аналитика видео уровня агентств. Дорого, зато данные по всем площадкам сразу."
+    status: listed
+    tags: [analytics, cross-platform, enterprise]
+
+  # ═══════ research: тренды и спрос ═══════
+
+  - id: google-trends-trending
+    name: "Google Trends: Trending Now"
+    category: research
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://trends.google.com/trending"
+    tagline: "Что ищут прямо сейчас, с разбивкой по странам. Источник тем для быстрых реактивных роликов."
+    status: listed
+    tags: [trends, realtime, free]
+
+  - id: glimpse
+    name: "Glimpse"
+    category: research
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://meetglimpse.com/"
+    tagline: "Надстройка над Google Trends: показывает абсолютные цифры вместо относительных. Видно масштаб, а не только форму кривой."
+    status: listed
+    tags: [trends, absolute-volume]
+
+  - id: tiktok-creative-center
+    name: "TikTok Creative Center"
+    category: research
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://ads.tiktok.com/business/creativecenter"
+    tagline: "Официальные данные TikTok по трендам, звукам и хэштегам — бесплатно и без рекламного кабинета."
+    status: listed
+    tags: [tiktok, trends, free, official]
+
+  - id: pinterest-trends
+    name: "Pinterest Trends"
+    category: research
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://trends.pinterest.com/"
+    tagline: "Сезонный спрос с опережением: в Pinterest темы всплывают за месяцы до пика. Ранний сигнал бесплатно."
+    status: listed
+    tags: [trends, seasonal, early-signal, free]
+
+  - id: sparktoro
+    name: "SparkToro"
+    category: research
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://sparktoro.com/"
+    tagline: "Показывает, что аудитория ещё читает, слушает и смотрит. Отвечает на вопрос «где мои зрители водятся»."
+    status: listed
+    tags: [audience-research, discovery]
+
+  # ═══════ research: поисковый спрос ═══════
+
+  - id: semrush
+    name: "Semrush"
+    category: research
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://www.semrush.com/"
+    tagline: "Тяжёлый SEO-комбайн с данными по конкурентам. Основной соперник Ahrefs — выбирают по интерфейсу и цене."
+    status: listed
+    tags: [seo, keywords, competitors]
+
+  - id: ubersuggest
+    name: "Ubersuggest"
+    category: research
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://neilpatel.com/ubersuggest/"
+    tagline: "Бюджетный SEO-инструмент с бесплатным дневным лимитом. Хватает, чтобы проверить пару тем."
+    status: listed
+    tags: [seo, keywords, budget]
+
+  - id: keyword-planner
+    name: "Google Keyword Planner"
+    category: research
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://ads.google.com/home/tools/keyword-planner/"
+    tagline: "Данные о спросе от самого Google. Бесплатно, но нужен рекламный аккаунт, а объёмы показываются диапазонами."
+    status: listed
+    tags: [seo, keywords, official, free]
+
+  - id: alsoasked
+    name: "AlsoAsked"
+    category: research
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://alsoasked.com/"
+    tagline: "Дерево вопросов «Люди также спрашивают». Готовая структура разделов сценария."
+    status: listed
+    tags: [questions, structure, seo]
+
+  - id: keywords-everywhere
+    name: "Keywords Everywhere"
+    category: research
+    kind: app
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://keywordseverywhere.com/"
+    tagline: "Показывает объёмы запросов прямо в поиске YouTube и Google. Ресёрч не отвлекаясь на отдельную вкладку."
+    status: listed
+    tags: [keywords, browser-extension]
+
+  # ═══════ research: конкуренты и рынок ═══════
+
+  - id: similarweb
+    name: "Similarweb"
+    category: research
+    kind: service
+    agent: mcp
+    pricing: freemium
+    key: required
+    url: "https://www.similarweb.com/"
+    tagline: "Трафик и источники чужого сайта. Нужно, если делаешь ролик-разбор про компанию."
+    status: listed
+    tags: [traffic, competitors, market]
+
+  - id: buzzsumo
+    name: "BuzzSumo"
+    category: research
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://buzzsumo.com/"
+    tagline: "Показывает, какой контент по теме собрал больше всего репостов. Проверка, что тема вообще расходится."
+    status: listed
+    tags: [content-research, virality, social]
+
+  - id: spyfu
+    name: "SpyFu"
+    category: research
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://www.spyfu.com/"
+    tagline: "История рекламных и органических запросов конкурентов на годы назад. Фактура для роликов про бизнес."
+    status: listed
+    tags: [competitors, ads, history]
