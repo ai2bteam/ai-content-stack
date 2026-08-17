@@ -1,0 +1,897 @@
+# ai-content-stack — единый источник правды.
+# README.md и всё, что в catalog/, генерируется отсюда: python3 scripts/build.py
+# Правь ТОЛЬКО этот файл. Описание полей — в data/schema.md.
+
+meta:
+  title: "AI Content Stack"
+  tagline: "Каталог инструментов для производства контента с помощью ИИ — что берём, чем управляем из агента, как ставится."
+  repo: "https://github.com/ai2bteam/ai-content-stack"
+
+categories:
+  - id: agents
+    name: "Агенты и оркестрация"
+    emoji: "🤖"
+    blurb: "Среда, из которой всё запускается. Агент читает задачу и сам дёргает нужные инструменты."
+
+  - id: mcp
+    name: "MCP-серверы"
+    emoji: "🔌"
+    blurb: "Инструменты, подключаемые к агенту по протоколу MCP. Агент управляет ими напрямую — без копипасты и ручного клика."
+
+  - id: video
+    name: "Генерация видео"
+    emoji: "🎬"
+    blurb: "text→video и image→video. Основной расходник — деньги и время рендера, поэтому сначала смотри, нет ли готового стока."
+
+  - id: image
+    name: "Картинки: генерация и редактирование"
+    emoji: "🖼️"
+    blurb: "Генерация с нуля, img2img, инпейнт, удаление фона, апскейл."
+
+  - id: audio
+    name: "Голос, музыка, звук"
+    emoji: "🔊"
+    blurb: "Озвучка, клонирование голоса, фоновая музыка, SFX, транскрипция."
+
+  - id: motion
+    name: "Моушн и анимация"
+    emoji: "✨"
+    blurb: "Движение в кадре: анимационные библиотеки, Lottie/Rive, процедурная графика."
+
+  - id: assembly
+    name: "Сборка, монтаж, рендер"
+    emoji: "🧩"
+    blurb: "Где всё склеивается в готовый файл."
+
+  - id: assets
+    name: "Стоки и готовые ассеты"
+    emoji: "📦"
+    blurb: "Фото, видео, GIF, шрифты, иконки, логотипы. Правило: сначала сток, потом генерация — быстрее и без лимитов."
+
+  - id: data
+    name: "Данные для контента"
+    emoji: "📊"
+    blurb: "Живые цифры для data-driven роликов: курсы, погода, новости, статистика."
+
+  - id: research
+    name: "Research и аналитика"
+    emoji: "🔍"
+    blurb: "Что снимать: ниши, конкуренты, ключевики, выбросы по просмотрам."
+
+tools:
+
+  # ─────────────────────────── agents ───────────────────────────
+  - id: claude-code
+    name: "Claude Code"
+    category: agents
+    kind: app
+    agent: native
+    pricing: paid
+    key: none
+    url: "https://claude.com/product/claude-code"
+    docs: "https://docs.claude.com/en/docs/claude-code/overview"
+    tagline: "Агент в терминале, десктопе, вебе и IDE. Точка входа во весь остальной стек."
+    status: verified
+    note: |
+      Всё в этом каталоге так или иначе подключается сюда: MCP-серверы через `claude mcp add`,
+      повторяемые процессы — через skills, многоагентные прогоны — через workflows.
+
+  - id: mcp
+    name: "Model Context Protocol"
+    category: agents
+    kind: spec
+    agent: native
+    pricing: oss
+    key: none
+    url: "https://modelcontextprotocol.io/"
+    repo: "https://github.com/modelcontextprotocol"
+    tagline: "Открытый протокол, по которому агент получает чужие инструменты. Причина, по которой этот каталог вообще имеет смысл."
+    status: verified
+
+  - id: claude-agent-sdk
+    name: "Claude Agent SDK"
+    category: agents
+    kind: library
+    agent: api
+    pricing: paid
+    key: required
+    key_url: "https://console.anthropic.com/"
+    url: "https://docs.claude.com/en/api/agent-sdk/overview"
+    tagline: "Собрать своего агента с тем же циклом инструментов, что у Claude Code."
+    status: listed
+
+  # ─────────────────────────── mcp ───────────────────────────
+  - id: palmier-pro
+    guide: "guides/palmier-pro.md"
+    name: "Palmier Pro"
+    category: mcp
+    kind: app
+    agent: mcp
+    pricing: paid
+    key: none
+    platforms: [macos]
+    url: "https://palmierai.pro/"
+    tagline: "Видеоредактор для macOS, у которого таймлайн выставлен наружу как MCP-сервер — агент правит монтаж сам."
+    status: listed
+    tags: [video-editing, timeline, macos]
+    note: |
+      Поднимает локальный MCP на `http://127.0.0.1:19789/mcp`. Подключаешь Claude Code / Claude Desktop /
+      Cursor / Codex — и агент видит весь проект: какие клипы на каких дорожках, их длительность,
+      исходные промпты. Дальше умеет читать таймлайн, добавлять и подрезать клипы, менять порядок,
+      генерировать новый материал по промпту и перегенерировать уже сделанный.
+
+      Ключевая разница с обычным редактором: контекст проекта живёт в том же чате, что и остальные
+      MCP-серверы. То есть в одном разговоре можно найти сток через Pexels, сгенерировать озвучку
+      и тут же положить это на таймлайн.
+
+  - id: coverr-mcp
+    name: "Coverr MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: free
+    key: required
+    key_url: "https://coverr.co/"
+    url: "https://coverr.co/"
+    install: "claude mcp add --transport http coverr https://mcp.coverr.co/mcp"
+    tagline: "B-roll в MP4 прямо из чата: `get_videos` → `get_video(id)` → готовый 1080p-линк."
+    status: verified
+    tags: [b-roll, video, stock]
+
+  - id: pexels-mcp
+    name: "Pexels MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: free
+    key: required
+    key_url: "https://www.pexels.com/api/"
+    env: [PEXELS_API_KEY]
+    install: "uvx pexels-mcp-server"
+    url: "https://www.pexels.com/api/"
+    tagline: "Стоковые фото и видео. Рабочая лошадка для generic-кадров."
+    status: verified
+    tags: [stock, photo, video]
+    note: |
+      Для картинок бери размер `large2x` (до ~1880px), а не `original` — иначе упрёшься
+      в потолок API при массовой выгрузке.
+
+  - id: openverse-mcp
+    name: "Openverse MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: free
+    key: none
+    install: "npx -y mcp-openverse@latest"
+    url: "https://openverse.org/"
+    tagline: "CC-лицензированные картинки: Flickr, rawpixel, Wikimedia в одном поиске. Ключ не нужен."
+    status: verified
+    tags: [stock, creative-commons]
+    note: "Сохраняй `creator` и `license` вместе с файлом — они понадобятся для атрибуции."
+
+  - id: wikipedia-mcp
+    name: "Wikipedia MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: free
+    key: none
+    install: "uvx wikipedia-mcp"
+    url: "https://www.wikipedia.org/"
+    tagline: "Лучший первый источник фото для известных сущностей — компаний, людей, продуктов."
+    status: verified
+    tags: [reference, photo]
+    note: |
+      Сток систематически промахивается по именованным сущностям: на запрос «Liquid Death»
+      Pexels отдаст абстрактную банку. Wikipedia отдаёт настоящее lead-изображение статьи.
+
+  - id: brandfetch-mcp
+    name: "Brandfetch MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: freemium
+    key: required
+    key_url: "https://developers.brandfetch.com/"
+    env: [BRANDFETCH_API_KEY]
+    install: "uvx --from git+https://github.com/djmoore711/brandfetch-mcp mcp-brandfetch"
+    url: "https://brandfetch.com/"
+    tagline: "Логотипы брендов в SVG (light/dark) плюс фирменные цвета и шрифты по одному домену."
+    status: verified
+    tags: [logo, branding]
+
+  - id: klipy-mcp
+    name: "Klipy MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: freemium
+    key: required
+    key_url: "https://klipy.com/"
+    env: [KLIPY_API_KEY]
+    url: "https://klipy.com/"
+    tagline: "GIF-поиск. Неожиданно хорошо находит поп-культуру и свежую технику."
+    status: verified
+    tags: [gif]
+
+  - id: nasa-mcp
+    name: "NASA MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: free
+    key: required
+    key_url: "https://api.nasa.gov/"
+    env: [NASA_API_KEY]
+    install: "npx -y @programcomputer/nasa-mcp-server@latest"
+    url: "https://api.nasa.gov/"
+    tagline: "Космос и наука в высоком разрешении. Public domain."
+    status: verified
+    tags: [space, science, public-domain]
+
+  - id: unsplash-mcp
+    name: "Unsplash MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: free
+    key: required
+    key_url: "https://unsplash.com/developers"
+    env: [UNSPLASH_ACCESS_KEY]
+    install: "npx -y @violent-madman/unsplash-mcp@latest"
+    url: "https://unsplash.com/developers"
+    tagline: "Фото-сток номер два. Картинки красивее, релевантность к запросу слабее, чем у Pexels."
+    status: verified
+    tags: [stock, photo]
+
+  - id: fetch-mcp
+    name: "Fetch MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: free
+    key: none
+    install: "uvx mcp-server-fetch"
+    repo: "https://github.com/modelcontextprotocol/servers"
+    url: "https://github.com/modelcontextprotocol/servers"
+    tagline: "Достать и распарсить произвольную страницу. Спасает, когда нужны фото с /press или /newsroom компании."
+    status: verified
+    tags: [scraping]
+
+  - id: tavily-mcp
+    name: "Tavily MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: freemium
+    key: required
+    key_url: "https://app.tavily.com/"
+    env: [TAVILY_API_KEY]
+    install: "npx -y tavily-mcp@latest"
+    url: "https://tavily.com/"
+    tagline: "Веб-поиск, заточенный под агентов. С `include_images` вытаскивает реальные фото из новостных статей."
+    status: listed
+    tags: [search, news-photo]
+
+  - id: brave-search-mcp
+    name: "Brave Search MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: freemium
+    key: required
+    key_url: "https://api-dashboard.search.brave.com/app/keys"
+    env: [BRAVE_API_KEY]
+    install: "npx -y @brave/brave-search-mcp-server@latest"
+    url: "https://brave.com/search/api/"
+    tagline: "Поиск по вебу и картинкам без Google. Есть бесплатный тариф."
+    status: listed
+    tags: [search]
+
+  # ─────────────────────────── video ───────────────────────────
+  - id: ltx-video
+    name: "LTX-Video"
+    category: video
+    kind: model
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://www.lightricks.com/ltxv"
+    repo: "https://github.com/Lightricks/LTX-Video"
+    tagline: "Открытая модель text→video и image→video от Lightricks. Гоняется локально или в облаке."
+    status: listed
+    tags: [text-to-video, image-to-video, open-weights]
+
+  - id: runway
+    name: "Runway"
+    category: video
+    kind: service
+    agent: api
+    pricing: paid
+    key: required
+    key_url: "https://dev.runwayml.com/"
+    url: "https://runwayml.com/"
+    tagline: "Генерация и редактирование видео уровня продакшена. Есть API."
+    status: listed
+    tags: [text-to-video, image-to-video]
+
+  - id: kling
+    name: "Kling AI"
+    category: video
+    kind: service
+    agent: api
+    pricing: paid
+    key: required
+    url: "https://klingai.com/"
+    tagline: "Сильная физика движения и длинные планы. Один из лучших вариантов для реалистичного B-roll."
+    status: listed
+    tags: [text-to-video, image-to-video]
+
+  - id: modelslab-video
+    name: "ModelsLab Video"
+    category: video
+    kind: api
+    agent: api
+    pricing: paid
+    key: required
+    key_url: "https://modelslab.com/"
+    url: "https://modelslab.com/"
+    docs: "https://docs.modelslab.com/"
+    tagline: "Один API поверх пачки видеомоделей — удобно, когда не хочешь заводить пять аккаунтов."
+    status: listed
+    tags: [text-to-video, aggregator]
+
+  - id: heygen
+    name: "HeyGen"
+    category: video
+    kind: service
+    agent: api
+    pricing: paid
+    key: required
+    url: "https://www.heygen.com/"
+    docs: "https://docs.heygen.com/"
+    tagline: "Говорящие аватары и липсинк. Для форматов, где нужен «человек в кадре» без съёмки."
+    status: listed
+    tags: [avatar, lipsync]
+
+  # ─────────────────────────── image ───────────────────────────
+  - id: flux
+    name: "FLUX"
+    category: image
+    kind: model
+    agent: api
+    pricing: freemium
+    key: optional
+    url: "https://blackforestlabs.ai/"
+    repo: "https://github.com/black-forest-labs/flux"
+    tagline: "Текущий рабочий дефолт для text→image. Schnell — быстрый и бесплатный на большинстве хостингов."
+    status: verified
+    tags: [text-to-image, open-weights]
+
+  - id: cloudflare-workers-ai
+    name: "Cloudflare Workers AI"
+    category: image
+    kind: api
+    agent: api
+    pricing: freemium
+    key: required
+    key_url: "https://dash.cloudflare.com/profile/api-tokens"
+    url: "https://developers.cloudflare.com/workers-ai/"
+    tagline: "Flux Schnell и SD 1.5 по HTTP с щедрым бесплатным лимитом. Ответ приходит base64-PNG."
+    status: verified
+    tags: [text-to-image, image-to-image, free-tier]
+
+  - id: nvidia-nim
+    name: "NVIDIA NIM"
+    category: image
+    kind: api
+    agent: api
+    pricing: freemium
+    key: required
+    key_url: "https://build.nvidia.com/"
+    url: "https://build.nvidia.com/"
+    tagline: "Бесплатные кредиты на генеративные модели. Хорош как первое звено фолбэк-цепочки."
+    status: verified
+    tags: [text-to-image, free-tier]
+
+  - id: pollinations
+    name: "Pollinations"
+    category: image
+    kind: api
+    agent: api
+    pricing: free
+    key: none
+    url: "https://pollinations.ai/"
+    repo: "https://github.com/pollinations/pollinations"
+    tagline: "Генерация картинки обычным GET-запросом, без ключа вообще. Последний рубеж фолбэка."
+    status: verified
+    tags: [text-to-image, keyless]
+
+  - id: comfyui
+    name: "ComfyUI"
+    category: image
+    kind: app
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://www.comfy.org/"
+    repo: "https://github.com/comfyanonymous/ComfyUI"
+    tagline: "Нодовый пайплайн для диффузии локально. Когда нужен контроль, которого нет в чужом API."
+    status: listed
+    tags: [local, workflow, inpainting]
+
+  - id: rembg
+    name: "rembg"
+    category: image
+    kind: library
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/danielgatis/rembg"
+    repo: "https://github.com/danielgatis/rembg"
+    tagline: "Удаление фона одной командой, локально и бесплатно."
+    status: listed
+    tags: [background-removal]
+
+  - id: real-esrgan
+    name: "Real-ESRGAN"
+    category: image
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/xinntao/Real-ESRGAN"
+    repo: "https://github.com/xinntao/Real-ESRGAN"
+    tagline: "Апскейл картинок. Спасает сток низкого разрешения перед укладкой в 4K-таймлайн."
+    status: listed
+    tags: [upscaling]
+
+  # ─────────────────────────── audio ───────────────────────────
+  - id: voicebox
+    guide: "guides/voicebox.md"
+    name: "Voicebox"
+    category: audio
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    platforms: [macos, windows, linux]
+    url: "https://voicebox.sh/"
+    docs: "https://docs.voicebox.sh/"
+    repo: "https://github.com/jamiepine/voicebox"
+    tagline: "Локальная голосовая студия: 7 TTS-движков, 23 языка, клонирование голоса с нескольких секунд записи."
+    status: listed
+    tags: [tts, voice-cloning, local, elevenlabs-alternative]
+    note: |
+      Open-source и local-first — модели и голоса не уезжают с машины. Позиционируется как замена
+      связке ElevenLabs + WisprFlow: есть многодорожечный таймлайн, подрезка и сведение реплик,
+      то есть можно собирать диалоговые сцены, а не только рендерить отдельные фразы.
+
+      ⚠️ Не путать с **Voicebox от Meta** (2023) — это исследовательская flow-matching модель,
+      её веса и код в открытый доступ не выкладывали. Одинаковое имя, разные вещи.
+
+  - id: elevenlabs
+    name: "ElevenLabs"
+    category: audio
+    kind: service
+    agent: api
+    pricing: freemium
+    key: required
+    key_url: "https://elevenlabs.io/app/settings/api-keys"
+    url: "https://elevenlabs.io/"
+    docs: "https://elevenlabs.io/docs"
+    tagline: "Эталон качества синтеза речи. Дорого, но по интонации пока никто не догнал."
+    status: verified
+    tags: [tts, voice-cloning]
+
+  - id: kokoro
+    name: "Kokoro TTS"
+    category: audio
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://huggingface.co/hexgrad/Kokoro-82M"
+    tagline: "82M параметров, Apache-2.0, крутится на CPU. Лучшее соотношение «качество / вес» для локальной озвучки."
+    status: verified
+    tags: [tts, local, apache-2]
+
+  - id: chatterbox
+    name: "Chatterbox TTS"
+    category: audio
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/resemble-ai/chatterbox"
+    repo: "https://github.com/resemble-ai/chatterbox"
+    tagline: "MIT-лицензия и управление эмоцией. Локальная альтернатива, когда Kokoro звучит слишком ровно."
+    status: verified
+    tags: [tts, local, mit]
+
+  - id: whisper
+    name: "Whisper"
+    category: audio
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/openai/whisper"
+    repo: "https://github.com/openai/whisper"
+    tagline: "Транскрипция и тайминги. Из него же получаются субтитры под автоматическую нарезку."
+    status: verified
+    tags: [stt, subtitles]
+
+  - id: suno
+    name: "Suno"
+    category: audio
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://suno.com/"
+    tagline: "Генерация музыки с вокалом по текстовому описанию."
+    status: listed
+    tags: [music]
+
+  - id: ace-step
+    name: "ACE-Step"
+    category: audio
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/ace-step/ACE-Step"
+    repo: "https://github.com/ace-step/ACE-Step"
+    tagline: "Открытая модель генерации музыки. Фоновые треки без роялти и без подписки."
+    status: listed
+    tags: [music, open-weights]
+
+  - id: freesound
+    name: "Freesound"
+    category: audio
+    kind: api
+    agent: api
+    pricing: free
+    key: required
+    key_url: "https://freesound.org/apiv2/apply/"
+    url: "https://freesound.org/"
+    tagline: "Библиотека SFX под Creative Commons. Есть API."
+    status: listed
+    tags: [sfx, creative-commons]
+
+  # ─────────────────────────── motion ───────────────────────────
+  - id: motion
+    guide: "guides/motion.md"
+    name: "Motion"
+    category: motion
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://motion.dev/"
+    docs: "https://motion.dev/docs"
+    repo: "https://github.com/motiondivision/motion"
+    tagline: "Бывший Framer Motion. Анимации для React, ванильного JS и Vue — пружины, жесты, layout-переходы, скролл."
+    status: listed
+    tags: [animation, react, javascript, vue]
+    note: |
+      Гибридный движок: часть работы отдаёт нативным браузерным API, поэтому вывозит 120fps
+      с GPU-ускорением. Мини-версия `animate()` для HTML/SVG весит 2.3kb, API в среднем
+      заметно компактнее, чем у GSAP.
+
+      Что берём: layout- и shared-layout-переходы, анимация появления/исчезновения,
+      жесты (drag, tap, hover), скролл-связанные эффекты, таймлайны.
+
+      ⚠️ Для Remotion-роликов Motion **не** используем напрямую: там кадр рендерится по
+      `useCurrentFrame()`, а не по часам реального времени. Motion — для лендингов, интерфейсов
+      и HTML-сцен, которые потом пишутся с экрана.
+
+  - id: gsap
+    name: "GSAP"
+    category: motion
+    kind: library
+    agent: none
+    pricing: free
+    key: none
+    url: "https://gsap.com/"
+    docs: "https://gsap.com/docs/v3/"
+    tagline: "Ветеран веб-анимации. Таймлайны, морфинг SVG, сложная хореография."
+    status: listed
+    tags: [animation, javascript, timeline]
+
+  - id: lottie
+    name: "Lottie"
+    category: motion
+    kind: format
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://lottiefiles.com/"
+    tagline: "Векторная анимация в JSON. Готовых файлов — сотни тысяч, вставляются в Remotion через @remotion/lottie."
+    status: verified
+    tags: [animation, vector, json]
+
+  - id: rive
+    name: "Rive"
+    category: motion
+    kind: app
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://rive.app/"
+    tagline: "Интерактивная анимация с машиной состояний. Тяжелее Lottie, зато реагирует на события."
+    status: listed
+    tags: [animation, interactive]
+
+  - id: three-js
+    name: "Three.js"
+    category: motion
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://threejs.org/"
+    repo: "https://github.com/mrdoob/three.js"
+    tagline: "3D в браузере. В связке с @remotion/three рендерится покадрово в готовое видео."
+    status: verified
+    tags: [3d, webgl]
+
+  - id: sketchfab
+    name: "Sketchfab"
+    category: motion
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://sketchfab.com/"
+    tagline: "Готовые 3D-модели в .glb/.gltf, много бесплатных."
+    status: listed
+    tags: [3d, assets]
+
+  # ─────────────────────────── assembly ───────────────────────────
+  - id: remotion
+    name: "Remotion"
+    category: assembly
+    kind: library
+    agent: cli
+    pricing: freemium
+    key: none
+    url: "https://www.remotion.dev/"
+    docs: "https://www.remotion.dev/docs"
+    repo: "https://github.com/remotion-dev/remotion"
+    tagline: "Видео как React-компонент. Кадр — чистая функция от номера кадра, поэтому результат детерминирован и его можно ревьюить как код."
+    status: verified
+    tags: [react, typescript, programmatic-video]
+    note: |
+      Опорный инструмент сборки. Вся анимация идёт через `useCurrentFrame()` + `interpolate()`
+      или `spring()` — CSS-переходы и CSS-анимации не работают, потому что рендер идёт покадрово,
+      а не в реальном времени.
+
+      Лицензия: бесплатно для физлиц и небольших команд, для компаний нужна платная.
+      Проверь условия до того, как встроишь в коммерческий пайплайн.
+
+  - id: ffmpeg
+    name: "FFmpeg"
+    category: assembly
+    kind: cli
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://ffmpeg.org/"
+    docs: "https://ffmpeg.org/documentation.html"
+    tagline: "Фундамент под всем остальным: конвертация, обрезка, склейка, сведение звука, проверка файлов через ffprobe."
+    status: verified
+    tags: [encoding, editing]
+
+  - id: moviepy
+    name: "MoviePy"
+    category: assembly
+    kind: library
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://zulko.github.io/moviepy/"
+    repo: "https://github.com/Zulko/moviepy"
+    tagline: "Монтаж на Python, когда React-сцена — избыточно, а голый ffmpeg — уже больно."
+    status: listed
+    tags: [python, editing]
+
+  - id: playwright
+    name: "Playwright"
+    category: assembly
+    kind: library
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://playwright.dev/"
+    tagline: "Запись HTML/Canvas-сцены в видео через headless-браузер. Мост между веб-анимацией и монтажом."
+    status: verified
+    tags: [recording, headless]
+
+  # ─────────────────────────── assets ───────────────────────────
+  - id: pexels
+    name: "Pexels"
+    category: assets
+    kind: api
+    agent: api
+    pricing: free
+    key: required
+    key_url: "https://www.pexels.com/api/"
+    url: "https://www.pexels.com/"
+    tagline: "Фото и видео без атрибуции. Первый заход за generic-кадрами."
+    status: verified
+    tags: [photo, video, stock]
+
+  - id: coverr
+    name: "Coverr"
+    category: assets
+    kind: api
+    agent: mcp
+    pricing: free
+    key: required
+    url: "https://coverr.co/"
+    tagline: "Только видео, только B-roll. 1080p MP4 без водяных знаков."
+    status: verified
+    tags: [b-roll, video]
+
+  - id: wikimedia-commons
+    name: "Wikimedia Commons"
+    category: assets
+    kind: api
+    agent: api
+    pricing: free
+    key: none
+    url: "https://commons.wikimedia.org/"
+    tagline: "Настоящие фотографии реальных объектов и событий. Без ключа, лицензии открытые."
+    status: verified
+    tags: [photo, creative-commons, keyless]
+
+  - id: openverse
+    name: "Openverse"
+    category: assets
+    kind: api
+    agent: mcp
+    pricing: free
+    key: none
+    url: "https://openverse.org/"
+    tagline: "Метапоиск по CC-контенту: Flickr, Wikimedia, rawpixel и ещё десяток источников."
+    status: verified
+    tags: [photo, creative-commons, keyless]
+
+  - id: google-fonts
+    name: "Google Fonts"
+    category: assets
+    kind: service
+    agent: api
+    pricing: free
+    key: none
+    url: "https://fonts.google.com/"
+    tagline: "Шрифты под любой проект. В Remotion подключаются через @remotion/google-fonts без возни с загрузкой."
+    status: verified
+    tags: [fonts]
+
+  - id: lucide
+    name: "Lucide"
+    category: assets
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://lucide.dev/"
+    tagline: "Чистый набор иконок с React-компонентами из коробки."
+    status: verified
+    tags: [icons]
+
+  - id: gdelt
+    name: "GDELT"
+    category: assets
+    kind: api
+    agent: api
+    pricing: free
+    key: none
+    url: "https://www.gdeltproject.org/"
+    tagline: "Глобальный индекс новостных изображений. Ключ не нужен, но жёсткий лимит — 1 запрос в 5 секунд."
+    status: listed
+    tags: [news-photo, keyless]
+
+  # ─────────────────────────── data ───────────────────────────
+  - id: public-apis
+    name: "Public APIs"
+    category: data
+    kind: reference
+    agent: none
+    pricing: free
+    key: none
+    url: "https://github.com/public-apis/public-apis"
+    repo: "https://github.com/public-apis/public-apis"
+    tagline: "Каталог тысяч открытых API. Отсюда берутся живые цифры для data-driven роликов."
+    status: verified
+    tags: [reference, data]
+
+  - id: coingecko
+    name: "CoinGecko API"
+    category: data
+    kind: api
+    agent: api
+    pricing: freemium
+    key: optional
+    url: "https://www.coingecko.com/en/api"
+    tagline: "Курсы криптовалют. Базовые эндпоинты работают без ключа."
+    status: listed
+    tags: [crypto, data]
+
+  - id: open-meteo
+    name: "Open-Meteo"
+    category: data
+    kind: api
+    agent: api
+    pricing: free
+    key: none
+    url: "https://open-meteo.com/"
+    tagline: "Погода и климатические ряды вообще без регистрации."
+    status: listed
+    tags: [weather, keyless]
+
+  - id: recharts
+    name: "Recharts"
+    category: data
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://recharts.org/"
+    tagline: "Графики на React. Внутри Remotion анимируются покадрово — числа растут вместе с кадром."
+    status: verified
+    tags: [charts, react]
+
+  - id: d3
+    name: "D3"
+    category: data
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://d3js.org/"
+    tagline: "Когда нужен график, которого нет в готовых библиотеках."
+    status: verified
+    tags: [charts, dataviz]
+
+  # ─────────────────────────── research ───────────────────────────
+  - id: vidiq
+    name: "vidIQ"
+    category: research
+    kind: service
+    agent: mcp
+    pricing: freemium
+    key: required
+    url: "https://vidiq.com/"
+    tagline: "Ключевики, конкуренты, оценка заголовков и превью. Есть MCP — research идёт прямо из чата."
+    status: verified
+    tags: [youtube, seo, analytics]
+
+  - id: nexlev
+    name: "Nexlev"
+    category: research
+    kind: service
+    agent: mcp
+    pricing: paid
+    key: required
+    url: "https://nexlev.io/"
+    tagline: "База каналов с оценкой дохода, RPM и outlier-скором. Заточен под поиск faceless-ниш."
+    status: verified
+    tags: [youtube, niche-research, faceless]
+
+  - id: youtube-data-api
+    name: "YouTube Data API"
+    category: research
+    kind: api
+    agent: api
+    pricing: free
+    key: required
+    key_url: "https://console.cloud.google.com/"
+    url: "https://developers.google.com/youtube/v3"
+    tagline: "Первоисточник по статистике видео и каналов. Квоты жёсткие, зато данные не оценочные."
+    status: listed
+    tags: [youtube, analytics]

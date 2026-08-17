@@ -1,0 +1,82 @@
+name: Предложить инструмент
+description: Добавить в каталог инструмент, которого там нет
+title: "[инструмент] "
+labels: ["новый инструмент"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Название
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Ссылка
+      placeholder: https://
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Зачем его брать
+      description: >
+        Одно-два предложения. Не «что это такое», а чем он лучше того, что уже есть
+        в каталоге для этой задачи. Если у него есть неочевидный лимит или условие
+        лицензии — тоже сюда.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Категория
+      options:
+        - Агенты и оркестрация
+        - MCP-серверы
+        - Генерация видео
+        - Картинки — генерация и редактирование
+        - Голос, музыка, звук
+        - Моушн и анимация
+        - Сборка, монтаж, рендер
+        - Стоки и готовые ассеты
+        - Данные для контента
+        - Research и аналитика
+        - Не знаю
+    validations:
+      required: true
+
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Дотягивается ли до него агент
+      options:
+        - "MCP — подключается к агенту напрямую"
+        - "API — есть HTTP-эндпоинты"
+        - "CLI — ставится локально"
+        - "Никак, только руками"
+        - "Не знаю"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: pricing
+    attributes:
+      label: Цена
+      options:
+        - Бесплатно
+        - Freemium
+        - Платно
+        - Open source
+        - Не знаю
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: used
+    attributes:
+      label: Опыт использования
+      options:
+        - label: Пользовался этим на реальном проекте, а не просто нашёл ссылку

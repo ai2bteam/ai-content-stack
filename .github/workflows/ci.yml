@@ -1,0 +1,38 @@
+name: catalog
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # проверка ссылок раз в неделю, в понедельник утром
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  # Быстро и детерминированно: данные валидны, README не разошёлся с YAML.
+  # Гоняется на каждый пуш и пулреквест.
+  build:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Данные валидны и README собран из них
+        run: python3 scripts/build.py --check
+
+  # Сеть — штука ненадёжная, поэтому по расписанию и по кнопке, а не на каждый пуш.
+  links:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Ссылки живы
+        run: python3 scripts/check_links.py

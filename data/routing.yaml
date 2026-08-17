@@ -1,0 +1,109 @@
+# Таблица «задача → инструмент». Главная страница каталога строится вокруг неё:
+# человек приходит с задачей, а не с названием тула.
+# Значения в `tools` — это id из tools.yaml. Генератор сам развернёт их в ссылки
+# и упадёт с ошибкой, если id не существует.
+
+routing:
+  - group: "Найти готовое"
+    rows:
+      - task: "Фото — реальное, живое, generic"
+        tools: [pexels-mcp, openverse-mcp, unsplash-mcp]
+        note: "Сначала Pexels. Openverse — если нужна CC-лицензия с атрибуцией."
+
+      - task: "Фото известной компании, человека, продукта"
+        tools: [wikipedia-mcp, wikimedia-commons, tavily-mcp]
+        note: "Сток тут промахивается. Иди в Wikipedia за lead-изображением статьи."
+
+      - task: "Видео B-roll в MP4"
+        tools: [coverr-mcp, pexels-mcp]
+        note: "На каждую сцену длиннее 3 секунд ищи видео, а не статичное фото."
+
+      - task: "GIF"
+        tools: [klipy-mcp]
+
+      - task: "Логотип бренда"
+        tools: [brandfetch-mcp]
+        note: "Отдаёт SVG отдельно под светлый и тёмный фон."
+
+      - task: "Космос, наука, съёмка Земли"
+        tools: [nasa-mcp]
+
+      - task: "Шрифты и иконки"
+        tools: [google-fonts, lucide]
+
+      - task: "3D-модель"
+        tools: [sketchfab]
+
+  - group: "Сгенерировать, если готового нет"
+    rows:
+      - task: "Картинка по тексту"
+        tools: [flux, cloudflare-workers-ai, nvidia-nim, pollinations]
+        note: "Выстраивай в цепочку с фолбэком — бесплатные лимиты кончаются в самый неподходящий момент."
+
+      - task: "Картинка по референсу, инпейнт, локальный контроль"
+        tools: [comfyui]
+
+      - task: "Убрать фон / увеличить разрешение"
+        tools: [rembg, real-esrgan]
+
+      - task: "Видео по тексту или по картинке"
+        tools: [ltx-video, kling, runway, modelslab-video]
+        note: "LTX-Video — если хочется без подписки. Kling — если нужна убедительная физика движения."
+
+      - task: "Говорящий аватар"
+        tools: [heygen]
+
+      - task: "Озвучка — локально и бесплатно"
+        tools: [voicebox, kokoro, chatterbox]
+
+      - task: "Озвучка — максимальное качество"
+        tools: [elevenlabs]
+
+      - task: "Фоновая музыка"
+        tools: [suno, ace-step]
+
+      - task: "Звуковые эффекты"
+        tools: [freesound]
+
+      - task: "Субтитры и тайминги"
+        tools: [whisper]
+
+  - group: "Собрать ролик"
+    rows:
+      - task: "Программная сборка видео"
+        tools: [remotion]
+        note: "Кадр — функция от номера кадра. Диффы читаемые, рендер воспроизводимый."
+
+      - task: "Монтаж из чата, руками агента"
+        tools: [palmier-pro]
+        note: "Единственный в списке редактор, который отдаёт таймлайн наружу по MCP."
+
+      - task: "Нарезка, конвертация, сведение звука"
+        tools: [ffmpeg, moviepy]
+
+      - task: "Записать HTML/Canvas-сцену в видео"
+        tools: [playwright]
+
+      - task: "Анимация в вебе — лендинг, интерфейс, HTML-сцена"
+        tools: [motion, gsap]
+        note: "Для Remotion не подходит: там время идёт по кадрам, а не по часам."
+
+      - task: "Готовая векторная анимация"
+        tools: [lottie, rive]
+
+      - task: "3D в кадре"
+        tools: [three-js]
+
+  - group: "Понять, что снимать"
+    rows:
+      - task: "Ниши, конкуренты, ключевые слова"
+        tools: [vidiq, nexlev]
+
+      - task: "Статистика видео и каналов из первоисточника"
+        tools: [youtube-data-api]
+
+      - task: "Живые данные в кадр — курсы, погода, новости"
+        tools: [public-apis, coingecko, open-meteo]
+
+      - task: "Графики из этих данных"
+        tools: [recharts, d3]
