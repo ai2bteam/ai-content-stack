@@ -23,6 +23,21 @@
 
 ---
 
+## [D-ID](https://www.d-id.com/)
+
+Говорящие аватары из одной фотографии, с API. Ветеран категории.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🔴 платно |
+| **Из агента** | `API` |
+| **API-ключ** | нужен |
+
+`avatar` `lipsync` `api`
+
+---
+
 ## [FramePack](https://github.com/lllyasviel/FramePack)
 
 Генерация длинного видео на карте с 6 ГБ памяти. Радикально снижает порог входа в локальный video-gen.
@@ -331,6 +346,21 @@ Apache-2.0 и сильная физика движения. Один из нем
 | **Из агента** | `CLI` |
 
 `upscaling` `restoration`
+
+---
+
+## [VideoCrafter](https://github.com/AILab-CVC/VideoCrafter)
+
+Открытые диффузионные модели для видео от Tencent ARC. Text-to-video и image-to-video локально.
+
+| | |
+|---|---|
+| **Тип** | модель |
+| **Цена** | 🔵 open source |
+| **Из агента** | `CLI` |
+| **Исходники** | https://github.com/AILab-CVC/VideoCrafter |
+
+`text-to-video` `open-weights` `local`
 
 ---
 

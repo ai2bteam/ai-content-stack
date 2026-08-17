@@ -63,8 +63,22 @@ routing:
         note: "Большая часть в public domain — то, чего на стоках нет в принципе."
 
       - task: "Иллюстрации вместо фото"
-        tools: [undraw, storyset]
-        note: "У обоих настраивается акцентный цвет — подгоняются под палитру ролика."
+        tools: [undraw, storyset, blush]
+        note: "У всех настраивается акцентный цвет — подгоняются под палитру ролика."
+
+      - task: "Бесплатный фотобанк без атрибуции"
+        tools: [stocksnap, gratisography, picography, deathtostock, allthefreestock]
+        note: "AllTheFreeStock — каталог остальных, начинать удобно с него."
+
+      - task: "Лицо человека, которого не существует"
+        tools: [generated-photos]
+        note: "Снимает вопрос разрешения на съёмку: человека нет."
+
+      - task: "Подобрать пару шрифтов"
+        tools: [fontjoy, colors-and-fonts]
+
+      - task: "Узнать, какой шрифт на чужом сайте"
+        tools: [fontface-ninja]
 
   - group: "Сгенерировать, если готового нет"
     rows:
@@ -73,7 +87,14 @@ routing:
         note: "Выстраивай в цепочку с фолбэком — бесплатные лимиты кончаются в самый неподходящий момент."
 
       - task: "Картинка по референсу, инпейнт, локальный контроль"
-        tools: [comfyui]
+        tools: [comfyui, invokeai, rundiffusion]
+
+      - task: "Понять, как просить нужный стиль"
+        tools: [lexica, publicprompts, promptomania]
+        note: "Lexica ищет по готовым картинкам вместе с их промптами — быстрее, чем угадывать словами."
+
+      - task: "Stable Diffusion на Mac без командной строки"
+        tools: [diffusionbee]
 
       - task: "Убрать фон / увеличить разрешение"
         tools: [rembg, upscayl, real-esrgan, magnific]
@@ -141,6 +162,13 @@ routing:
       - task: "Записать HTML/Canvas-сцену в видео"
         tools: [playwright]
 
+      - task: "Записать экран"
+        tools: [obs, screen-studio, loom]
+        note: "OBS бесплатен и умеет всё. Screen Studio даёт тот самый плавный зум за деньги."
+
+      - task: "Процедурный фон, которого нет ни у кого"
+        tools: [shadertoy, hydra, touchdesigner, canvas-sketch, p5js]
+
       - task: "Анимация в вебе — лендинг, интерфейс, HTML-сцена"
         tools: [motion, gsap]
         note: "Для Remotion не подходит: там время идёт по кадрам, а не по часам."
@@ -195,7 +223,18 @@ routing:
         note: "Satori рисует превью из JSX — значит, оно генерится из тех же данных, что и ролик."
 
       - task: "Подобрать палитру"
-        tools: [coolors, realtime-colors]
+        tools: [coolors, colorhunt, adobe-color, colorspace]
+
+      - task: "Проверить, читается ли надпись"
+        tools: [colorable, realtime-colors, color-oracle]
+        note: "Color Oracle показывает кадр глазами дальтоника — это восемь процентов мужской аудитории."
+
+      - task: "Фирменные цвета чужого бренда"
+        tools: [brandcolors, brandfetch-mcp, simple-icons]
+
+      - task: "Схема или диаграмма в кадр"
+        tools: [mermaid, d2, excalidraw, mcp-mermaid]
+        note: "Все описываются текстом — значит, правятся в диффе, а не перетаскиванием прямоугольников."
 
   - group: "Понять, что снимать"
     rows:

@@ -7,6 +7,32 @@ meta:
   tagline: "Каталог инструментов для производства контента с помощью ИИ — что берём, чем управляем из агента, как ставится."
   repo: "https://github.com/ai2bteam/ai-content-stack"
 
+# Списки, из которых вычёсывались кандидаты. Ссылки оттуда проверялись
+# заново, описания написаны свои — прямого копирования нет.
+sources:
+  - name: "punkpeye/awesome-mcp-servers"
+    url: "https://github.com/punkpeye/awesome-mcp-servers"
+  - name: "wong2/awesome-mcp-servers"
+    url: "https://github.com/wong2/awesome-mcp-servers"
+  - name: "appcypher/awesome-mcp-servers"
+    url: "https://github.com/appcypher/awesome-mcp-servers"
+  - name: "steven2358/awesome-generative-ai"
+    url: "https://github.com/steven2358/awesome-generative-ai"
+  - name: "filipecalegario/awesome-generative-ai"
+    url: "https://github.com/filipecalegario/awesome-generative-ai"
+  - name: "mahseema/awesome-ai-tools"
+    url: "https://github.com/mahseema/awesome-ai-tools"
+  - name: "goabstract/Awesome-Design-Tools"
+    url: "https://github.com/goabstract/Awesome-Design-Tools"
+  - name: "terkelg/awesome-creative-coding"
+    url: "https://github.com/terkelg/awesome-creative-coding"
+  - name: "heyalexej/awesome-images"
+    url: "https://github.com/heyalexej/awesome-images"
+  - name: "brabadu/awesome-fonts"
+    url: "https://github.com/brabadu/awesome-fonts"
+  - name: "public-apis/public-apis"
+    url: "https://github.com/public-apis/public-apis"
+
 categories:
   - id: agents
     name: "Агенты и оркестрация"
@@ -3863,3 +3889,1013 @@ tools:
     tagline: "Подсказки поиска YouTube без входа в аккаунт. Реальные формулировки запросов зрителей."
     status: listed
     tags: [keywords, youtube]
+
+  # ═══════ из awesome-списков: съёмка экрана и запись ═══════
+
+  - id: obs
+    name: "OBS Studio"
+    category: assembly
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://obsproject.com/"
+    tagline: "Стандарт записи экрана и стрима, бесплатно и на всех платформах. Сцены, источники, виртуальная камера."
+    status: verified
+    tags: [screen-recording, streaming, local]
+
+  - id: screen-studio
+    name: "Screen Studio"
+    category: assembly
+    kind: app
+    agent: none
+    pricing: paid
+    key: none
+    platforms: [macos]
+    url: "https://screen.studio/"
+    tagline: "Запись экрана с автоматическим зумом на курсор и плавными движениями. Тот самый вид «дорогого» скринкаста."
+    status: listed
+    tags: [screen-recording, macos]
+
+  - id: loom
+    name: "Loom"
+    category: assembly
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.loom.com/"
+    tagline: "Запись экрана сразу в ссылку, с расшифровкой. Для черновиков и объяснений, а не для финального ролика."
+    status: listed
+    tags: [screen-recording, quick]
+
+  - id: riverside
+    name: "Riverside"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://riverside.fm/"
+    tagline: "Пишет каждого участника локально в высоком качестве, а не сжатый поток из звонка. Спасает удалённые интервью."
+    status: listed
+    tags: [interview, recording, podcast]
+
+  # ═══════ процедурная графика и creative coding ═══════
+
+  - id: shadertoy
+    name: "Shadertoy"
+    category: motion
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://www.shadertoy.com/"
+    tagline: "Огромная библиотека готовых GLSL-шейдеров с исходниками. Источник фонов, которых точно нет у других."
+    status: listed
+    tags: [shaders, glsl, backgrounds]
+
+  - id: book-of-shaders
+    name: "The Book of Shaders"
+    category: motion
+    kind: reference
+    agent: none
+    pricing: free
+    key: none
+    url: "https://thebookofshaders.com/"
+    tagline: "Учебник по фрагментным шейдерам с редактором в браузере. Отсюда начинают, если хочется своей процедурной графики."
+    status: listed
+    tags: [shaders, learning, glsl]
+
+  - id: processing
+    name: "Processing"
+    category: motion
+    kind: app
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://processing.org/"
+    tagline: "Среда генеративной графики с экспортом кадров. Прародитель всего creative coding."
+    status: listed
+    tags: [generative, frames-export]
+
+  - id: openframeworks
+    name: "openFrameworks"
+    category: motion
+    kind: library
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://openframeworks.cc/"
+    tagline: "C++ каркас для тяжёлой real-time графики. Берут, когда браузер уже не тянет."
+    status: listed
+    tags: [generative, cpp, realtime]
+
+  - id: touchdesigner
+    name: "TouchDesigner"
+    category: motion
+    kind: app
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://derivative.ca/"
+    tagline: "Нодовая среда для аудиореактивной графики. Бесплатная версия ограничена 1280×1280 — для вертикалок хватает."
+    status: listed
+    tags: [nodes, audio-reactive, realtime]
+
+  - id: cables
+    name: "cables.gl"
+    category: motion
+    kind: app
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://cables.gl/"
+    tagline: "TouchDesigner в браузере: нодовая графика без установки, с экспортом в веб."
+    status: listed
+    tags: [nodes, webgl, browser]
+
+  - id: hydra
+    name: "Hydra"
+    category: motion
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://hydra.ojack.xyz/"
+    tagline: "Живое кодирование визуалов прямо в браузере. Аудиореактивные фоны в несколько строк."
+    status: listed
+    tags: [live-coding, audio-reactive, browser]
+
+  - id: canvas-sketch
+    name: "canvas-sketch"
+    category: motion
+    kind: library
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/mattdesl/canvas-sketch"
+    repo: "https://github.com/mattdesl/canvas-sketch"
+    tagline: "Каркас генеративных работ с экспортом секвенции кадров под нужный размер. Прямо стыкуется с ffmpeg."
+    status: listed
+    tags: [generative, frames-export, canvas]
+
+  - id: paperjs
+    name: "Paper.js"
+    category: motion
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "http://paperjs.org/"
+    tagline: "Векторная графика на canvas с честными кривыми Безье. Для схем и рисованных линий."
+    status: listed
+    tags: [vector, canvas, bezier]
+
+  - id: zdog
+    name: "Zdog"
+    category: motion
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://zzz.dog/"
+    tagline: "Псевдо-3D на плоских формах, очень лёгкий. Милая объёмная иконка без всякого WebGL."
+    status: listed
+    tags: [3d, lightweight, illustration]
+
+  - id: generative-gestaltung
+    name: "Generative Design"
+    category: motion
+    kind: reference
+    agent: none
+    pricing: free
+    key: none
+    url: "http://www.generative-gestaltung.de/"
+    tagline: "Классический сборник генеративных приёмов с исходниками. Каталог идей, а не библиотека."
+    status: listed
+    tags: [generative, reference]
+
+  # ═══════ диаграммы и схемы ═══════
+
+  - id: mermaid
+    name: "Mermaid"
+    category: thumbnail
+    kind: library
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://mermaid.js.org/"
+    repo: "https://github.com/mermaid-js/mermaid"
+    tagline: "Схема описывается текстом и рисуется сама. Диаграмма правится в диффе, а не перетаскиванием прямоугольников."
+    status: verified
+    tags: [diagrams, text-based]
+
+  - id: d2
+    name: "D2"
+    category: thumbnail
+    kind: cli
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://d2lang.com/"
+    repo: "https://github.com/terrastruct/d2"
+    tagline: "Схемы из текста, но с заметно лучшей раскладкой, чем у Mermaid. Есть анимация переходов между кадрами схемы."
+    status: listed
+    tags: [diagrams, text-based, animation]
+
+  - id: excalidraw
+    name: "Excalidraw"
+    category: thumbnail
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://excalidraw.com/"
+    repo: "https://github.com/excalidraw/excalidraw"
+    tagline: "Схемы с видом набросков от руки. Объяснение выглядит живым, а не корпоративной презентацией."
+    status: verified
+    tags: [diagrams, sketchy, whiteboard]
+
+  - id: tldraw
+    name: "tldraw"
+    category: thumbnail
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://www.tldraw.com/"
+    repo: "https://github.com/tldraw/tldraw"
+    tagline: "Доска с SDK — встраивается в свой инструмент. Часто берут как основу для интерактивных сцен."
+    status: listed
+    tags: [whiteboard, sdk]
+
+  - id: penpot
+    name: "Penpot"
+    category: thumbnail
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://penpot.app/"
+    tagline: "Открытая замена Figma, которую можно поднять у себя. Файлы не заперты в чужом облаке."
+    status: listed
+    tags: [design, self-hosted, figma-alternative]
+
+  - id: gamma
+    name: "Gamma"
+    category: thumbnail
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://gamma.app/"
+    tagline: "Презентация из текстового плана за минуту. Быстрый источник слайдов под скринкаст."
+    status: listed
+    tags: [presentation, slides]
+
+  - id: ms-designer
+    name: "Microsoft Designer"
+    category: thumbnail
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://designer.microsoft.com/"
+    tagline: "Генерация обложек и постов по описанию. Бесплатно, на движке DALL·E."
+    status: listed
+    tags: [design, thumbnail, free]
+
+  - id: affinity-designer
+    name: "Affinity Designer"
+    category: thumbnail
+    kind: app
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://affinity.serif.com/designer/"
+    tagline: "Вектор и растр в одном редакторе, разовая покупка вместо подписки Adobe."
+    status: listed
+    tags: [vector, design, one-time-purchase]
+
+  # ═══════ стоки: бесплатные фотобанки ═══════
+
+  - id: stocksnap
+    name: "StockSnap.io"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://stocksnap.io/"
+    tagline: "CC0-фотобанк с пополнением каждую неделю. Атрибуция не нужна вообще."
+    status: listed
+    tags: [photo, cc0, free]
+
+  - id: gratisography
+    name: "Gratisography"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://gratisography.com/"
+    tagline: "Нарочито странные и смешные фото. Спасает, когда обычный сток выглядит слишком гладко."
+    status: listed
+    tags: [photo, quirky, free]
+
+  - id: picography
+    name: "Picography"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://picography.co/"
+    tagline: "Крупные атмосферные снимки без ограничений на использование."
+    status: listed
+    tags: [photo, free]
+
+  - id: new-old-stock
+    name: "New Old Stock"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://nos.twnsnd.co/"
+    tagline: "Винтажные фото из публичных архивов, вне известных ограничений копирайта. Готовая ретро-фактура."
+    status: listed
+    tags: [photo, vintage, public-domain]
+
+  - id: foodiesfeed
+    name: "FoodiesFeed"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://foodiesfeed.com/"
+    tagline: "Только еда, зато тысячи снимков и бесплатно. Узкий сток бьёт широкий, когда тема совпала."
+    status: listed
+    tags: [photo, food, free]
+
+  - id: deathtostock
+    name: "Death to Stock"
+    category: assets
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://deathtothestockphoto.com/"
+    tagline: "Фото, намеренно непохожие на сток. Кадры выглядят снятыми, а не подобранными."
+    status: listed
+    tags: [photo, authentic]
+
+  - id: freerangestock
+    name: "Free Range Stock"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://freerangestock.com/"
+    tagline: "Бесплатный фотобанк с регистрацией. Часть снимков в public domain."
+    status: listed
+    tags: [photo, free]
+
+  - id: goodfreephotos
+    name: "Good Free Photos"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://www.goodfreephotos.com/"
+    tagline: "Природа, страны, путешествия — в public domain. Удобная разбивка по географии."
+    status: listed
+    tags: [photo, nature, public-domain]
+
+  - id: generated-photos
+    name: "Generated Photos"
+    category: assets
+    kind: service
+    agent: api
+    pricing: freemium
+    key: required
+    url: "https://generated.photos/"
+    tagline: "Лица несуществующих людей. Снимает вопрос разрешения на съёмку — человека не существует."
+    status: listed
+    tags: [faces, synthetic, model-release]
+
+  - id: allthefreestock
+    name: "AllTheFreeStock"
+    category: assets
+    kind: reference
+    agent: none
+    pricing: free
+    key: none
+    url: "https://allthefreestock.com/"
+    tagline: "Каталог бесплатных стоков — фото, видео, звук, иконки. Точка входа, когда не знаешь, где искать."
+    status: listed
+    tags: [directory, free]
+
+  # ═══════ шрифты ═══════
+
+  - id: font-squirrel
+    name: "Font Squirrel"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://www.fontsquirrel.com/"
+    tagline: "Шрифты с проверенной коммерческой лицензией плюс генератор веб-форматов."
+    status: listed
+    tags: [fonts, commercial-safe]
+
+  - id: dafont
+    name: "DaFont"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://www.dafont.com/"
+    tagline: "Огромный архив декоративных шрифтов. Лицензии разные — проверяй каждый перед коммерцией."
+    status: listed
+    tags: [fonts, display]
+
+  - id: befonts
+    name: "BeFonts"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://befonts.com/"
+    tagline: "Современные бесплатные шрифты с подборками. Часть — только для личного использования."
+    status: listed
+    tags: [fonts, display]
+
+  - id: fontjoy
+    name: "Fontjoy"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://fontjoy.com/"
+    tagline: "Подбирает сочетание шрифтов нейросетью. Решает вопрос «какой второй шрифт взять к первому»."
+    status: listed
+    tags: [fonts, pairing]
+
+  - id: fontbase
+    name: "FontBase"
+    category: assets
+    kind: app
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://fontba.se/"
+    tagline: "Менеджер шрифтов: включает и выключает их в системе. Нужен, когда локальных файлов стало больше сотни."
+    status: listed
+    tags: [fonts, management]
+
+  - id: fontface-ninja
+    name: "Fontface Ninja"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://fontface.ninja/"
+    tagline: "Определяет шрифт на чужом сайте. Быстрый способ повторить понравившуюся типографику."
+    status: listed
+    tags: [fonts, identification]
+
+  - id: fontforge
+    name: "FontForge"
+    category: assets
+    kind: app
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://fontforge.org/"
+    repo: "https://github.com/fontforge/fontforge"
+    tagline: "Открытый редактор шрифтов со скриптами. Поправить начертание или собрать свой набор глифов."
+    status: listed
+    tags: [fonts, editing]
+
+  - id: colors-and-fonts
+    name: "Colors & Fonts"
+    category: assets
+    kind: reference
+    agent: none
+    pricing: free
+    key: none
+    url: "https://www.colorsandfonts.com/"
+    tagline: "Отобранные вручную шрифты, палитры и инструменты в одном месте."
+    status: listed
+    tags: [fonts, color, directory]
+
+  # ═══════ иконки ═══════
+
+  - id: font-awesome
+    name: "Font Awesome"
+    category: assets
+    kind: library
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://fontawesome.com/"
+    tagline: "Самый узнаваемый набор иконок. Бесплатная часть покрывает почти всё, что нужно в кадре."
+    status: listed
+    tags: [icons]
+
+  - id: feather-icons
+    name: "Feather Icons"
+    category: assets
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://feathericons.com/"
+    tagline: "Минималистичный набор с единой сеткой — предок Lucide. Хорош, когда нужна графическая тишина."
+    status: listed
+    tags: [icons, minimal]
+
+  - id: material-design-icons
+    name: "Material Design Icons"
+    category: assets
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://github.com/google/material-design-icons"
+    repo: "https://github.com/google/material-design-icons"
+    tagline: "Исходники иконок Google в SVG. Берут, когда нужны файлы, а не веб-шрифт."
+    status: listed
+    tags: [icons, svg]
+
+  - id: iconstore
+    name: "Icon Store"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://iconstore.co/"
+    tagline: "Бесплатные наборы иконок от независимых дизайнеров. Меньше шансов совпасть с чужим роликом."
+    status: listed
+    tags: [icons, free]
+
+  - id: flaticon
+    name: "Flaticon"
+    category: assets
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.flaticon.com/"
+    tagline: "Миллионы иконок в разных стилях. Бесплатно с атрибуцией, что для видео неудобно — считай подписку."
+    status: listed
+    tags: [icons, attribution-required]
+
+  # ═══════ цвет ═══════
+
+  - id: colorhunt
+    name: "Color Hunt"
+    category: thumbnail
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://colorhunt.co/"
+    tagline: "Готовые палитры из четырёх цветов с голосованием. Быстрее, чем крутить колесо самому."
+    status: listed
+    tags: [color, palette]
+
+  - id: adobe-color
+    name: "Adobe Color"
+    category: thumbnail
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://color.adobe.com/"
+    tagline: "Колесо с правилами гармонии плюс извлечение палитры из загруженного кадра."
+    status: listed
+    tags: [color, palette, extraction]
+
+  - id: brandcolors
+    name: "BrandColors"
+    category: thumbnail
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://brandcolors.net/"
+    tagline: "Официальные цвета сотен брендов. Нужно, если в кадре упоминается чужая компания."
+    status: listed
+    tags: [color, branding]
+
+  - id: colorspace
+    name: "ColorSpace"
+    category: thumbnail
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://mycolor.space/"
+    tagline: "Из одного цвета собирает палитру и градиенты с готовым CSS."
+    status: listed
+    tags: [color, gradients]
+
+  - id: color-oracle
+    name: "Color Oracle"
+    category: thumbnail
+    kind: app
+    agent: none
+    pricing: free
+    key: none
+    url: "https://colororacle.org/"
+    tagline: "Показывает кадр глазами человека с дальтонизмом. Восемь процентов мужчин — не мелочь для превью."
+    status: listed
+    tags: [color, accessibility]
+
+  - id: colorable
+    name: "Colorable"
+    category: thumbnail
+    kind: service
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://colorable.jxnblk.com/"
+    tagline: "Проверка контраста текста и фона по нормам доступности. Прямо отвечает, читается ли надпись."
+    status: listed
+    tags: [color, contrast, accessibility]
+
+  - id: cssgradient
+    name: "CSS Gradient"
+    category: thumbnail
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://cssgradient.io/"
+    tagline: "Конструктор градиентов с готовым кодом. Подложка под заголовок за минуту."
+    status: listed
+    tags: [gradients, css]
+
+  # ═══════ AI-арт: промпты, поиск, локальные оболочки ═══════
+
+  - id: lexica
+    name: "Lexica"
+    category: image
+    kind: service
+    agent: api
+    pricing: freemium
+    key: optional
+    url: "https://lexica.art/"
+    tagline: "Поиск по миллионам сгенерированных картинок вместе с их промптами. Быстрый способ понять, как просить нужный стиль."
+    status: listed
+    tags: [prompts, search, reference]
+
+  - id: openart
+    name: "OpenArt"
+    category: image
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://openart.ai/"
+    tagline: "Библиотека промптов плюс генерация на месте. Полезен как справочник формулировок."
+    status: listed
+    tags: [prompts, text-to-image]
+
+  - id: publicprompts
+    name: "PublicPrompts"
+    category: image
+    kind: reference
+    agent: none
+    pricing: free
+    key: none
+    url: "https://publicprompts.art/"
+    tagline: "Бесплатные проверенные промпты под конкретные стили. Готовые рецепты вместо угадывания."
+    status: listed
+    tags: [prompts, free]
+
+  - id: promptomania
+    name: "promptoMANIA"
+    category: image
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://promptomania.com/"
+    tagline: "Конструктор промпта по частям: свет, объектив, стиль. Хорош, пока не выработался свой словарь."
+    status: listed
+    tags: [prompts, builder]
+
+  - id: artbreeder
+    name: "Artbreeder"
+    category: image
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.artbreeder.com/"
+    tagline: "Скрещивает и плавно смешивает изображения. Другой способ управления, чем текстовый промпт."
+    status: listed
+    tags: [image-blending, exploration]
+
+  - id: diffusionbee
+    name: "DiffusionBee"
+    category: image
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    platforms: [macos]
+    url: "https://diffusionbee.com/"
+    tagline: "Stable Diffusion на Mac одним установщиком. Без Python, командной строки и настройки окружения."
+    status: listed
+    tags: [local, macos, stable-diffusion]
+
+  - id: dreamstudio
+    name: "DreamStudio"
+    category: image
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://dreamstudio.ai/"
+    tagline: "Официальная веб-оболочка Stability. Попробовать их модели, ничего не разворачивая."
+    status: listed
+    tags: [text-to-image, stability]
+
+  - id: craiyon
+    name: "Craiyon"
+    category: image
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.craiyon.com/"
+    tagline: "Бывший DALL·E mini: бесплатно и без регистрации. Качество среднее, зато порог нулевой."
+    status: listed
+    tags: [text-to-image, free, no-signup]
+
+  - id: haveibeentrained
+    name: "Have I Been Trained?"
+    category: image
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://haveibeentrained.com/"
+    tagline: "Проверяет, попала ли конкретная работа в обучающие датасеты. Нужно, если работаешь с чужой графикой."
+    status: listed
+    tags: [ethics, datasets, rights]
+
+  - id: rundiffusion
+    name: "RunDiffusion"
+    category: runtime
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://rundiffusion.com/"
+    tagline: "ComfyUI и A1111 в облаке с почасовой оплатой. Локальный пайплайн без локальной видеокарты."
+    status: listed
+    tags: [cloud, comfyui, gpu]
+
+  - id: videocrafter
+    name: "VideoCrafter"
+    category: video
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/AILab-CVC/VideoCrafter"
+    repo: "https://github.com/AILab-CVC/VideoCrafter"
+    tagline: "Открытые диффузионные модели для видео от Tencent ARC. Text-to-video и image-to-video локально."
+    status: listed
+    tags: [text-to-video, open-weights, local]
+
+  - id: clipwing
+    name: "Clipwing"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://clipwing.pro/"
+    tagline: "Режет длинное видео на десятки коротких. Ещё один игрок рядом с OpusClip — сравни цену на своём объёме."
+    status: listed
+    tags: [shorts, auto-editing]
+
+  - id: d-id
+    name: "D-ID"
+    category: video
+    kind: service
+    agent: api
+    pricing: paid
+    key: required
+    url: "https://www.d-id.com/"
+    tagline: "Говорящие аватары из одной фотографии, с API. Ветеран категории."
+    status: listed
+    tags: [avatar, lipsync, api]
+
+  # ═══════ музыка и звук ═══════
+
+  - id: bensound
+    name: "Bensound"
+    category: audio
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.bensound.com/"
+    tagline: "Фоновая музыка от одного автора — отсюда узнаваемая ровность. Бесплатно с указанием авторства."
+    status: listed
+    tags: [music, royalty-free]
+
+  - id: audiojungle
+    name: "AudioJungle"
+    category: audio
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://audiojungle.net/"
+    tagline: "Сотни тысяч треков и звуков поштучно, без подписки. Разовая лицензия под конкретный ролик."
+    status: listed
+    tags: [music, sfx, per-track]
+
+  - id: soundful
+    name: "Soundful"
+    category: audio
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://soundful.com/"
+    tagline: "Генерация музыки с правами на коммерческое использование результата."
+    status: listed
+    tags: [music, licensing]
+
+  - id: ecrett
+    name: "Ecrett Music"
+    category: audio
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://ecrettmusic.com/"
+    tagline: "Музыка подбирается по сцене и настроению, а не по жанру. Удобно, когда не знаешь музыкальных терминов."
+    status: listed
+    tags: [music, mood-based]
+
+  - id: mubert
+    name: "Mubert"
+    category: audio
+    kind: service
+    agent: api
+    pricing: freemium
+    key: required
+    url: "https://mubert.com/"
+    tagline: "Генеративная музыка потоком и по API. Бесконечный фон нужной длины без склейки петель."
+    status: listed
+    tags: [music, api, generative]
+
+  - id: aiva
+    name: "AIVA"
+    category: audio
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.aiva.ai/"
+    tagline: "Оркестровые и кинематографичные темы. Заточен под саундтрек, а не под биты."
+    status: listed
+    tags: [music, orchestral, cinematic]
+
+  - id: audioldm
+    name: "AudioLDM"
+    category: audio
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/haoheliu/AudioLDM"
+    repo: "https://github.com/haoheliu/AudioLDM"
+    tagline: "Открытая генерация звуковых эффектов по описанию. SFX, которого нет ни в одной библиотеке."
+    status: listed
+    tags: [sfx, open-weights, local]
+
+  - id: csound
+    name: "Csound"
+    category: audio
+    kind: app
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://csound.com/"
+    tagline: "Синтез звука кодом, с историей с 1986 года. Для полностью процедурного саунд-дизайна."
+    status: listed
+    tags: [synthesis, procedural, cli]
+
+  # ═══════ MCP: контентные серверы из awesome-списков ═══════
+
+  - id: mcp-server-chart
+    name: "AntV Chart MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: oss
+    key: none
+    url: "https://github.com/antvis/mcp-server-chart"
+    repo: "https://github.com/antvis/mcp-server-chart"
+    tagline: "Агент строит готовый график по данным — двадцать с лишним типов. Картинка для ролика прямо из чата."
+    status: listed
+    tags: [charts, dataviz]
+
+  - id: mcp-mermaid
+    name: "Mermaid MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: oss
+    key: none
+    url: "https://github.com/hustcc/mcp-mermaid"
+    repo: "https://github.com/hustcc/mcp-mermaid"
+    tagline: "Схема по описанию сразу в картинку. Объясняющий кадр без ручного рисования."
+    status: listed
+    tags: [diagrams, charts]
+
+  - id: mcp-hfspace
+    name: "HuggingFace Space MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: oss
+    key: none
+    url: "https://github.com/evalstate/mcp-hfspace"
+    repo: "https://github.com/evalstate/mcp-hfspace"
+    tagline: "Любой Space с Hugging Face становится инструментом агента. Тысячи демо-моделей без своего хостинга."
+    status: listed
+    tags: [huggingface, models, bridge]
+
+  - id: video-editing-mcp
+    name: "Video Editing MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: oss
+    key: none
+    url: "https://github.com/burningion/video-editing-mcp"
+    repo: "https://github.com/burningion/video-editing-mcp"
+    tagline: "Поиск по своей видеотеке и сборка нарезки силами агента."
+    status: listed
+    tags: [video, editing, search]
+
+  - id: mcp-youtube
+    name: "YouTube MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: oss
+    key: none
+    url: "https://github.com/anaisbetts/mcp-youtube"
+    repo: "https://github.com/anaisbetts/mcp-youtube"
+    tagline: "Скачивает субтитры ролика через yt-dlp. Разбор чужого видео без просмотра."
+    status: listed
+    tags: [youtube, transcript, research]
+
+  - id: imagesorcery-mcp
+    name: "ImageSorcery MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: oss
+    key: none
+    url: "https://github.com/sunriseapps/imagesorcery-mcp"
+    repo: "https://github.com/sunriseapps/imagesorcery-mcp"
+    tagline: "Обрезка, ресайз, детекция объектов на картинке средствами компьютерного зрения — локально."
+    status: listed
+    tags: [image-processing, computer-vision, local]
+
+  - id: piapi-mcp
+    name: "PiAPI MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: paid
+    key: required
+    url: "https://github.com/apinetwork/piapi-mcp-server"
+    repo: "https://github.com/apinetwork/piapi-mcp-server"
+    tagline: "Мост к Midjourney, Kling, Suno и другим закрытым сервисам. Обходит отсутствие у них официального API."
+    status: listed
+    tags: [bridge, midjourney, aggregator]

@@ -41,6 +41,20 @@ pip install auto-editor
 
 ---
 
+## [Clipwing](https://clipwing.pro/)
+
+Режет длинное видео на десятки коротких. Ещё один игрок рядом с OpusClip — сравни цену на своём объёме.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🟡 freemium |
+| **Из агента** | — |
+
+`shorts` `auto-editing`
+
+---
+
 ## [Descript](https://www.descript.com/)
 
 Монтаж правкой текста расшифровки: удалил слово — исчезло из видео. Плюс вычистка «эээ» одной кнопкой.
@@ -125,6 +139,20 @@ pip install auto-editor
 | **Исходники** | https://github.com/pyannote/pyannote-audio |
 
 `diarization` `subtitles`
+
+---
+
+## [Riverside](https://riverside.fm/)
+
+Пишет каждого участника локально в высоком качестве, а не сжатый поток из звонка. Спасает удалённые интервью.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🟡 freemium |
+| **Из агента** | — |
+
+`interview` `recording` `podcast`
 
 ---
 

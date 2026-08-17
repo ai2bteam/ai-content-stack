@@ -23,6 +23,21 @@
 
 ---
 
+## [AntV Chart MCP](https://github.com/antvis/mcp-server-chart)
+
+Агент строит готовый график по данным — двадцать с лишним типов. Картинка для ролика прямо из чата.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **Исходники** | https://github.com/antvis/mcp-server-chart |
+
+`charts` `dataviz`
+
+---
+
 ## [Apify MCP](https://apify.com/)
 
 Тысячи готовых скрейперов под соцсети и маркетплейсы, дёргаются как инструменты агента.
@@ -248,6 +263,36 @@ npx -y @modelcontextprotocol/server-filesystem /path/to/project
 
 ---
 
+## [HuggingFace Space MCP](https://github.com/evalstate/mcp-hfspace)
+
+Любой Space с Hugging Face становится инструментом агента. Тысячи демо-моделей без своего хостинга.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **Исходники** | https://github.com/evalstate/mcp-hfspace |
+
+`huggingface` `models` `bridge`
+
+---
+
+## [ImageSorcery MCP](https://github.com/sunriseapps/imagesorcery-mcp)
+
+Обрезка, ресайз, детекция объектов на картинке средствами компьютерного зрения — локально.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **Исходники** | https://github.com/sunriseapps/imagesorcery-mcp |
+
+`image-processing` `computer-vision` `local`
+
+---
+
 ## [Klipy MCP](https://klipy.com/) ⭐
 
 GIF-поиск. Неожиданно хорошо находит поп-культуру и свежую технику.
@@ -281,6 +326,21 @@ npx -y @modelcontextprotocol/server-memory
 ```
 
 `memory` `knowledge-graph`
+
+---
+
+## [Mermaid MCP](https://github.com/hustcc/mcp-mermaid)
+
+Схема по описанию сразу в картинку. Объясняющий кадр без ручного рисования.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **Исходники** | https://github.com/hustcc/mcp-mermaid |
+
+`diagrams` `charts`
 
 ---
 
@@ -389,6 +449,22 @@ uvx pexels-mcp-server
 
 ---
 
+## [PiAPI MCP](https://github.com/apinetwork/piapi-mcp-server)
+
+Мост к Midjourney, Kling, Suno и другим закрытым сервисам. Обходит отсутствие у них официального API.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔴 платно |
+| **Из агента** | `MCP` |
+| **API-ключ** | нужен |
+| **Исходники** | https://github.com/apinetwork/piapi-mcp-server |
+
+`bridge` `midjourney` `aggregator`
+
+---
+
 ## [Playwright MCP](https://github.com/microsoft/playwright-mcp)
 
 Браузер под управлением агента. Забрать то, к чему нет API, или записать HTML-сцену в кадры.
@@ -469,6 +545,21 @@ npx -y @violent-madman/unsplash-mcp@latest
 
 ---
 
+## [Video Editing MCP](https://github.com/burningion/video-editing-mcp)
+
+Поиск по своей видеотеке и сборка нарезки силами агента.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **Исходники** | https://github.com/burningion/video-editing-mcp |
+
+`video` `editing` `search`
+
+---
+
 ## [Wikipedia MCP](https://www.wikipedia.org/) ⭐
 
 Лучший первый источник фото для известных сущностей — компаний, людей, продуктов.
@@ -487,6 +578,21 @@ uvx wikipedia-mcp
 Pexels отдаст абстрактную банку. Wikipedia отдаёт настоящее lead-изображение статьи.
 
 `reference` `photo`
+
+---
+
+## [YouTube MCP](https://github.com/anaisbetts/mcp-youtube)
+
+Скачивает субтитры ролика через yt-dlp. Разбор чужого видео без просмотра.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **Исходники** | https://github.com/anaisbetts/mcp-youtube |
+
+`youtube` `transcript` `research`
 
 ---
 
