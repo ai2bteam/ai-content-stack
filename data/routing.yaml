@@ -34,6 +34,14 @@ routing:
       - task: "3D-модель"
         tools: [sketchfab]
 
+      - task: "Историческая и архивная фактура"
+        tools: [internet-archive, loc, europeana, smithsonian, met-museum]
+        note: "Большая часть в public domain — то, чего на стоках нет в принципе."
+
+      - task: "Иллюстрации вместо фото"
+        tools: [undraw, storyset]
+        note: "У обоих настраивается акцентный цвет — подгоняются под палитру ролика."
+
   - group: "Сгенерировать, если готового нет"
     rows:
       - task: "Картинка по тексту"
@@ -44,7 +52,15 @@ routing:
         tools: [comfyui]
 
       - task: "Убрать фон / увеличить разрешение"
-        tools: [rembg, real-esrgan]
+        tools: [rembg, upscayl, real-esrgan, magnific]
+        note: "Локально — rembg и Upscayl. Magnific дорисовывает детали, но платный."
+
+      - task: "Убрать со стока водяной знак или лишний объект"
+        tools: [iopaint, clipdrop]
+
+      - task: "Запустить открытую модель, не разворачивая железо"
+        tools: [replicate, fal]
+        note: "Оплата за секунды инференса. Дешевле, чем поднимать GPU ради одного ролика."
 
       - task: "Видео по тексту или по картинке"
         tools: [ltx-video, kling, runway, modelslab-video]
@@ -92,7 +108,49 @@ routing:
         tools: [lottie, rive]
 
       - task: "3D в кадре"
-        tools: [three-js]
+        tools: [three-js, react-three-fiber, drei, blender]
+
+      - task: "Рендер видео в облаке по API"
+        tools: [shotstack, creatomate]
+        note: "Когда роликов сотня и они различаются только текстом и картинкой."
+
+      - task: "Объясняющий ролик со схемами и формулами"
+        tools: [manim, motion-canvas]
+
+  - group: "Переупаковать снятое"
+    rows:
+      - task: "Нарезать длинное видео на вертикальные клипы"
+        tools: [opusclip, klap, vizard]
+        note: "У Klap есть API — только он встраивается в конвейер без ручного захода на сайт."
+
+      - task: "Убрать паузы и слова-паразиты"
+        tools: [auto-editor, descript]
+        note: "auto-editor делает это бесплатно и одной командой."
+
+      - task: "Субтитры с пословным таймингом"
+        tools: [whisperx, faster-whisper, subtitle-edit]
+
+      - task: "Понять, кто из говорящих сказал реплику"
+        tools: [pyannote]
+
+      - task: "Вычистить звук: эхо, шум, разная громкость"
+        tools: [adobe-podcast, auphonic, demucs]
+
+  - group: "Сделать превью"
+    rows:
+      - task: "Собрать обложку руками"
+        tools: [canva, figma, photopea]
+
+      - task: "Нужен читаемый текст внутри картинки"
+        tools: [ideogram, recraft]
+        note: "Остальные генераторы на тексте до сих пор ломаются."
+
+      - task: "Пачка однотипных обложек из данных"
+        tools: [satori, imagemagick, photoroom]
+        note: "Satori рисует превью из JSX — значит, оно генерится из тех же данных, что и ролик."
+
+      - task: "Подобрать палитру"
+        tools: [coolors, realtime-colors]
 
   - group: "Понять, что снимать"
     rows:
@@ -106,4 +164,12 @@ routing:
         tools: [public-apis, coingecko, open-meteo]
 
       - task: "Графики из этих данных"
-        tools: [recharts, d3]
+        tools: [recharts, chartjs, visx, echarts]
+        note: "Recharts — дефолт для React. ECharts — если нужны карты или десятки тысяч точек."
+
+      - task: "Проверить, не поздно ли снимать тему"
+        tools: [google-trends, exploding-topics]
+
+      - task: "Вопросы, которые люди реально задают"
+        tools: [answer-the-public]
+        note: "Прямой источник заголовков и структуры сценария."

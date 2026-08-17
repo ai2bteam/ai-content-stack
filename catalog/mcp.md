@@ -8,6 +8,36 @@
 
 ---
 
+## [Apify MCP](https://apify.com/)
+
+Тысячи готовых скрейперов под соцсети и маркетплейсы, дёргаются как инструменты агента.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `MCP` |
+| **API-ключ** | нужен |
+
+`scraping` `social`
+
+---
+
+## [Blender MCP](https://github.com/ahujasid/blender-mcp)
+
+Агент строит и рендерит 3D-сцену прямо в Blender. Тот же приём, что у Palmier, только для трёхмерки.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **Исходники** | https://github.com/ahujasid/blender-mcp |
+
+`3d` `blender`
+
+---
+
 ## [Brandfetch MCP](https://brandfetch.com/) ⭐
 
 Логотипы брендов в SVG (light/dark) плюс фирменные цвета и шрифты по одному домену.
@@ -50,6 +80,36 @@ npx -y @brave/brave-search-mcp-server@latest
 
 ---
 
+## [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp)
+
+Консоль, сеть и профайлер живой страницы для агента. Полезно, когда Remotion-превью тормозит и непонятно где.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **Исходники** | https://github.com/ChromeDevTools/chrome-devtools-mcp |
+
+`debugging` `browser`
+
+---
+
+## [Context7](https://context7.com/)
+
+Подсовывает агенту актуальную документацию библиотеки. Лечит выдуманные API у Remotion и three.js.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `MCP` |
+| **API-ключ** | необязателен |
+
+`docs` `coding`
+
+---
+
 ## [Coverr MCP](https://coverr.co/) ⭐
 
 B-roll в MP4 прямо из чата: `get_videos` → `get_video(id)` → готовый 1080p-линк.
@@ -69,6 +129,24 @@ claude mcp add --transport http coverr https://mcp.coverr.co/mcp
 
 ---
 
+## [ElevenLabs MCP](https://github.com/elevenlabs/elevenlabs-mcp)
+
+Официальный сервер: озвучка, звуковые эффекты и клонирование голоса прямо из чата.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `MCP` |
+| **API-ключ** | нужен — [получить](https://elevenlabs.io/app/settings/api-keys) |
+| **Исходники** | https://github.com/elevenlabs/elevenlabs-mcp |
+
+Переменные окружения: `ELEVENLABS_API_KEY`. Держи их в конфиге агента, не в репозитории.
+
+`tts` `sfx`
+
+---
+
 ## [Fetch MCP](https://github.com/modelcontextprotocol/servers) ⭐
 
 Достать и распарсить произвольную страницу. Спасает, когда нужны фото с /press или /newsroom компании.
@@ -85,6 +163,43 @@ uvx mcp-server-fetch
 ```
 
 `scraping`
+
+---
+
+## [Filesystem MCP](https://github.com/modelcontextprotocol/servers)
+
+Доступ к папке проекта с явными границами. Базовый кирпич, о котором забывают.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **Исходники** | https://github.com/modelcontextprotocol/servers |
+
+```bash
+npx -y @modelcontextprotocol/server-filesystem /path/to/project
+```
+
+`files`
+
+---
+
+## [Firecrawl MCP](https://github.com/firecrawl/firecrawl-mcp-server)
+
+Превращает сайт в чистый markdown. Когда нужен фактурный материал для сценария, а не десять вкладок.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `MCP` |
+| **API-ключ** | нужен |
+| **Исходники** | https://github.com/firecrawl/firecrawl-mcp-server |
+
+Переменные окружения: `FIRECRAWL_API_KEY`. Держи их в конфиге агента, не в репозитории.
+
+`scraping` `research`
 
 ---
 
@@ -192,6 +307,25 @@ uvx pexels-mcp-server
 в потолок API при массовой выгрузке.
 
 `stock` `photo` `video`
+
+---
+
+## [Playwright MCP](https://github.com/microsoft/playwright-mcp)
+
+Браузер под управлением агента. Забрать то, к чему нет API, или записать HTML-сцену в кадры.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **Исходники** | https://github.com/microsoft/playwright-mcp |
+
+```bash
+npx -y @playwright/mcp@latest
+```
+
+`browser` `scraping` `recording`
 
 ---
 

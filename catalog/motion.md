@@ -8,6 +8,50 @@
 
 ---
 
+## [Anime.js](https://animejs.com/)
+
+Лёгкая библиотека без привязки к фреймворку. Когда Motion избыточен, а голый CSS уже не тянет.
+
+| | |
+|---|---|
+| **Тип** | библиотека |
+| **Цена** | 🔵 open source |
+| **Из агента** | — |
+| **Исходники** | https://github.com/juliangarnier/anime |
+
+`animation` `javascript`
+
+---
+
+## [Blender](https://www.blender.org/)
+
+Бесплатный 3D-пакет промышленного уровня. Рендерится из командной строки, значит встраивается в конвейер.
+
+| | |
+|---|---|
+| **Тип** | приложение |
+| **Цена** | 🔵 open source |
+| **Из агента** | `CLI` |
+
+`3d` `rendering` `cli`
+
+---
+
+## [drei](https://github.com/pmndrs/drei) ⭐
+
+Готовые хелперы к React Three Fiber: камеры, свет, окружение, текст. Экономит сотни строк.
+
+| | |
+|---|---|
+| **Тип** | библиотека |
+| **Цена** | 🔵 open source |
+| **Из агента** | — |
+| **Исходники** | https://github.com/pmndrs/drei |
+
+`3d` `react` `helpers`
+
+---
+
 ## [GSAP](https://gsap.com/)
 
 Ветеран веб-анимации. Таймлайны, морфинг SVG, сложная хореография.
@@ -23,6 +67,20 @@
 
 ---
 
+## [Lordicon](https://lordicon.com/)
+
+Анимированные иконки в формате Lottie. Оживляют перечисления, где обычно висит статичный список.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🟡 freemium |
+| **Из агента** | — |
+
+`icons` `lottie`
+
+---
+
 ## [Lottie](https://lottiefiles.com/) ⭐
 
 Векторная анимация в JSON. Готовых файлов — сотни тысяч, вставляются в Remotion через @remotion/lottie.
@@ -34,6 +92,21 @@
 | **Из агента** | — |
 
 `animation` `vector` `json`
+
+---
+
+## [Manim](https://www.manim.community/)
+
+Движок математических анимаций, тот самый из 3Blue1Brown. Формулы и графы, а не общая моушн-графика.
+
+| | |
+|---|---|
+| **Тип** | библиотека |
+| **Цена** | 🔵 open source |
+| **Из агента** | `CLI` |
+| **Исходники** | https://github.com/ManimCommunity/manim |
+
+`math` `explainer` `python`
 
 ---
 
@@ -65,6 +138,66 @@
 
 ---
 
+## [Motion Canvas](https://motioncanvas.io/)
+
+Анимация кодом с редактором для тонкой настройки таймингов. Заточен под объясняющие ролики.
+
+| | |
+|---|---|
+| **Тип** | библиотека |
+| **Цена** | 🔵 open source |
+| **Из агента** | `CLI` |
+| **Исходники** | https://github.com/motion-canvas/motion-canvas |
+
+`programmatic` `explainer`
+
+---
+
+## [p5.js](https://p5js.org/)
+
+Процедурная графика с минимумом обвязки. Быстрый способ получить уникальный анимированный фон.
+
+| | |
+|---|---|
+| **Тип** | библиотека |
+| **Цена** | 🔵 open source |
+| **Из агента** | — |
+| **Исходники** | https://github.com/processing/p5.js |
+
+`generative` `canvas`
+
+---
+
+## [React Spring](https://www.react-spring.dev/)
+
+Анимации на физике пружин для React. Альтернатива Motion со своим взглядом на API.
+
+| | |
+|---|---|
+| **Тип** | библиотека |
+| **Цена** | 🔵 open source |
+| **Из агента** | — |
+| **Исходники** | https://github.com/pmndrs/react-spring |
+
+`animation` `react` `spring`
+
+---
+
+## [React Three Fiber](https://github.com/pmndrs/react-three-fiber) ⭐
+
+Three.js как React-компоненты. Именно через него 3D попадает в Remotion-композицию.
+
+| | |
+|---|---|
+| **Тип** | библиотека |
+| **Цена** | 🔵 open source |
+| **Из агента** | — |
+| **Исходники** | https://github.com/pmndrs/react-three-fiber |
+
+`3d` `react` `webgl`
+
+---
+
 ## [Rive](https://rive.app/)
 
 Интерактивная анимация с машиной состояний. Тяжелее Lottie, зато реагирует на события.
@@ -90,6 +223,35 @@
 | **Из агента** | — |
 
 `3d` `assets`
+
+---
+
+## [Spline](https://spline.design/)
+
+3D-сцены в браузере без порога входа Blender. Экспортируется в React-компонент.
+
+| | |
+|---|---|
+| **Тип** | приложение |
+| **Цена** | 🟡 freemium |
+| **Из агента** | — |
+
+`3d` `no-code` `react`
+
+---
+
+## [Theatre.js](https://www.theatrejs.com/)
+
+Настоящий таймлайн с ключевыми кадрами прямо в браузере. Анимация настраивается мышкой, а сохраняется в JSON.
+
+| | |
+|---|---|
+| **Тип** | библиотека |
+| **Цена** | 🔵 open source |
+| **Из агента** | — |
+| **Исходники** | https://github.com/theatre-js/theatre |
+
+`animation` `timeline` `keyframes`
 
 ---
 

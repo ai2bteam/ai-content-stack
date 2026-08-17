@@ -8,6 +8,36 @@
 
 ---
 
+## [AUTOMATIC1111 WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
+
+Классический локальный интерфейс к Stable Diffusion. Расширений больше, чем у всех остальных вместе.
+
+| | |
+|---|---|
+| **Тип** | приложение |
+| **Цена** | 🔵 open source |
+| **Из агента** | `API` |
+| **Исходники** | https://github.com/AUTOMATIC1111/stable-diffusion-webui |
+
+`local` `stable-diffusion`
+
+---
+
+## [Clipdrop](https://clipdrop.co/)
+
+Набор операций одним API: убрать фон, убрать объект, расширить кадр, перерисовать освещение.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `API` |
+| **API-ключ** | нужен |
+
+`image-editing` `background-removal`
+
+---
+
 ## [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/) ⭐
 
 Flux Schnell и SD 1.5 по HTTP с щедрым бесплатным лимитом. Ответ приходит base64-PNG.
@@ -51,6 +81,140 @@ Flux Schnell и SD 1.5 по HTTP с щедрым бесплатным лимит
 | **Исходники** | https://github.com/black-forest-labs/flux |
 
 `text-to-image` `open-weights`
+
+---
+
+## [Fooocus](https://github.com/lllyasviel/Fooocus)
+
+Локальная генерация без настройки сорока параметров. Когда ComfyUI — это перебор.
+
+| | |
+|---|---|
+| **Тип** | приложение |
+| **Цена** | 🔵 open source |
+| **Из агента** | — |
+| **Исходники** | https://github.com/lllyasviel/Fooocus |
+
+`local` `stable-diffusion`
+
+---
+
+## [Google AI Studio](https://aistudio.google.com/)
+
+Доступ к картиночным моделям Gemini, включая редактирование по текстовой инструкции. Есть бесплатный лимит.
+
+| | |
+|---|---|
+| **Тип** | API |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `API` |
+| **API-ключ** | нужен — [получить](https://aistudio.google.com/apikey) |
+
+`text-to-image` `image-editing`
+
+---
+
+## [Ideogram](https://ideogram.ai/)
+
+Единственный, кто уверенно рисует читаемый текст внутри картинки. Для превью и плашек — незаменим.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `API` |
+| **API-ключ** | нужен |
+
+`text-to-image` `typography`
+
+---
+
+## [InvokeAI](https://github.com/invoke-ai/InvokeAI)
+
+Локальная студия с нормальным холстом для инпейнта. Удобнее нодов, когда правишь конкретный кусок кадра.
+
+| | |
+|---|---|
+| **Тип** | приложение |
+| **Цена** | 🔵 open source |
+| **Из агента** | `API` |
+| **Исходники** | https://github.com/invoke-ai/InvokeAI |
+
+`local` `inpainting`
+
+---
+
+## [IOPaint](https://github.com/Sanster/IOPaint)
+
+Убрать со стока водяной знак, лишнего человека или логотип. Локально, пакетно, бесплатно.
+
+| | |
+|---|---|
+| **Тип** | приложение |
+| **Цена** | 🔵 open source |
+| **Из агента** | `CLI` |
+| **Исходники** | https://github.com/Sanster/IOPaint |
+
+`inpainting` `cleanup` `local`
+
+---
+
+## [Krea](https://www.krea.ai/)
+
+Генерация в реальном времени: правишь промпт — картинка меняется на глазах. Быстрый подбор направления.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `API` |
+| **API-ключ** | нужен |
+
+`text-to-image` `realtime`
+
+---
+
+## [Leonardo AI](https://leonardo.ai/)
+
+Обучение своих стилей и щедрый бесплатный лимит. Полезно, когда нужна единая эстетика на весь сезон роликов.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `API` |
+| **API-ключ** | нужен |
+
+`text-to-image` `style`
+
+---
+
+## [Magnific](https://magnific.ai/)
+
+Апскейл, который дорисовывает детали, а не просто растягивает. Лучший результат в категории и самая высокая цена.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🔴 платно |
+| **Из агента** | `API` |
+| **API-ключ** | нужен |
+
+`upscaling`
+
+---
+
+## [Midjourney](https://www.midjourney.com/)
+
+До сих пор эталон по художественности кадра. Официального API нет — в пайплайн автоматом не вставить.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🔴 платно |
+| **Из агента** | — |
+
+`text-to-image`
 
 ---
 
@@ -99,6 +263,21 @@ Flux Schnell и SD 1.5 по HTTP с щедрым бесплатным лимит
 
 ---
 
+## [Recraft](https://www.recraft.ai/)
+
+Генерирует настоящий вектор в SVG, а не растр. Иконки и иллюстрации масштабируются без потерь.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `API` |
+| **API-ключ** | нужен |
+
+`text-to-image` `svg` `vector`
+
+---
+
 ## [rembg](https://github.com/danielgatis/rembg)
 
 Удаление фона одной командой, локально и бесплатно.
@@ -111,6 +290,51 @@ Flux Schnell и SD 1.5 по HTTP с щедрым бесплатным лимит
 | **Исходники** | https://github.com/danielgatis/rembg |
 
 `background-removal`
+
+---
+
+## [remove.bg](https://www.remove.bg/)
+
+Удаление фона одним запросом. Дороже локального rembg, но по краям волос заметно аккуратнее.
+
+| | |
+|---|---|
+| **Тип** | API |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `API` |
+| **API-ключ** | нужен — [получить](https://www.remove.bg/api) |
+
+`background-removal`
+
+---
+
+## [Stability AI](https://stability.ai/)
+
+Stable Diffusion от первоисточника: API плюс открытые веса, которые можно унести к себе.
+
+| | |
+|---|---|
+| **Тип** | API |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `API` |
+| **API-ключ** | нужен |
+
+`text-to-image` `open-weights`
+
+---
+
+## [Upscayl](https://github.com/upscayl/upscayl)
+
+Апскейл с человеческим интерфейсом поверх Real-ESRGAN. Готовое приложение вместо возни с командной строкой.
+
+| | |
+|---|---|
+| **Тип** | приложение |
+| **Цена** | 🔵 open source |
+| **Из агента** | `CLI` |
+| **Исходники** | https://github.com/upscayl/upscayl |
+
+`upscaling` `local`
 
 ---
 
