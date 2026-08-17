@@ -8,6 +8,21 @@
 
 ---
 
+## [Ableton MCP](https://github.com/ahujasid/ableton-mcp)
+
+Агент собирает аранжировку в Ableton Live. Звуковой аналог того, что Palmier делает с видео.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **Исходники** | https://github.com/ahujasid/ableton-mcp |
+
+`music` `daw`
+
+---
+
 ## [Apify MCP](https://apify.com/)
 
 Тысячи готовых скрейперов под соцсети и маркетплейсы, дёргаются как инструменты агента.
@@ -129,6 +144,20 @@ claude mcp add --transport http coverr https://mcp.coverr.co/mcp
 
 ---
 
+## [Docker MCP Catalog](https://hub.docker.com/mcp)
+
+MCP-серверы в контейнерах: ставятся без npm и uv и не тащат зависимости в систему.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🟢 бесплатно |
+| **Из агента** | `MCP` |
+
+`mcp` `docker` `registry`
+
+---
+
 ## [ElevenLabs MCP](https://github.com/elevenlabs/elevenlabs-mcp)
 
 Официальный сервер: озвучка, звуковые эффекты и клонирование голоса прямо из чата.
@@ -203,6 +232,22 @@ npx -y @modelcontextprotocol/server-filesystem /path/to/project
 
 ---
 
+## [GitHub MCP](https://github.com/github/github-mcp-server)
+
+Официальный сервер: issues, PR, файлы репозитория как инструменты агента.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **API-ключ** | нужен |
+| **Исходники** | https://github.com/github/github-mcp-server |
+
+`github` `workflow`
+
+---
+
 ## [Klipy MCP](https://klipy.com/) ⭐
 
 GIF-поиск. Неожиданно хорошо находит поп-культуру и свежую технику.
@@ -217,6 +262,25 @@ GIF-поиск. Неожиданно хорошо находит поп-куль
 Переменные окружения: `KLIPY_API_KEY`. Держи их в конфиге агента, не в репозитории.
 
 `gif`
+
+---
+
+## [Memory MCP](https://github.com/modelcontextprotocol/servers)
+
+Граф знаний, переживающий перезапуск сессии. Стиль канала и решения не приходится объяснять заново.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **Исходники** | https://github.com/modelcontextprotocol/servers |
+
+```bash
+npx -y @modelcontextprotocol/server-memory
+```
+
+`memory` `knowledge-graph`
 
 ---
 
@@ -238,6 +302,21 @@ npx -y @programcomputer/nasa-mcp-server@latest
 Переменные окружения: `NASA_API_KEY`. Держи их в конфиге агента, не в репозитории.
 
 `space` `science` `public-domain`
+
+---
+
+## [Notion MCP](https://developers.notion.com/docs/mcp)
+
+Контент-план и база сценариев в Notion становятся доступны агенту напрямую.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `MCP` |
+| **API-ключ** | нужен |
+
+`notion` `planning`
 
 ---
 
@@ -329,6 +408,25 @@ npx -y @playwright/mcp@latest
 
 ---
 
+## [Sequential Thinking MCP](https://github.com/modelcontextprotocol/servers)
+
+Заставляет агента разложить задачу по шагам вслух. Заметно помогает на длинных структурах вроде сценария.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **Исходники** | https://github.com/modelcontextprotocol/servers |
+
+```bash
+npx -y @modelcontextprotocol/server-sequential-thinking
+```
+
+`reasoning` `planning`
+
+---
+
 ## [Tavily MCP](https://tavily.com/)
 
 Веб-поиск, заточенный под агентов. С `include_images` вытаскивает реальные фото из новостных статей.
@@ -389,6 +487,21 @@ uvx wikipedia-mcp
 Pexels отдаст абстрактную банку. Wikipedia отдаёт настоящее lead-изображение статьи.
 
 `reference` `photo`
+
+---
+
+## [YouTube Transcript MCP](https://github.com/jkawamoto/mcp-youtube-transcript)
+
+Расшифровка чужого ролика в контекст агента. Разбор конкурента без ручного просмотра.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🔵 open source |
+| **Из агента** | `MCP` |
+| **Исходники** | https://github.com/jkawamoto/mcp-youtube-transcript |
+
+`youtube` `research` `transcript`
 
 ---
 

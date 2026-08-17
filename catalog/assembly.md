@@ -81,6 +81,21 @@
 
 ---
 
+## [ffmpeg.wasm](https://ffmpegwasm.netlify.app/)
+
+FFmpeg прямо в браузере. Обрезать и перекодировать без загрузки файла на сервер.
+
+| | |
+|---|---|
+| **Тип** | библиотека |
+| **Цена** | 🔵 open source |
+| **Из агента** | — |
+| **Исходники** | https://github.com/ffmpegwasm/ffmpeg.wasm |
+
+`browser` `encoding`
+
+---
+
 ## [HandBrake](https://handbrake.fr/)
 
 Перекодирование с вменяемыми пресетами. Когда ffmpeg хочется, но не хочется вспоминать флаги.
@@ -138,6 +153,20 @@
 
 ---
 
+## [OpenShot](https://www.openshot.org/)
+
+Простой открытый монтажёр с Python-библиотекой под капотом — её можно дёргать отдельно.
+
+| | |
+|---|---|
+| **Тип** | приложение |
+| **Цена** | 🔵 open source |
+| **Из агента** | `API` |
+
+`editing` `python`
+
+---
+
 ## [Playwright](https://playwright.dev/) ⭐
 
 Запись HTML/Canvas-сцены в видео через headless-браузер. Мост между веб-анимацией и монтажом.
@@ -187,6 +216,20 @@
 | **Исходники** | https://github.com/redotvideo/revideo |
 
 `programmatic` `typescript`
+
+---
+
+## [Shotcut](https://shotcut.org/)
+
+Открытый монтажёр на всех платформах, без установки кодеков.
+
+| | |
+|---|---|
+| **Тип** | приложение |
+| **Цена** | 🔵 open source |
+| **Из агента** | — |
+
+`editing` `local`
 
 ---
 

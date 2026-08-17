@@ -13,6 +13,11 @@ categories:
     emoji: "🤖"
     blurb: "Среда, из которой всё запускается. Агент читает задачу и сам дёргает нужные инструменты."
 
+  - id: script
+    name: "Сценарий и текст"
+    emoji: "📝"
+    blurb: "Первый шаг любого ролика. Ресёрч темы, структура, текст под озвучку, заголовки и описание."
+
   - id: mcp
     name: "MCP-серверы"
     emoji: "🔌"
@@ -27,6 +32,11 @@ categories:
     name: "Картинки: генерация и редактирование"
     emoji: "🖼️"
     blurb: "Генерация с нуля, img2img, инпейнт, удаление фона, апскейл."
+
+  - id: runtime
+    name: "Модели и где их запускать"
+    emoji: "⚙️"
+    blurb: "Веса, LoRA и площадки для инференса. Сюда идут, когда чужой сервис не устраивает по цене, приватности или контролю."
 
   - id: audio
     name: "Голос, музыка, звук"
@@ -1205,7 +1215,7 @@ tools:
 
   - id: fal
     name: "fal.ai"
-    category: video
+    category: runtime
     kind: api
     agent: api
     pricing: paid
@@ -1217,7 +1227,7 @@ tools:
 
   - id: replicate
     name: "Replicate"
-    category: video
+    category: runtime
     kind: api
     agent: api
     pricing: paid
@@ -2563,3 +2573,1293 @@ tools:
     tagline: "Реальные вопросы людей вокруг темы. Прямой источник заголовков и структуры сценария."
     status: listed
     tags: [keywords, questions]
+
+  # ═══════════════ сценарий и текст ═══════════════
+
+  - id: claude-ai
+    name: "Claude"
+    category: script
+    kind: service
+    agent: api
+    pricing: freemium
+    key: optional
+    url: "https://claude.ai/"
+    docs: "https://docs.claude.com/"
+    tagline: "Длинный контекст и внятная работа со структурой. Держит сценарий целиком, а не абзац за абзацем."
+    status: verified
+    tags: [writing, research]
+
+  - id: notebooklm
+    name: "NotebookLM"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://notebooklm.google.com/"
+    tagline: "Загружаешь источники — отвечает только по ним, со ссылками на конкретное место. Сценарий не уплывает в выдумку."
+    status: listed
+    tags: [research, grounding]
+
+  - id: perplexity
+    name: "Perplexity"
+    category: script
+    kind: service
+    agent: api
+    pricing: freemium
+    key: optional
+    url: "https://www.perplexity.ai/"
+    tagline: "Поисковый ресёрч со ссылками на источник каждого утверждения. Быстрый сбор фактуры под сценарий."
+    status: listed
+    tags: [research, citations]
+
+  - id: exa
+    name: "Exa"
+    category: script
+    kind: api
+    agent: mcp
+    pricing: freemium
+    key: required
+    url: "https://exa.ai/"
+    tagline: "Поиск по смыслу, а не по ключевым словам, и сразу с MCP. Находит статьи, которые Google прячет на пятой странице."
+    status: listed
+    tags: [research, semantic-search]
+
+  - id: elicit
+    name: "Elicit"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://elicit.com/"
+    tagline: "Ресёрч по научным статьям с выжимкой методов и выводов. Для роликов, где нужен не блог, а исследование."
+    status: listed
+    tags: [research, academic]
+
+  - id: consensus
+    name: "Consensus"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://consensus.app/"
+    tagline: "Показывает, что говорит совокупность исследований по вопросу, а не одна удобная статья."
+    status: listed
+    tags: [research, academic]
+
+  - id: hemingway
+    name: "Hemingway Editor"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://hemingwayapp.com/"
+    tagline: "Подсвечивает длинные предложения и пассив. Текст под озвучку должен читаться вслух — это и проверяет."
+    status: listed
+    tags: [editing, readability]
+
+  - id: languagetool
+    name: "LanguageTool"
+    category: script
+    kind: service
+    agent: api
+    pricing: freemium
+    key: optional
+    url: "https://languagetool.org/"
+    repo: "https://github.com/languagetool-org/languagetool"
+    tagline: "Проверка грамматики, в том числе русской, с открытым кодом и возможностью поднять у себя."
+    status: listed
+    tags: [grammar, multilingual, self-hosted]
+
+  - id: gummysearch
+    name: "GummySearch"
+    category: script
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://gummysearch.com/"
+    tagline: "Ищет боль и вопросы аудитории по реддиту. Источник тем, которые людей реально жгут."
+    status: listed
+    tags: [audience-research, reddit]
+
+  # ═══════════════ модели и запуск ═══════════════
+
+  - id: huggingface
+    name: "Hugging Face"
+    category: runtime
+    kind: service
+    agent: api
+    pricing: freemium
+    key: optional
+    key_url: "https://huggingface.co/settings/tokens"
+    url: "https://huggingface.co/"
+    tagline: "Главный склад открытых моделей и датасетов. Почти всё локальное из этого каталога скачивается отсюда."
+    status: verified
+    tags: [models, datasets, hub]
+
+  - id: civitai
+    name: "Civitai"
+    category: runtime
+    kind: service
+    agent: api
+    pricing: freemium
+    key: optional
+    url: "https://civitai.com/"
+    tagline: "Чекпойнты и LoRA под конкретные стили. Оттуда берут единую эстетику для всего сезона роликов."
+    status: listed
+    tags: [models, lora, stable-diffusion]
+
+  - id: ollama
+    name: "Ollama"
+    category: runtime
+    kind: app
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://ollama.com/"
+    repo: "https://github.com/ollama/ollama"
+    tagline: "Локальные языковые модели одной командой. Черновики и разметка текста без отправки материала наружу."
+    status: listed
+    tags: [local, llm]
+
+  - id: lm-studio
+    name: "LM Studio"
+    category: runtime
+    kind: app
+    agent: api
+    pricing: free
+    key: none
+    url: "https://lmstudio.ai/"
+    tagline: "То же, что Ollama, но с интерфейсом и совместимым с OpenAI сервером из коробки."
+    status: listed
+    tags: [local, llm]
+
+  - id: openrouter
+    name: "OpenRouter"
+    category: runtime
+    kind: api
+    agent: api
+    pricing: paid
+    key: required
+    key_url: "https://openrouter.ai/keys"
+    url: "https://openrouter.ai/"
+    tagline: "Один ключ ко всем языковым моделям сразу. Сравнить их на своей задаче, не заводя пять аккаунтов."
+    status: listed
+    tags: [llm, aggregator]
+
+  - id: runpod
+    name: "RunPod"
+    category: runtime
+    kind: service
+    agent: api
+    pricing: paid
+    key: required
+    url: "https://www.runpod.io/"
+    tagline: "Аренда GPU по минутам. Прогнать HunyuanVideo или обучить LoRA, не покупая видеокарту."
+    status: listed
+    tags: [gpu, cloud]
+
+  - id: modal
+    name: "Modal"
+    category: runtime
+    kind: service
+    agent: api
+    pricing: freemium
+    key: required
+    url: "https://modal.com/"
+    tagline: "Python-функция уезжает на GPU без возни с инфраструктурой. Удобно обернуть свой шаг пайплайна."
+    status: listed
+    tags: [gpu, serverless, python]
+
+  - id: vllm
+    name: "vLLM"
+    category: runtime
+    kind: library
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://github.com/vllm-project/vllm"
+    repo: "https://github.com/vllm-project/vllm"
+    tagline: "Быстрый сервер инференса для языковых моделей на своём железе."
+    status: listed
+    tags: [local, llm, serving]
+
+  - id: controlnet
+    name: "ControlNet"
+    category: runtime
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/lllyasviel/ControlNet"
+    repo: "https://github.com/lllyasviel/ControlNet"
+    tagline: "Задаёт генерации позу, глубину или контур. Единственный способ получить нужную композицию, а не лотерею."
+    status: listed
+    tags: [stable-diffusion, control, composition]
+
+  - id: ip-adapter
+    name: "IP-Adapter"
+    category: runtime
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/tencent-ailab/IP-Adapter"
+    repo: "https://github.com/tencent-ailab/IP-Adapter"
+    tagline: "Переносит стиль или лицо с картинки-референса. Держит одного персонажа одинаковым от кадра к кадру."
+    status: listed
+    tags: [stable-diffusion, style-transfer, consistency]
+
+  - id: segment-anything
+    name: "Segment Anything"
+    category: runtime
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/facebookresearch/segment-anything"
+    repo: "https://github.com/facebookresearch/segment-anything"
+    tagline: "Точно вырезает любой объект по клику. Основа под маски, ротоскоп и замену фона."
+    status: listed
+    tags: [segmentation, masking]
+
+  - id: animatediff
+    name: "AnimateDiff"
+    category: runtime
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/guoyww/AnimateDiff"
+    repo: "https://github.com/guoyww/AnimateDiff"
+    tagline: "Оживляет статичную Stable Diffusion-картинку. Работает в ComfyUI, значит встраивается в локальный конвейер."
+    status: listed
+    tags: [image-to-video, stable-diffusion, local]
+
+  # ═══════════════ агенты: пополнение ═══════════════
+
+  - id: gemini-cli
+    name: "Gemini CLI"
+    category: agents
+    kind: app
+    agent: mcp
+    pricing: freemium
+    key: required
+    url: "https://github.com/google-gemini/gemini-cli"
+    repo: "https://github.com/google-gemini/gemini-cli"
+    tagline: "Агент Google в терминале, с MCP и щедрым бесплатным лимитом."
+    status: listed
+    tags: [cli, mcp]
+
+  - id: codex-cli
+    name: "Codex CLI"
+    category: agents
+    kind: app
+    agent: mcp
+    pricing: paid
+    key: required
+    url: "https://github.com/openai/codex"
+    repo: "https://github.com/openai/codex"
+    tagline: "Терминальный агент OpenAI. Тоже понимает MCP — те же серверы из этого каталога подключаются и к нему."
+    status: listed
+    tags: [cli, mcp]
+
+  - id: aider
+    name: "Aider"
+    category: agents
+    kind: app
+    agent: cli
+    pricing: oss
+    key: required
+    url: "https://aider.chat/"
+    repo: "https://github.com/Aider-AI/aider"
+    tagline: "Открытый агент, работающий через git-коммиты. Каждая правка откатывается одной командой."
+    status: listed
+    tags: [cli, git, open-source]
+
+  - id: activepieces
+    name: "Activepieces"
+    category: agents
+    kind: app
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://www.activepieces.com/"
+    repo: "https://github.com/activepieces/activepieces"
+    tagline: "Открытая замена Zapier с MCP на борту. Автоматизации живут на своём сервере."
+    status: listed
+    tags: [automation, self-hosted, mcp]
+
+  - id: composio
+    name: "Composio"
+    category: agents
+    kind: service
+    agent: mcp
+    pricing: freemium
+    key: required
+    url: "https://composio.dev/"
+    tagline: "Сотни готовых интеграций как инструменты агента, с решённой авторизацией. Не писать свой MCP под каждый сервис."
+    status: listed
+    tags: [mcp, integrations, auth]
+
+  - id: zapier-mcp
+    name: "Zapier MCP"
+    category: agents
+    kind: mcp
+    agent: mcp
+    pricing: freemium
+    key: required
+    url: "https://zapier.com/mcp"
+    tagline: "Тысячи приложений Zapier открываются агенту как инструменты. Самый широкий охват из существующих."
+    status: listed
+    tags: [mcp, integrations]
+
+  # ═══════════════ MCP: пополнение ═══════════════
+
+  - id: github-mcp
+    name: "GitHub MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: oss
+    key: required
+    url: "https://github.com/github/github-mcp-server"
+    repo: "https://github.com/github/github-mcp-server"
+    tagline: "Официальный сервер: issues, PR, файлы репозитория как инструменты агента."
+    status: listed
+    tags: [github, workflow]
+
+  - id: notion-mcp
+    name: "Notion MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: freemium
+    key: required
+    url: "https://developers.notion.com/docs/mcp"
+    tagline: "Контент-план и база сценариев в Notion становятся доступны агенту напрямую."
+    status: listed
+    tags: [notion, planning]
+
+  - id: ableton-mcp
+    name: "Ableton MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: oss
+    key: none
+    url: "https://github.com/ahujasid/ableton-mcp"
+    repo: "https://github.com/ahujasid/ableton-mcp"
+    tagline: "Агент собирает аранжировку в Ableton Live. Звуковой аналог того, что Palmier делает с видео."
+    status: listed
+    tags: [music, daw]
+
+  - id: memory-mcp
+    name: "Memory MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: oss
+    key: none
+    install: "npx -y @modelcontextprotocol/server-memory"
+    url: "https://github.com/modelcontextprotocol/servers"
+    repo: "https://github.com/modelcontextprotocol/servers"
+    tagline: "Граф знаний, переживающий перезапуск сессии. Стиль канала и решения не приходится объяснять заново."
+    status: listed
+    tags: [memory, knowledge-graph]
+
+  - id: sequential-thinking-mcp
+    name: "Sequential Thinking MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: oss
+    key: none
+    install: "npx -y @modelcontextprotocol/server-sequential-thinking"
+    url: "https://github.com/modelcontextprotocol/servers"
+    repo: "https://github.com/modelcontextprotocol/servers"
+    tagline: "Заставляет агента разложить задачу по шагам вслух. Заметно помогает на длинных структурах вроде сценария."
+    status: listed
+    tags: [reasoning, planning]
+
+  - id: docker-mcp
+    name: "Docker MCP Catalog"
+    category: mcp
+    kind: service
+    agent: mcp
+    pricing: free
+    key: none
+    url: "https://hub.docker.com/mcp"
+    tagline: "MCP-серверы в контейнерах: ставятся без npm и uv и не тащат зависимости в систему."
+    status: listed
+    tags: [mcp, docker, registry]
+
+  - id: youtube-transcript-mcp
+    name: "YouTube Transcript MCP"
+    category: mcp
+    kind: mcp
+    agent: mcp
+    pricing: oss
+    key: none
+    url: "https://github.com/jkawamoto/mcp-youtube-transcript"
+    repo: "https://github.com/jkawamoto/mcp-youtube-transcript"
+    tagline: "Расшифровка чужого ролика в контекст агента. Разбор конкурента без ручного просмотра."
+    status: listed
+    tags: [youtube, research, transcript]
+
+  # ═══════════════ видео: пополнение ═══════════════
+
+  - id: ltx-studio
+    name: "LTX Studio"
+    category: video
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://ltx.studio/"
+    tagline: "Раскадровка, персонажи и генерация в одном месте. Держит героя похожим на себя между кадрами."
+    status: listed
+    tags: [storyboard, consistency]
+
+  - id: higgsfield
+    name: "Higgsfield"
+    category: video
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://higgsfield.ai/"
+    tagline: "Пресеты операторских движений: облёт, наезд, слоу-мо. Кинематографичность без описания камеры словами."
+    status: listed
+    tags: [camera-motion, cinematic]
+
+  - id: vidu
+    name: "Vidu"
+    category: video
+    kind: service
+    agent: api
+    pricing: freemium
+    key: required
+    url: "https://www.vidu.com/"
+    tagline: "Умеет держать один и тот же персонаж или предмет в разных сценах. Редкая для генераторов способность."
+    status: listed
+    tags: [text-to-video, consistency]
+
+  - id: framepack
+    name: "FramePack"
+    category: video
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/lllyasviel/FramePack"
+    repo: "https://github.com/lllyasviel/FramePack"
+    tagline: "Генерация длинного видео на карте с 6 ГБ памяти. Радикально снижает порог входа в локальный video-gen."
+    status: listed
+    tags: [image-to-video, local, low-vram]
+
+  - id: viggle
+    name: "Viggle"
+    category: video
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://viggle.ai/"
+    tagline: "Переносит движение с видео-референса на нарисованного персонажа."
+    status: listed
+    tags: [motion-transfer, character]
+
+  - id: invideo
+    name: "InVideo"
+    category: video
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://invideo.io/"
+    tagline: "Из текстового промпта собирает целый ролик со стоком, озвучкой и субтитрами. Быстро и узнаваемо шаблонно."
+    status: listed
+    tags: [text-to-video, automated]
+
+  - id: pictory
+    name: "Pictory"
+    category: video
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://pictory.ai/"
+    tagline: "Превращает статью или скрипт в видео со стоковым видеорядом. Заточен под контент-маркетинг."
+    status: listed
+    tags: [text-to-video, automated]
+
+  - id: gyroflow
+    name: "Gyroflow"
+    category: video
+    kind: app
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://gyroflow.xyz/"
+    repo: "https://github.com/gyroflow/gyroflow"
+    tagline: "Стабилизация по данным гироскопа камеры. Вытягивает тряску там, где софтверная стабилизация сдаётся."
+    status: listed
+    tags: [stabilization, local]
+
+  # ═══════════════ картинки: пополнение ═══════════════
+
+  - id: freepik
+    name: "Freepik"
+    category: image
+    kind: service
+    agent: api
+    pricing: freemium
+    key: required
+    url: "https://www.freepik.com/"
+    tagline: "Сток и AI-генерация в одной подписке, с доступом к нескольким чужим моделям через один API."
+    status: listed
+    tags: [stock, text-to-image, aggregator]
+
+  - id: firefly
+    name: "Adobe Firefly"
+    category: image
+    kind: service
+    agent: api
+    pricing: freemium
+    key: required
+    url: "https://www.adobe.com/products/firefly.html"
+    tagline: "Обучена на лицензионных данных — Adobe даёт правовые гарантии на результат. Важно для коммерческих роликов."
+    status: listed
+    tags: [text-to-image, commercial-safe]
+
+  - id: qwen-image
+    name: "Qwen-Image"
+    category: image
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/QwenLM/Qwen-Image"
+    repo: "https://github.com/QwenLM/Qwen-Image"
+    tagline: "Открытая модель Alibaba, сильная в тексте внутри картинки — включая нелатиницу."
+    status: listed
+    tags: [text-to-image, open-weights, typography]
+
+  - id: codeformer
+    name: "CodeFormer"
+    category: image
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/sczhou/CodeFormer"
+    repo: "https://github.com/sczhou/CodeFormer"
+    tagline: "Восстанавливает лица на мыльных и старых снимках. Обязателен при работе с архивными фото."
+    status: listed
+    tags: [face-restoration, archival]
+
+  - id: gfpgan
+    name: "GFPGAN"
+    category: image
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/TencentARC/GFPGAN"
+    repo: "https://github.com/TencentARC/GFPGAN"
+    tagline: "Реставрация лиц от Tencent. Даёт результат мягче CodeFormer — сравнивай на своём материале."
+    status: listed
+    tags: [face-restoration, archival]
+
+  - id: vectorizer-ai
+    name: "Vectorizer.AI"
+    category: image
+    kind: service
+    agent: api
+    pricing: paid
+    key: required
+    url: "https://vectorizer.ai/"
+    tagline: "Растр в чистый вектор. Логотип из скриншота, который не рассыплется на 4K."
+    status: listed
+    tags: [vectorization, svg]
+
+  - id: pixlr
+    name: "Pixlr"
+    category: image
+    kind: app
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://pixlr.com/"
+    tagline: "Браузерный редактор с AI-инструментами. Быстрая правка, когда локально ставить нечего."
+    status: listed
+    tags: [editing, browser]
+
+  # ═══════════════ звук: пополнение ═══════════════
+
+  - id: assemblyai
+    name: "AssemblyAI"
+    category: audio
+    kind: api
+    agent: api
+    pricing: freemium
+    key: required
+    url: "https://www.assemblyai.com/"
+    tagline: "Транскрипция с разделением говорящих и главами из коробки. Русский держит уверенно."
+    status: listed
+    tags: [stt, diarization, api]
+
+  - id: deepgram
+    name: "Deepgram"
+    category: audio
+    kind: api
+    agent: api
+    pricing: freemium
+    key: required
+    url: "https://deepgram.com/"
+    tagline: "Быстрая транскрипция по API с низкой задержкой. Дешевле AssemblyAI на объёме."
+    status: listed
+    tags: [stt, api, fast]
+
+  - id: rvc
+    name: "RVC"
+    category: audio
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI"
+    repo: "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI"
+    tagline: "Меняет тембр в готовой записи, сохраняя вашу интонацию и тайминг. Не синтез с нуля — конверсия."
+    status: listed
+    tags: [voice-conversion, local]
+
+  - id: silero-vad
+    name: "Silero VAD"
+    category: audio
+    kind: model
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://github.com/snakers4/silero-vad"
+    repo: "https://github.com/snakers4/silero-vad"
+    tagline: "Определяет, где в дорожке речь, а где тишина. Кирпич под автонарезку и вырезание пауз."
+    status: listed
+    tags: [vad, preprocessing]
+
+  - id: audacity
+    name: "Audacity"
+    category: audio
+    kind: app
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://www.audacityteam.org/"
+    tagline: "Бесплатный аудиоредактор с пакетными сценариями. Ручная доводка после автоматики."
+    status: listed
+    tags: [editing, local]
+
+  - id: reaper
+    name: "REAPER"
+    category: audio
+    kind: app
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://www.reaper.fm/"
+    tagline: "Полноценная DAW за цену подписки на месяц облачного сервиса. Бессрочная лицензия, честный триал."
+    status: listed
+    tags: [daw, mixing]
+
+  - id: soundraw
+    name: "Soundraw"
+    category: audio
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://soundraw.io/"
+    tagline: "Генерация музыки с ручной правкой структуры: где куплет, где нарастание. Ложится в тайминг сцен."
+    status: listed
+    tags: [music, structure]
+
+  - id: beatoven
+    name: "Beatoven"
+    category: audio
+    kind: service
+    agent: api
+    pricing: freemium
+    key: required
+    url: "https://www.beatoven.ai/"
+    tagline: "Фоновая музыка под заданное настроение и хронометраж, с понятными правами на использование."
+    status: listed
+    tags: [music, licensing]
+
+  - id: uppbeat
+    name: "Uppbeat"
+    category: audio
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://uppbeat.io/"
+    tagline: "Музыка, специально расчищенная от копирайт-претензий YouTube. Бесплатный тариф с атрибуцией."
+    status: listed
+    tags: [music, youtube-safe]
+
+  - id: free-music-archive
+    name: "Free Music Archive"
+    category: audio
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://freemusicarchive.org/"
+    tagline: "Музыка под Creative Commons от живых исполнителей. Звучит человечнее генерации."
+    status: listed
+    tags: [music, creative-commons]
+
+  - id: bbc-sfx
+    name: "BBC Sound Effects"
+    category: audio
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://sound-effects.bbcrewind.co.uk/"
+    tagline: "33 тысячи звуков из архива BBC, бесплатно для личных и учебных проектов. Читай условия для коммерции."
+    status: listed
+    tags: [sfx, archive]
+
+  # ═══════════════ моушн: пополнение ═══════════════
+
+  - id: pixijs
+    name: "PixiJS"
+    category: motion
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://pixijs.com/"
+    repo: "https://github.com/pixijs/pixijs"
+    tagline: "2D-рендер на WebGL. Тянет тысячи частиц там, где обычный canvas уже начинает захлёбываться."
+    status: listed
+    tags: [2d, webgl, particles]
+
+  - id: konva
+    name: "Konva"
+    category: motion
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://konvajs.org/"
+    tagline: "Canvas со сценой из объектов вместо ручного рисования. Есть готовая обвязка под React."
+    status: listed
+    tags: [2d, canvas, react]
+
+  - id: matter-js
+    name: "Matter.js"
+    category: motion
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://brm.io/matter-js/"
+    repo: "https://github.com/liabru/matter-js"
+    tagline: "Физика 2D: падение, столкновения, гравитация. Движение выглядит естественным без ручных ключей."
+    status: listed
+    tags: [physics, 2d]
+
+  - id: roughjs
+    name: "Rough.js"
+    category: motion
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://roughjs.com/"
+    repo: "https://github.com/rough-stuff/rough"
+    tagline: "Рисует графику так, будто её набросали от руки. Схема перестаёт выглядеть корпоративным слайдом."
+    status: listed
+    tags: [style, sketchy, svg]
+
+  - id: mixamo
+    name: "Mixamo"
+    category: motion
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://www.mixamo.com/"
+    tagline: "Готовые анимации персонажей с автоматическим риггингом. Бесплатно, от Adobe."
+    status: listed
+    tags: [3d, character-animation, free]
+
+  - id: jitter
+    name: "Jitter"
+    category: motion
+    kind: app
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://jitter.video/"
+    tagline: "Моушн-дизайн в браузере с логикой Figma. Порог входа сильно ниже After Effects."
+    status: listed
+    tags: [motion-design, browser]
+
+  - id: after-effects
+    name: "After Effects"
+    category: motion
+    kind: app
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://www.adobe.com/products/aftereffects.html"
+    tagline: "Индустриальный стандарт моушн-графики. Отсюда экспортируется большая часть Lottie-файлов."
+    status: listed
+    tags: [motion-design, industry-standard]
+
+  - id: polyhaven
+    name: "Poly Haven"
+    category: motion
+    kind: service
+    agent: api
+    pricing: free
+    key: none
+    url: "https://polyhaven.com/"
+    tagline: "HDRI, текстуры и 3D-модели в CC0 — без атрибуции и ограничений. Свет для сцены берут отсюда."
+    status: listed
+    tags: [3d, hdri, textures, cc0]
+
+  - id: ambientcg
+    name: "ambientCG"
+    category: motion
+    kind: service
+    agent: api
+    pricing: free
+    key: none
+    url: "https://ambientcg.com/"
+    tagline: "Тысячи PBR-текстур в CC0. Дополняет Poly Haven там, где не хватило материала."
+    status: listed
+    tags: [3d, textures, cc0]
+
+  # ═══════════════ сборка и переупаковка: пополнение ═══════════════
+
+  - id: ffmpeg-wasm
+    name: "ffmpeg.wasm"
+    category: assembly
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://ffmpegwasm.netlify.app/"
+    repo: "https://github.com/ffmpegwasm/ffmpeg.wasm"
+    tagline: "FFmpeg прямо в браузере. Обрезать и перекодировать без загрузки файла на сервер."
+    status: listed
+    tags: [browser, encoding]
+
+  - id: shotcut
+    name: "Shotcut"
+    category: assembly
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://shotcut.org/"
+    tagline: "Открытый монтажёр на всех платформах, без установки кодеков."
+    status: listed
+    tags: [editing, local]
+
+  - id: openshot
+    name: "OpenShot"
+    category: assembly
+    kind: app
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://www.openshot.org/"
+    tagline: "Простой открытый монтажёр с Python-библиотекой под капотом — её можно дёргать отдельно."
+    status: listed
+    tags: [editing, python]
+
+  - id: submagic
+    name: "Submagic"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://www.submagic.co/"
+    tagline: "Динамичные субтитры и подсветка ключевых слов для вертикалок. Тот самый вид, что держит удержание."
+    status: listed
+    tags: [subtitles, shorts]
+
+  - id: veed
+    name: "VEED"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.veed.io/"
+    tagline: "Браузерный монтаж с субтитрами и переводом. Быстрая правка без установки чего-либо."
+    status: listed
+    tags: [browser, subtitles]
+
+  - id: kapwing
+    name: "Kapwing"
+    category: repurpose
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.kapwing.com/"
+    tagline: "Онлайн-редактор с ресайзом под все площадки одним нажатием."
+    status: listed
+    tags: [browser, resize]
+
+  - id: happyscribe
+    name: "Happy Scribe"
+    category: repurpose
+    kind: service
+    agent: api
+    pricing: paid
+    key: required
+    url: "https://www.happyscribe.com/"
+    tagline: "Транскрипция и субтитры с вычиткой живым человеком. Когда автоматике доверять нельзя."
+    status: listed
+    tags: [subtitles, human-review]
+
+  # ═══════════════ превью и ассеты: пополнение ═══════════════
+
+  - id: inkscape
+    name: "Inkscape"
+    category: thumbnail
+    kind: app
+    agent: cli
+    pricing: oss
+    key: none
+    url: "https://inkscape.org/"
+    tagline: "Открытый векторный редактор с командной строкой. Пакетная конвертация SVG в PNG без сервисов."
+    status: listed
+    tags: [vector, svg, cli]
+
+  - id: krita
+    name: "Krita"
+    category: thumbnail
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://krita.org/"
+    tagline: "Открытый растровый редактор для рисования. Дорисовать поверх генерации то, чего модель не поняла."
+    status: listed
+    tags: [painting, local]
+
+  - id: squoosh
+    name: "Squoosh"
+    category: thumbnail
+    kind: app
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://squoosh.app/"
+    tagline: "Сжатие картинок с наглядным сравнением до и после. Укладывает превью в лимит площадки без потери вида."
+    status: listed
+    tags: [compression, browser]
+
+  - id: haikei
+    name: "Haikei"
+    category: thumbnail
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://haikei.app/"
+    tagline: "Генератор SVG-фонов: волны, блобы, сетки, градиенты. Быстрая подложка под текст."
+    status: listed
+    tags: [backgrounds, svg]
+
+  - id: thumbnailtest
+    name: "ThumbnailTest"
+    category: thumbnail
+    kind: service
+    agent: none
+    pricing: paid
+    key: none
+    url: "https://thumbnailtest.com/"
+    tagline: "A/B-тест превью на реальной аудитории. Единственный способ узнать, что работает, а не что нравится."
+    status: listed
+    tags: [ab-testing, youtube]
+
+  - id: iconify
+    name: "Iconify"
+    category: assets
+    kind: library
+    agent: api
+    pricing: oss
+    key: none
+    url: "https://iconify.design/"
+    tagline: "Двести тысяч иконок из сотни наборов через один интерфейс. Не надо ставить пять библиотек."
+    status: listed
+    tags: [icons, aggregator]
+
+  - id: tabler-icons
+    name: "Tabler Icons"
+    category: assets
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://tabler.io/icons"
+    tagline: "Пять тысяч иконок в едином штрихе, MIT. Хорошо читаются даже мелко в кадре."
+    status: listed
+    tags: [icons, mit]
+
+  - id: material-symbols
+    name: "Material Symbols"
+    category: assets
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://fonts.google.com/icons"
+    tagline: "Иконки Google с настраиваемой толщиной и заливкой. Переменные оси позволяют анимировать саму иконку."
+    status: listed
+    tags: [icons, variable]
+
+  - id: rawpixel
+    name: "Rawpixel"
+    category: assets
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.rawpixel.com/"
+    tagline: "Винтажные иллюстрации и public domain-графика. Источник фактуры, которой нет на обычных стоках."
+    status: listed
+    tags: [vintage, public-domain, illustrations]
+
+  - id: nappy
+    name: "Nappy"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://nappy.co/"
+    tagline: "Бесплатные фото чернокожих и латиноамериканцев. Закрывает провал обычных стоков в разнообразии."
+    status: listed
+    tags: [photo, diversity, free]
+
+  - id: kaboompics
+    name: "Kaboompics"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://kaboompics.com/"
+    tagline: "Лайфстайл и интерьеры одного автора — отсюда единый стиль. Есть поиск по палитре."
+    status: listed
+    tags: [photo, lifestyle, free]
+
+  - id: noun-project
+    name: "The Noun Project"
+    category: assets
+    kind: service
+    agent: api
+    pricing: freemium
+    key: required
+    url: "https://thenounproject.com/"
+    tagline: "Иконка почти под любое понятие, включая абстрактные. Там, где обычные наборы пасуют."
+    status: listed
+    tags: [icons, coverage]
+
+  - id: blush
+    name: "Blush"
+    category: assets
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://blush.design/"
+    tagline: "Иллюстрации, собираемые из частей: поза, одежда, фон. Персонажи получаются непохожими на чужие ролики."
+    status: listed
+    tags: [illustrations, customizable]
+
+  - id: uigradients
+    name: "uiGradients"
+    category: assets
+    kind: service
+    agent: none
+    pricing: free
+    key: none
+    url: "https://uigradients.com/"
+    tagline: "Готовые градиенты с копированием CSS. Подложка за полминуты."
+    status: listed
+    tags: [gradients, color]
+
+  # ═══════════════ данные и research: пополнение ═══════════════
+
+  - id: nager-date
+    name: "Nager.Date"
+    category: data
+    kind: api
+    agent: api
+    pricing: free
+    key: none
+    url: "https://date.nager.at/"
+    tagline: "Государственные праздники по странам на годы вперёд. Планирование сезонного контента."
+    status: listed
+    tags: [holidays, keyless, planning]
+
+  - id: tmdb
+    name: "TMDB"
+    category: data
+    kind: api
+    agent: api
+    pricing: free
+    key: required
+    url: "https://www.themoviedb.org/"
+    tagline: "База фильмов и сериалов с постерами и кадрами. Бесплатно для некоммерческого использования."
+    status: listed
+    tags: [movies, posters]
+
+  - id: pokeapi
+    name: "PokéAPI"
+    category: data
+    kind: api
+    agent: api
+    pricing: free
+    key: none
+    url: "https://pokeapi.co/"
+    tagline: "Полная база покемонов без ключа. Классический пример данных, из которых собирают развлекательный ролик."
+    status: listed
+    tags: [games, keyless, fun]
+
+  - id: opentdb
+    name: "Open Trivia DB"
+    category: data
+    kind: api
+    agent: api
+    pricing: free
+    key: none
+    url: "https://opentdb.com/"
+    tagline: "Вопросы викторин по категориям и сложности. Готовое наполнение для quiz-формата."
+    status: listed
+    tags: [trivia, keyless, quiz]
+
+  - id: natural-earth
+    name: "Natural Earth"
+    category: data
+    kind: reference
+    agent: none
+    pricing: free
+    key: none
+    url: "https://www.naturalearthdata.com/"
+    tagline: "Картографические данные в public domain. База под любую анимированную карту."
+    status: listed
+    tags: [maps, geodata, public-domain]
+
+  - id: kaggle
+    name: "Kaggle Datasets"
+    category: data
+    kind: service
+    agent: api
+    pricing: free
+    key: required
+    url: "https://www.kaggle.com/datasets"
+    tagline: "Сотни тысяч готовых датасетов почти по любой теме. Проверяй происхождение данных перед эфиром."
+    status: listed
+    tags: [datasets, research]
+
+  - id: nivo
+    name: "Nivo"
+    category: data
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://nivo.rocks/"
+    tagline: "Графики на React с приличным видом по умолчанию. Меньше возни со стилями, чем у Recharts."
+    status: listed
+    tags: [charts, react]
+
+  - id: plotly-js
+    name: "Plotly.js"
+    category: data
+    kind: library
+    agent: none
+    pricing: oss
+    key: none
+    url: "https://plotly.com/javascript/"
+    tagline: "Научные графики: 3D-поверхности, тепловые карты, статистика. Там, где обычных библиотек не хватает."
+    status: listed
+    tags: [charts, scientific, 3d]
+
+  - id: flourish
+    name: "Flourish"
+    category: data
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://flourish.studio/"
+    tagline: "Анимированные графики без кода, включая гонку столбиков. Быстрее, чем собирать её в Remotion."
+    status: listed
+    tags: [charts, animated, no-code]
+
+  - id: datawrapper
+    name: "Datawrapper"
+    category: data
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.datawrapper.de/"
+    tagline: "Редакционные графики со встроенной защитой от вранья: сам подскажет про обрезанную ось."
+    status: listed
+    tags: [charts, editorial]
+
+  - id: viewstats
+    name: "ViewStats"
+    category: research
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://www.viewstats.com/"
+    tagline: "Аналитика чужих каналов с историей превью и заголовков. Видно, что они меняли и что после этого выстрелило."
+    status: listed
+    tags: [youtube, competitors, thumbnails]
+
+  - id: ahrefs
+    name: "Ahrefs"
+    category: research
+    kind: service
+    agent: mcp
+    pricing: paid
+    key: required
+    url: "https://ahrefs.com/"
+    tagline: "Поисковый спрос вокруг темы. Полезно, когда ролик должен ловить трафик и из Google тоже."
+    status: listed
+    tags: [seo, keywords]
+
+  - id: keywordtool
+    name: "Keyword Tool"
+    category: research
+    kind: service
+    agent: none
+    pricing: freemium
+    key: none
+    url: "https://keywordtool.io/"
+    tagline: "Подсказки поиска YouTube без входа в аккаунт. Реальные формулировки запросов зрителей."
+    status: listed
+    tags: [keywords, youtube]

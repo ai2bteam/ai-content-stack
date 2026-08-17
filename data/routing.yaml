@@ -4,6 +4,26 @@
 # и упадёт с ошибкой, если id не существует.
 
 routing:
+  - group: "Написать сценарий"
+    rows:
+      - task: "Собрать фактуру по теме"
+        tools: [perplexity, exa, notebooklm, firecrawl-mcp]
+        note: "NotebookLM отвечает только по загруженным источникам — сценарий не уплывает в выдумку."
+
+      - task: "Найти, что реально болит у аудитории"
+        tools: [gummysearch, answer-the-public, youtube-transcript-mcp]
+
+      - task: "Проверить утверждение по исследованиям"
+        tools: [consensus, elicit, our-world-in-data]
+        note: "Нужно, если в ролике звучит «учёные доказали»."
+
+      - task: "Написать и выстроить текст"
+        tools: [claude-ai]
+
+      - task: "Вычитать текст под озвучку"
+        tools: [hemingway, languagetool]
+        note: "Текст для диктора проверяется чтением вслух — Hemingway ловит то, обо что споткнёшься."
+
   - group: "Найти готовое"
     rows:
       - task: "Фото — реальное, живое, generic"
@@ -32,7 +52,11 @@ routing:
         tools: [google-fonts, lucide]
 
       - task: "3D-модель"
-        tools: [sketchfab]
+        tools: [sketchfab, polyhaven, mixamo]
+
+      - task: "Текстуры, HDRI, анимации персонажей в CC0"
+        tools: [polyhaven, ambientcg, mixamo]
+        note: "CC0 — без атрибуции и ограничений, самый спокойный вариант для коммерции."
 
       - task: "Историческая и архивная фактура"
         tools: [internet-archive, loc, europeana, smithsonian, met-museum]
@@ -61,6 +85,23 @@ routing:
       - task: "Запустить открытую модель, не разворачивая железо"
         tools: [replicate, fal]
         note: "Оплата за секунды инференса. Дешевле, чем поднимать GPU ради одного ролика."
+
+      - task: "Задать генерации точную позу или композицию"
+        tools: [controlnet, ip-adapter]
+        note: "Без них композиция — лотерея, сколько промпт ни переписывай."
+
+      - task: "Держать одного персонажа похожим на себя между кадрами"
+        tools: [ip-adapter, vidu, ltx-studio]
+        note: "Главная нерешённая боль генеративного видео. Работает через раз — закладывай время."
+
+      - task: "Взять веса или LoRA под нужный стиль"
+        tools: [huggingface, civitai]
+
+      - task: "Арендовать GPU под тяжёлую модель"
+        tools: [runpod, modal]
+
+      - task: "Языковая модель локально, без отправки материала наружу"
+        tools: [ollama, lm-studio]
 
       - task: "Видео по тексту или по картинке"
         tools: [ltx-video, kling, runway, modelslab-video]
@@ -129,6 +170,10 @@ routing:
 
       - task: "Субтитры с пословным таймингом"
         tools: [whisperx, faster-whisper, subtitle-edit]
+        note: "Локально и бесплатно. Из пословных таймингов собираются «прыгающие» субтитры."
+
+      - task: "Транскрипция по API, без возни с локальным железом"
+        tools: [assemblyai, deepgram, happyscribe]
 
       - task: "Понять, кто из говорящих сказал реплику"
         tools: [pyannote]

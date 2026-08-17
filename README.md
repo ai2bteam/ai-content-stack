@@ -4,7 +4,7 @@
 
 > Каталог инструментов для производства контента с помощью ИИ — что берём, чем управляем из агента, как ставится.
 
-**192 инструментов · 12 категорий · 28 подключаются к агенту по MCP · 114 бесплатны или open source**
+**295 инструментов · 14 категорий · 41 подключаются к агенту по MCP · 167 бесплатны или open source**
 
 ---
 
@@ -28,6 +28,16 @@
 
 ## Задача → инструмент
 
+### Написать сценарий
+
+| Задача | Чем делать | Комментарий |
+|---|---|---|
+| Собрать фактуру по теме | [Perplexity](https://www.perplexity.ai/) · [Exa](https://exa.ai/) · [NotebookLM](https://notebooklm.google.com/) · [Firecrawl MCP](https://github.com/firecrawl/firecrawl-mcp-server) | NotebookLM отвечает только по загруженным источникам — сценарий не уплывает в выдумку. |
+| Найти, что реально болит у аудитории | [GummySearch](https://gummysearch.com/) · [AnswerThePublic](https://answerthepublic.com/) · [YouTube Transcript MCP](https://github.com/jkawamoto/mcp-youtube-transcript) |  |
+| Проверить утверждение по исследованиям | [Consensus](https://consensus.app/) · [Elicit](https://elicit.com/) · [Our World in Data](https://ourworldindata.org/) | Нужно, если в ролике звучит «учёные доказали». |
+| Написать и выстроить текст | [Claude](https://claude.ai/) |  |
+| Вычитать текст под озвучку | [Hemingway Editor](https://hemingwayapp.com/) · [LanguageTool](https://languagetool.org/) | Текст для диктора проверяется чтением вслух — Hemingway ловит то, обо что споткнёшься. |
+
 ### Найти готовое
 
 | Задача | Чем делать | Комментарий |
@@ -39,7 +49,8 @@
 | Логотип бренда | [Brandfetch MCP](https://brandfetch.com/) | Отдаёт SVG отдельно под светлый и тёмный фон. |
 | Космос, наука, съёмка Земли | [NASA MCP](https://api.nasa.gov/) |  |
 | Шрифты и иконки | [Google Fonts](https://fonts.google.com/) · [Lucide](https://lucide.dev/) |  |
-| 3D-модель | [Sketchfab](https://sketchfab.com/) |  |
+| 3D-модель | [Sketchfab](https://sketchfab.com/) · [Poly Haven](https://polyhaven.com/) · [Mixamo](https://www.mixamo.com/) |  |
+| Текстуры, HDRI, анимации персонажей в CC0 | [Poly Haven](https://polyhaven.com/) · [ambientCG](https://ambientcg.com/) · [Mixamo](https://www.mixamo.com/) | CC0 — без атрибуции и ограничений, самый спокойный вариант для коммерции. |
 | Историческая и архивная фактура | [Internet Archive](https://archive.org/) · [Library of Congress](https://www.loc.gov/) · [Europeana](https://www.europeana.eu/) · [Smithsonian Open Access](https://www.si.edu/openaccess) · [Met Museum Open Access](https://www.metmuseum.org/art/collection) | Большая часть в public domain — то, чего на стоках нет в принципе. |
 | Иллюстрации вместо фото | [unDraw](https://undraw.co/) · [Storyset](https://storyset.com/) | У обоих настраивается акцентный цвет — подгоняются под палитру ролика. |
 
@@ -52,6 +63,11 @@
 | Убрать фон / увеличить разрешение | [rembg](https://github.com/danielgatis/rembg) · [Upscayl](https://github.com/upscayl/upscayl) · [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) · [Magnific](https://magnific.ai/) | Локально — rembg и Upscayl. Magnific дорисовывает детали, но платный. |
 | Убрать со стока водяной знак или лишний объект | [IOPaint](https://github.com/Sanster/IOPaint) · [Clipdrop](https://clipdrop.co/) |  |
 | Запустить открытую модель, не разворачивая железо | [Replicate](https://replicate.com/) · [fal.ai](https://fal.ai/) | Оплата за секунды инференса. Дешевле, чем поднимать GPU ради одного ролика. |
+| Задать генерации точную позу или композицию | [ControlNet](https://github.com/lllyasviel/ControlNet) · [IP-Adapter](https://github.com/tencent-ailab/IP-Adapter) | Без них композиция — лотерея, сколько промпт ни переписывай. |
+| Держать одного персонажа похожим на себя между кадрами | [IP-Adapter](https://github.com/tencent-ailab/IP-Adapter) · [Vidu](https://www.vidu.com/) · [LTX Studio](https://ltx.studio/) | Главная нерешённая боль генеративного видео. Работает через раз — закладывай время. |
+| Взять веса или LoRA под нужный стиль | [Hugging Face](https://huggingface.co/) · [Civitai](https://civitai.com/) |  |
+| Арендовать GPU под тяжёлую модель | [RunPod](https://www.runpod.io/) · [Modal](https://modal.com/) |  |
+| Языковая модель локально, без отправки материала наружу | [Ollama](https://ollama.com/) · [LM Studio](https://lmstudio.ai/) |  |
 | Видео по тексту или по картинке | [LTX-Video](https://www.lightricks.com/ltxv) · [Kling AI](https://klingai.com/) · [Runway](https://runwayml.com/) · [ModelsLab Video](https://modelslab.com/) | LTX-Video — если хочется без подписки. Kling — если нужна убедительная физика движения. |
 | Говорящий аватар | [HeyGen](https://www.heygen.com/) |  |
 | Озвучка — локально и бесплатно | [Voicebox](https://voicebox.sh/) · [Kokoro TTS](https://huggingface.co/hexgrad/Kokoro-82M) · [Chatterbox TTS](https://github.com/resemble-ai/chatterbox) |  |
@@ -80,7 +96,8 @@
 |---|---|---|
 | Нарезать длинное видео на вертикальные клипы | [OpusClip](https://www.opus.pro/) · [Klap](https://klap.app/) · [Vizard](https://vizard.ai/) | У Klap есть API — только он встраивается в конвейер без ручного захода на сайт. |
 | Убрать паузы и слова-паразиты | [auto-editor](https://github.com/WyattBlue/auto-editor) · [Descript](https://www.descript.com/) | auto-editor делает это бесплатно и одной командой. |
-| Субтитры с пословным таймингом | [WhisperX](https://github.com/m-bain/whisperX) · [faster-whisper](https://github.com/SYSTRAN/faster-whisper) · [Subtitle Edit](https://www.nikse.dk/subtitleedit) |  |
+| Субтитры с пословным таймингом | [WhisperX](https://github.com/m-bain/whisperX) · [faster-whisper](https://github.com/SYSTRAN/faster-whisper) · [Subtitle Edit](https://www.nikse.dk/subtitleedit) | Локально и бесплатно. Из пословных таймингов собираются «прыгающие» субтитры. |
+| Транскрипция по API, без возни с локальным железом | [AssemblyAI](https://www.assemblyai.com/) · [Deepgram](https://deepgram.com/) · [Happy Scribe](https://www.happyscribe.com/) |  |
 | Понять, кто из говорящих сказал реплику | [pyannote.audio](https://github.com/pyannote/pyannote-audio) |  |
 | Вычистить звук: эхо, шум, разная громкость | [Adobe Podcast Enhance](https://podcast.adobe.com/) · [Auphonic](https://auphonic.com/) · [Demucs](https://github.com/adefossez/demucs) |  |
 
@@ -106,18 +123,20 @@
 
 ## Категории
 
-- 🤖 **[Агенты и оркестрация](#cat-agents)** — Среда, из которой всё запускается. Агент читает задачу и сам дёргает нужные инструменты. _(9)_
-- 🔌 **[MCP-серверы](#cat-mcp)** — Инструменты, подключаемые к агенту по протоколу MCP. Агент управляет ими напрямую — без копипасты и ручного клика. _(20)_
-- 🎬 **[Генерация видео](#cat-video)** — text→video и image→video. Основной расходник — деньги и время рендера, поэтому сначала смотри, нет ли готового стока. _(19)_
-- 🖼️ **[Картинки: генерация и редактирование](#cat-image)** — Генерация с нуля, img2img, инпейнт, удаление фона, апскейл. _(22)_
-- 🔊 **[Голос, музыка, звук](#cat-audio)** — Озвучка, клонирование голоса, фоновая музыка, SFX, транскрипция. _(27)_
-- ✨ **[Моушн и анимация](#cat-motion)** — Движение в кадре: анимационные библиотеки, Lottie/Rive, процедурная графика. _(17)_
-- 🧩 **[Сборка, монтаж, рендер](#cat-assembly)** — Где всё склеивается в готовый файл. _(13)_
-- ✂️ **[Переупаковка и субтитры](#cat-repurpose)** — Длинное видео в короткие, автонарезка, субтитры, чистка речи. Самый дешёвый способ получить больше контента из уже снятого. _(8)_
-- 🎨 **[Превью, обложки, статика](#cat-thumbnail)** — Кадр, который решает, посмотрят ролик или нет. Плюс всё остальное, что не двигается. _(9)_
-- 📦 **[Стоки и готовые ассеты](#cat-assets)** — Фото, видео, GIF, шрифты, иконки, логотипы. Правило: сначала сток, потом генерация — быстрее и без лимитов. _(23)_
-- 📊 **[Данные для контента](#cat-data)** — Живые цифры для data-driven роликов: курсы, погода, новости, статистика. _(17)_
-- 🔍 **[Research и аналитика](#cat-research)** — Что снимать: ниши, конкуренты, ключевики, выбросы по просмотрам. _(8)_
+- 🤖 **[Агенты и оркестрация](#cat-agents)** — Среда, из которой всё запускается. Агент читает задачу и сам дёргает нужные инструменты. _(15)_
+- 📝 **[Сценарий и текст](#cat-script)** — Первый шаг любого ролика. Ресёрч темы, структура, текст под озвучку, заголовки и описание. _(9)_
+- 🔌 **[MCP-серверы](#cat-mcp)** — Инструменты, подключаемые к агенту по протоколу MCP. Агент управляет ими напрямую — без копипасты и ручного клика. _(27)_
+- 🎬 **[Генерация видео](#cat-video)** — text→video и image→video. Основной расходник — деньги и время рендера, поэтому сначала смотри, нет ли готового стока. _(25)_
+- 🖼️ **[Картинки: генерация и редактирование](#cat-image)** — Генерация с нуля, img2img, инпейнт, удаление фона, апскейл. _(29)_
+- ⚙️ **[Модели и где их запускать](#cat-runtime)** — Веса, LoRA и площадки для инференса. Сюда идут, когда чужой сервис не устраивает по цене, приватности или контролю. _(14)_
+- 🔊 **[Голос, музыка, звук](#cat-audio)** — Озвучка, клонирование голоса, фоновая музыка, SFX, транскрипция. _(38)_
+- ✨ **[Моушн и анимация](#cat-motion)** — Движение в кадре: анимационные библиотеки, Lottie/Rive, процедурная графика. _(26)_
+- 🧩 **[Сборка, монтаж, рендер](#cat-assembly)** — Где всё склеивается в готовый файл. _(16)_
+- ✂️ **[Переупаковка и субтитры](#cat-repurpose)** — Длинное видео в короткие, автонарезка, субтитры, чистка речи. Самый дешёвый способ получить больше контента из уже снятого. _(12)_
+- 🎨 **[Превью, обложки, статика](#cat-thumbnail)** — Кадр, который решает, посмотрят ролик или нет. Плюс всё остальное, что не двигается. _(14)_
+- 📦 **[Стоки и готовые ассеты](#cat-assets)** — Фото, видео, GIF, шрифты, иконки, логотипы. Правило: сначала сток, потом генерация — быстрее и без лимитов. _(32)_
+- 📊 **[Данные для контента](#cat-data)** — Живые цифры для data-driven роликов: курсы, погода, новости, статистика. _(27)_
+- 🔍 **[Research и аналитика](#cat-research)** — Что снимать: ниши, конкуренты, ключевики, выбросы по просмотрам. _(11)_
 
 ---
 
@@ -129,17 +148,43 @@
 
 | Инструмент | Что делает | Тип | Цена | Из агента | Ключ |
 |---|---|---|---|---|---|
+| **[Activepieces](https://www.activepieces.com/)** | Открытая замена Zapier с MCP на борту. Автоматизации живут на своём сервере. | приложение | 🔵 open source | `API` | — |
+| **[Aider](https://aider.chat/)** | Открытый агент, работающий через git-коммиты. Каждая правка откатывается одной командой. | приложение | 🔵 open source | `CLI` | нужен |
 | **[Claude Agent SDK](https://docs.claude.com/en/api/agent-sdk/overview)** | Собрать своего агента с тем же циклом инструментов, что у Claude Code. | библиотека | 🔴 платно | `API` | нужен |
 | **[Claude Code](https://claude.com/product/claude-code)** ⭐ | Агент в терминале, десктопе, вебе и IDE. Точка входа во весь остальной стек. | приложение | 🔴 платно | — | — |
+| **[Codex CLI](https://github.com/openai/codex)** | Терминальный агент OpenAI. Тоже понимает MCP — те же серверы из этого каталога подключаются и к нему. | приложение | 🔴 платно | `MCP` | нужен |
 | **[ComfyUI API](https://docs.comfy.org/)** | У локального ComfyUI есть HTTP-эндпоинт: агент кидает граф в очередь и забирает готовый файл. | API | 🔵 open source | `API` | — |
+| **[Composio](https://composio.dev/)** | Сотни готовых интеграций как инструменты агента, с решённой авторизацией. Не писать свой MCP под каждый сервис. | сервис | 🟡 freemium | `MCP` | нужен |
 | **[Cursor](https://cursor.com/)** | Редактор кода с агентом внутри. Понимает MCP, поэтому тот же Palmier или Blender цепляются и сюда. | приложение | 🟡 freemium | `MCP` | — |
+| **[Gemini CLI](https://github.com/google-gemini/gemini-cli)** | Агент Google в терминале, с MCP и щедрым бесплатным лимитом. | приложение | 🟡 freemium | `MCP` | нужен |
 | **[Make](https://www.make.com/)** | То же, что n8n, но как сервис и без своего сервера. Дороже на объёме, дешевле на старте. | сервис | 🟡 freemium | `API` | — |
 | **[MCP Registry](https://github.com/modelcontextprotocol/registry)** | Официальный реестр MCP-серверов. В отличие от сторонних каталогов — источник, а не витрина. | справочник | 🔵 open source | — | — |
 | **[Model Context Protocol](https://modelcontextprotocol.io/)** ⭐ | Открытый протокол, по которому агент получает чужие инструменты. Причина, по которой этот каталог вообще имеет смысл. | протокол | 🔵 open source | — | — |
 | **[n8n](https://n8n.io/)** | Визуальные автоматизации, которые можно хостить у себя. Держит контент-конвейер: вышел ролик — разошлось по площадкам. | приложение | 🟡 freemium | `API` | — |
 | **[Smithery](https://smithery.ai/)** | Каталог MCP-серверов с установкой в одну команду. Первое место, куда идти за «а есть ли MCP для...». | сервис | 🟢 бесплатно | `MCP` | — |
+| **[Zapier MCP](https://zapier.com/mcp)** | Тысячи приложений Zapier открываются агенту как инструменты. Самый широкий охват из существующих. | MCP-сервер | 🟡 freemium | `MCP` | нужен |
 
 → [Подробные карточки: установка, ключи, заметки](catalog/agents.md)
+
+<a id="cat-script"></a>
+
+## 📝 Сценарий и текст
+
+> Первый шаг любого ролика. Ресёрч темы, структура, текст под озвучку, заголовки и описание.
+
+| Инструмент | Что делает | Тип | Цена | Из агента | Ключ |
+|---|---|---|---|---|---|
+| **[Claude](https://claude.ai/)** ⭐ | Длинный контекст и внятная работа со структурой. Держит сценарий целиком, а не абзац за абзацем. | сервис | 🟡 freemium | `API` | опц. |
+| **[Consensus](https://consensus.app/)** | Показывает, что говорит совокупность исследований по вопросу, а не одна удобная статья. | сервис | 🟡 freemium | — | — |
+| **[Elicit](https://elicit.com/)** | Ресёрч по научным статьям с выжимкой методов и выводов. Для роликов, где нужен не блог, а исследование. | сервис | 🟡 freemium | — | — |
+| **[Exa](https://exa.ai/)** | Поиск по смыслу, а не по ключевым словам, и сразу с MCP. Находит статьи, которые Google прячет на пятой странице. | API | 🟡 freemium | `MCP` | нужен |
+| **[GummySearch](https://gummysearch.com/)** | Ищет боль и вопросы аудитории по реддиту. Источник тем, которые людей реально жгут. | сервис | 🟡 freemium | — | — |
+| **[Hemingway Editor](https://hemingwayapp.com/)** | Подсвечивает длинные предложения и пассив. Текст под озвучку должен читаться вслух — это и проверяет. | сервис | 🟡 freemium | — | — |
+| **[LanguageTool](https://languagetool.org/)** | Проверка грамматики, в том числе русской, с открытым кодом и возможностью поднять у себя. | сервис | 🟡 freemium | `API` | опц. |
+| **[NotebookLM](https://notebooklm.google.com/)** | Загружаешь источники — отвечает только по ним, со ссылками на конкретное место. Сценарий не уплывает в выдумку. | сервис | 🟡 freemium | — | — |
+| **[Perplexity](https://www.perplexity.ai/)** | Поисковый ресёрч со ссылками на источник каждого утверждения. Быстрый сбор фактуры под сценарий. | сервис | 🟡 freemium | `API` | опц. |
+
+→ [Подробные карточки: установка, ключи, заметки](catalog/script.md)
 
 <a id="cat-mcp"></a>
 
@@ -149,6 +194,7 @@
 
 | Инструмент | Что делает | Тип | Цена | Из агента | Ключ |
 |---|---|---|---|---|---|
+| **[Ableton MCP](https://github.com/ahujasid/ableton-mcp)** | Агент собирает аранжировку в Ableton Live. Звуковой аналог того, что Palmier делает с видео. | MCP-сервер | 🔵 open source | `MCP` | — |
 | **[Apify MCP](https://apify.com/)** | Тысячи готовых скрейперов под соцсети и маркетплейсы, дёргаются как инструменты агента. | MCP-сервер | 🟡 freemium | `MCP` | нужен |
 | **[Blender MCP](https://github.com/ahujasid/blender-mcp)** | Агент строит и рендерит 3D-сцену прямо в Blender. Тот же приём, что у Palmier, только для трёхмерки. | MCP-сервер | 🔵 open source | `MCP` | — |
 | **[Brandfetch MCP](https://brandfetch.com/)** ⭐ | Логотипы брендов в SVG (light/dark) плюс фирменные цвета и шрифты по одному домену. | MCP-сервер | 🟡 freemium | `MCP` | нужен |
@@ -156,19 +202,25 @@
 | **[Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp)** | Консоль, сеть и профайлер живой страницы для агента. Полезно, когда Remotion-превью тормозит и непонятно где. | MCP-сервер | 🔵 open source | `MCP` | — |
 | **[Context7](https://context7.com/)** | Подсовывает агенту актуальную документацию библиотеки. Лечит выдуманные API у Remotion и three.js. | MCP-сервер | 🟡 freemium | `MCP` | опц. |
 | **[Coverr MCP](https://coverr.co/)** ⭐ | B-roll в MP4 прямо из чата: `get_videos` → `get_video(id)` → готовый 1080p-линк. | MCP-сервер | 🟢 бесплатно | `MCP` | нужен |
+| **[Docker MCP Catalog](https://hub.docker.com/mcp)** | MCP-серверы в контейнерах: ставятся без npm и uv и не тащат зависимости в систему. | сервис | 🟢 бесплатно | `MCP` | — |
 | **[ElevenLabs MCP](https://github.com/elevenlabs/elevenlabs-mcp)** | Официальный сервер: озвучка, звуковые эффекты и клонирование голоса прямо из чата. | MCP-сервер | 🟡 freemium | `MCP` | нужен |
 | **[Fetch MCP](https://github.com/modelcontextprotocol/servers)** ⭐ | Достать и распарсить произвольную страницу. Спасает, когда нужны фото с /press или /newsroom компании. | MCP-сервер | 🟢 бесплатно | `MCP` | — |
 | **[Filesystem MCP](https://github.com/modelcontextprotocol/servers)** | Доступ к папке проекта с явными границами. Базовый кирпич, о котором забывают. | MCP-сервер | 🔵 open source | `MCP` | — |
 | **[Firecrawl MCP](https://github.com/firecrawl/firecrawl-mcp-server)** | Превращает сайт в чистый markdown. Когда нужен фактурный материал для сценария, а не десять вкладок. | MCP-сервер | 🟡 freemium | `MCP` | нужен |
+| **[GitHub MCP](https://github.com/github/github-mcp-server)** | Официальный сервер: issues, PR, файлы репозитория как инструменты агента. | MCP-сервер | 🔵 open source | `MCP` | нужен |
 | **[Klipy MCP](https://klipy.com/)** ⭐ | GIF-поиск. Неожиданно хорошо находит поп-культуру и свежую технику. | MCP-сервер | 🟡 freemium | `MCP` | нужен |
+| **[Memory MCP](https://github.com/modelcontextprotocol/servers)** | Граф знаний, переживающий перезапуск сессии. Стиль канала и решения не приходится объяснять заново. | MCP-сервер | 🔵 open source | `MCP` | — |
 | **[NASA MCP](https://api.nasa.gov/)** ⭐ | Космос и наука в высоком разрешении. Public domain. | MCP-сервер | 🟢 бесплатно | `MCP` | нужен |
+| **[Notion MCP](https://developers.notion.com/docs/mcp)** | Контент-план и база сценариев в Notion становятся доступны агенту напрямую. | MCP-сервер | 🟡 freemium | `MCP` | нужен |
 | **[Openverse MCP](https://openverse.org/)** ⭐ | CC-лицензированные картинки: Flickr, rawpixel, Wikimedia в одном поиске. Ключ не нужен. | MCP-сервер | 🟢 бесплатно | `MCP` | — |
 | **[Palmier Pro](https://palmierai.pro/)** | Видеоредактор для macOS, у которого таймлайн выставлен наружу как MCP-сервер — агент правит монтаж сам. | приложение | 🔴 платно | `MCP` | — |
 | **[Pexels MCP](https://www.pexels.com/api/)** ⭐ | Стоковые фото и видео. Рабочая лошадка для generic-кадров. | MCP-сервер | 🟢 бесплатно | `MCP` | нужен |
 | **[Playwright MCP](https://github.com/microsoft/playwright-mcp)** | Браузер под управлением агента. Забрать то, к чему нет API, или записать HTML-сцену в кадры. | MCP-сервер | 🔵 open source | `MCP` | — |
+| **[Sequential Thinking MCP](https://github.com/modelcontextprotocol/servers)** | Заставляет агента разложить задачу по шагам вслух. Заметно помогает на длинных структурах вроде сценария. | MCP-сервер | 🔵 open source | `MCP` | — |
 | **[Tavily MCP](https://tavily.com/)** | Веб-поиск, заточенный под агентов. С `include_images` вытаскивает реальные фото из новостных статей. | MCP-сервер | 🟡 freemium | `MCP` | нужен |
 | **[Unsplash MCP](https://unsplash.com/developers)** ⭐ | Фото-сток номер два. Картинки красивее, релевантность к запросу слабее, чем у Pexels. | MCP-сервер | 🟢 бесплатно | `MCP` | нужен |
 | **[Wikipedia MCP](https://www.wikipedia.org/)** ⭐ | Лучший первый источник фото для известных сущностей — компаний, людей, продуктов. | MCP-сервер | 🟢 бесплатно | `MCP` | — |
+| **[YouTube Transcript MCP](https://github.com/jkawamoto/mcp-youtube-transcript)** | Расшифровка чужого ролика в контекст агента. Разбор конкурента без ручного просмотра. | MCP-сервер | 🔵 open source | `MCP` | — |
 
 → [Подробные карточки: установка, ключи, заметки](catalog/mcp.md)
 
@@ -181,23 +233,29 @@
 | Инструмент | Что делает | Тип | Цена | Из агента | Ключ |
 |---|---|---|---|---|---|
 | **[CogVideoX](https://github.com/THUDM/CogVideo)** | Открытая модель, которая заводится на потребительской видеокарте. Порог входа ниже, чем у остальных. | модель | 🔵 open source | `CLI` | — |
-| **[fal.ai](https://fal.ai/)** | Быстрый инференс десятков видео- и картиночных моделей под одним API. Не надо разворачивать своё железо. | API | 🔴 платно | `API` | нужен |
+| **[FramePack](https://github.com/lllyasviel/FramePack)** | Генерация длинного видео на карте с 6 ГБ памяти. Радикально снижает порог входа в локальный video-gen. | модель | 🔵 open source | `CLI` | — |
 | **[Google Veo](https://deepmind.google/models/veo/)** | Генерирует видео сразу со звуком — редкость среди моделей. Доступна через Gemini API и Vertex AI. | сервис | 🔴 платно | `API` | нужен |
+| **[Gyroflow](https://gyroflow.xyz/)** | Стабилизация по данным гироскопа камеры. Вытягивает тряску там, где софтверная стабилизация сдаётся. | приложение | 🔵 open source | `CLI` | — |
 | **[Hailuo (MiniMax)](https://hailuoai.video/)** | Заметно дешевле западных аналогов при сопоставимом движении. Считается по кредитам. | сервис | 🟡 freemium | `API` | нужен |
 | **[Hedra](https://www.hedra.com/)** | Оживляет статичный портрет под звуковую дорожку. Дешевле полноценного аватара, если нужен один говорящий персонаж. | сервис | 🟡 freemium | `API` | нужен |
 | **[HeyGen](https://www.heygen.com/)** | Говорящие аватары и липсинк. Для форматов, где нужен «человек в кадре» без съёмки. | сервис | 🔴 платно | `API` | нужен |
+| **[Higgsfield](https://higgsfield.ai/)** | Пресеты операторских движений: облёт, наезд, слоу-мо. Кинематографичность без описания камеры словами. | сервис | 🟡 freemium | — | — |
 | **[HunyuanVideo](https://github.com/Tencent-Hunyuan/HunyuanVideo)** | Открытые веса от Tencent. Крутится локально, если есть видеокарта, и не считает кредиты. | модель | 🔵 open source | `CLI` | — |
+| **[InVideo](https://invideo.io/)** | Из текстового промпта собирает целый ролик со стоком, озвучкой и субтитрами. Быстро и узнаваемо шаблонно. | сервис | 🟡 freemium | — | — |
 | **[Kling AI](https://klingai.com/)** | Сильная физика движения и длинные планы. Один из лучших вариантов для реалистичного B-roll. | сервис | 🔴 платно | `API` | нужен |
+| **[LTX Studio](https://ltx.studio/)** | Раскадровка, персонажи и генерация в одном месте. Держит героя похожим на себя между кадрами. | сервис | 🟡 freemium | — | — |
 | **[LTX-Video](https://www.lightricks.com/ltxv)** | Открытая модель text→video и image→video от Lightricks. Гоняется локально или в облаке. | модель | 🔵 open source | `API` | — |
 | **[Luma Dream Machine](https://lumalabs.ai/dream-machine)** | Хорошо держит движение камеры: наезды, облёты, проходы. Есть бесплатный тариф на попробовать. | сервис | 🟡 freemium | `API` | нужен |
 | **[Mochi 1](https://github.com/genmoai/mochi)** | Apache-2.0 и сильная физика движения. Один из немногих открытых вариантов с честно свободной лицензией. | модель | 🔵 open source | `CLI` | — |
 | **[ModelsLab Video](https://modelslab.com/)** | Один API поверх пачки видеомоделей — удобно, когда не хочешь заводить пять аккаунтов. | API | 🔴 платно | `API` | нужен |
+| **[Pictory](https://pictory.ai/)** | Превращает статью или скрипт в видео со стоковым видеорядом. Заточен под контент-маркетинг. | сервис | 🔴 платно | — | — |
 | **[Pika](https://pika.art/)** | Ставка на эффекты и трансформации объектов, а не на фотореализм. Для роликов с характером. | сервис | 🟡 freemium | — | — |
-| **[Replicate](https://replicate.com/)** | Запуск почти любой открытой модели по HTTP с оплатой за секунды. Удобно, когда модель нужна разово. | API | 🔴 платно | `API` | нужен |
 | **[Runway](https://runwayml.com/)** | Генерация и редактирование видео уровня продакшена. Есть API. | сервис | 🔴 платно | `API` | нужен |
 | **[Sora](https://openai.com/sora/)** | Модель OpenAI. Сильна в связности длинного плана — объекты не расползаются к концу клипа. | сервис | 🔴 платно | `API` | нужен |
 | **[Synthesia](https://www.synthesia.io/)** | Корпоративные аватары для обучающих роликов. Дорого, зато предсказуемо и с лицензионной чистотой. | сервис | 🔴 платно | `API` | нужен |
 | **[Topaz Video AI](https://www.topazlabs.com/topaz-video-ai)** | Апскейл и интерполяция кадров. Вытягивает архивные и низкобитрейтные исходники до 4K. | приложение | 🔴 платно | `CLI` | — |
+| **[Vidu](https://www.vidu.com/)** | Умеет держать один и тот же персонаж или предмет в разных сценах. Редкая для генераторов способность. | сервис | 🟡 freemium | `API` | нужен |
+| **[Viggle](https://viggle.ai/)** | Переносит движение с видео-референса на нарисованного персонажа. | сервис | 🟡 freemium | — | — |
 | **[Wan](https://github.com/Wan-Video/Wan2.1)** | Открытая видеомодель Alibaba. Одна из немногих, что сносно рисует текст в кадре. | модель | 🔵 open source | `CLI` | — |
 
 → [Подробные карточки: установка, ключи, заметки](catalog/video.md)
@@ -210,12 +268,16 @@
 
 | Инструмент | Что делает | Тип | Цена | Из агента | Ключ |
 |---|---|---|---|---|---|
+| **[Adobe Firefly](https://www.adobe.com/products/firefly.html)** | Обучена на лицензионных данных — Adobe даёт правовые гарантии на результат. Важно для коммерческих роликов. | сервис | 🟡 freemium | `API` | нужен |
 | **[AUTOMATIC1111 WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)** | Классический локальный интерфейс к Stable Diffusion. Расширений больше, чем у всех остальных вместе. | приложение | 🔵 open source | `API` | — |
 | **[Clipdrop](https://clipdrop.co/)** | Набор операций одним API: убрать фон, убрать объект, расширить кадр, перерисовать освещение. | сервис | 🟡 freemium | `API` | нужен |
 | **[Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/)** ⭐ | Flux Schnell и SD 1.5 по HTTP с щедрым бесплатным лимитом. Ответ приходит base64-PNG. | API | 🟡 freemium | `API` | нужен |
+| **[CodeFormer](https://github.com/sczhou/CodeFormer)** | Восстанавливает лица на мыльных и старых снимках. Обязателен при работе с архивными фото. | модель | 🔵 open source | `CLI` | — |
 | **[ComfyUI](https://www.comfy.org/)** | Нодовый пайплайн для диффузии локально. Когда нужен контроль, которого нет в чужом API. | приложение | 🔵 open source | `API` | — |
 | **[FLUX](https://blackforestlabs.ai/)** ⭐ | Текущий рабочий дефолт для text→image. Schnell — быстрый и бесплатный на большинстве хостингов. | модель | 🟡 freemium | `API` | опц. |
 | **[Fooocus](https://github.com/lllyasviel/Fooocus)** | Локальная генерация без настройки сорока параметров. Когда ComfyUI — это перебор. | приложение | 🔵 open source | — | — |
+| **[Freepik](https://www.freepik.com/)** | Сток и AI-генерация в одной подписке, с доступом к нескольким чужим моделям через один API. | сервис | 🟡 freemium | `API` | нужен |
+| **[GFPGAN](https://github.com/TencentARC/GFPGAN)** | Реставрация лиц от Tencent. Даёт результат мягче CodeFormer — сравнивай на своём материале. | модель | 🔵 open source | `CLI` | — |
 | **[Google AI Studio](https://aistudio.google.com/)** | Доступ к картиночным моделям Gemini, включая редактирование по текстовой инструкции. Есть бесплатный лимит. | API | 🟡 freemium | `API` | нужен |
 | **[Ideogram](https://ideogram.ai/)** | Единственный, кто уверенно рисует читаемый текст внутри картинки. Для превью и плашек — незаменим. | сервис | 🟡 freemium | `API` | нужен |
 | **[InvokeAI](https://github.com/invoke-ai/InvokeAI)** | Локальная студия с нормальным холстом для инпейнта. Удобнее нодов, когда правишь конкретный кусок кадра. | приложение | 🔵 open source | `API` | — |
@@ -225,15 +287,43 @@
 | **[Magnific](https://magnific.ai/)** | Апскейл, который дорисовывает детали, а не просто растягивает. Лучший результат в категории и самая высокая цена. | сервис | 🔴 платно | `API` | нужен |
 | **[Midjourney](https://www.midjourney.com/)** | До сих пор эталон по художественности кадра. Официального API нет — в пайплайн автоматом не вставить. | сервис | 🔴 платно | — | — |
 | **[NVIDIA NIM](https://build.nvidia.com/)** ⭐ | Бесплатные кредиты на генеративные модели. Хорош как первое звено фолбэк-цепочки. | API | 🟡 freemium | `API` | нужен |
+| **[Pixlr](https://pixlr.com/)** | Браузерный редактор с AI-инструментами. Быстрая правка, когда локально ставить нечего. | приложение | 🟡 freemium | — | — |
 | **[Pollinations](https://pollinations.ai/)** ⭐ | Генерация картинки обычным GET-запросом, без ключа вообще. Последний рубеж фолбэка. | API | 🟢 бесплатно | `API` | — |
+| **[Qwen-Image](https://github.com/QwenLM/Qwen-Image)** | Открытая модель Alibaba, сильная в тексте внутри картинки — включая нелатиницу. | модель | 🔵 open source | `CLI` | — |
 | **[Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN)** | Апскейл картинок. Спасает сток низкого разрешения перед укладкой в 4K-таймлайн. | модель | 🔵 open source | `CLI` | — |
 | **[Recraft](https://www.recraft.ai/)** | Генерирует настоящий вектор в SVG, а не растр. Иконки и иллюстрации масштабируются без потерь. | сервис | 🟡 freemium | `API` | нужен |
 | **[rembg](https://github.com/danielgatis/rembg)** | Удаление фона одной командой, локально и бесплатно. | библиотека | 🔵 open source | `CLI` | — |
 | **[remove.bg](https://www.remove.bg/)** | Удаление фона одним запросом. Дороже локального rembg, но по краям волос заметно аккуратнее. | API | 🟡 freemium | `API` | нужен |
 | **[Stability AI](https://stability.ai/)** | Stable Diffusion от первоисточника: API плюс открытые веса, которые можно унести к себе. | API | 🟡 freemium | `API` | нужен |
 | **[Upscayl](https://github.com/upscayl/upscayl)** | Апскейл с человеческим интерфейсом поверх Real-ESRGAN. Готовое приложение вместо возни с командной строкой. | приложение | 🔵 open source | `CLI` | — |
+| **[Vectorizer.AI](https://vectorizer.ai/)** | Растр в чистый вектор. Логотип из скриншота, который не рассыплется на 4K. | сервис | 🔴 платно | `API` | нужен |
 
 → [Подробные карточки: установка, ключи, заметки](catalog/image.md)
+
+<a id="cat-runtime"></a>
+
+## ⚙️ Модели и где их запускать
+
+> Веса, LoRA и площадки для инференса. Сюда идут, когда чужой сервис не устраивает по цене, приватности или контролю.
+
+| Инструмент | Что делает | Тип | Цена | Из агента | Ключ |
+|---|---|---|---|---|---|
+| **[AnimateDiff](https://github.com/guoyww/AnimateDiff)** | Оживляет статичную Stable Diffusion-картинку. Работает в ComfyUI, значит встраивается в локальный конвейер. | модель | 🔵 open source | `CLI` | — |
+| **[Civitai](https://civitai.com/)** | Чекпойнты и LoRA под конкретные стили. Оттуда берут единую эстетику для всего сезона роликов. | сервис | 🟡 freemium | `API` | опц. |
+| **[ControlNet](https://github.com/lllyasviel/ControlNet)** | Задаёт генерации позу, глубину или контур. Единственный способ получить нужную композицию, а не лотерею. | модель | 🔵 open source | `CLI` | — |
+| **[fal.ai](https://fal.ai/)** | Быстрый инференс десятков видео- и картиночных моделей под одним API. Не надо разворачивать своё железо. | API | 🔴 платно | `API` | нужен |
+| **[Hugging Face](https://huggingface.co/)** ⭐ | Главный склад открытых моделей и датасетов. Почти всё локальное из этого каталога скачивается отсюда. | сервис | 🟡 freemium | `API` | опц. |
+| **[IP-Adapter](https://github.com/tencent-ailab/IP-Adapter)** | Переносит стиль или лицо с картинки-референса. Держит одного персонажа одинаковым от кадра к кадру. | модель | 🔵 open source | `CLI` | — |
+| **[LM Studio](https://lmstudio.ai/)** | То же, что Ollama, но с интерфейсом и совместимым с OpenAI сервером из коробки. | приложение | 🟢 бесплатно | `API` | — |
+| **[Modal](https://modal.com/)** | Python-функция уезжает на GPU без возни с инфраструктурой. Удобно обернуть свой шаг пайплайна. | сервис | 🟡 freemium | `API` | нужен |
+| **[Ollama](https://ollama.com/)** | Локальные языковые модели одной командой. Черновики и разметка текста без отправки материала наружу. | приложение | 🔵 open source | `API` | — |
+| **[OpenRouter](https://openrouter.ai/)** | Один ключ ко всем языковым моделям сразу. Сравнить их на своей задаче, не заводя пять аккаунтов. | API | 🔴 платно | `API` | нужен |
+| **[Replicate](https://replicate.com/)** | Запуск почти любой открытой модели по HTTP с оплатой за секунды. Удобно, когда модель нужна разово. | API | 🔴 платно | `API` | нужен |
+| **[RunPod](https://www.runpod.io/)** | Аренда GPU по минутам. Прогнать HunyuanVideo или обучить LoRA, не покупая видеокарту. | сервис | 🔴 платно | `API` | нужен |
+| **[Segment Anything](https://github.com/facebookresearch/segment-anything)** | Точно вырезает любой объект по клику. Основа под маски, ротоскоп и замену фона. | модель | 🔵 open source | `CLI` | — |
+| **[vLLM](https://github.com/vllm-project/vllm)** | Быстрый сервер инференса для языковых моделей на своём железе. | библиотека | 🔵 open source | `API` | — |
+
+→ [Подробные карточки: установка, ключи, заметки](catalog/runtime.md)
 
 <a id="cat-audio"></a>
 
@@ -245,26 +335,37 @@
 |---|---|---|---|---|---|
 | **[ACE-Step](https://github.com/ace-step/ACE-Step)** | Открытая модель генерации музыки. Фоновые треки без роялти и без подписки. | модель | 🔵 open source | `CLI` | — |
 | **[Adobe Podcast Enhance](https://podcast.adobe.com/)** | Превращает запись из комнаты с эхом в студийную. Иногда переусердствует — слушай результат. | сервис | 🟡 freemium | — | — |
+| **[AssemblyAI](https://www.assemblyai.com/)** | Транскрипция с разделением говорящих и главами из коробки. Русский держит уверенно. | API | 🟡 freemium | `API` | нужен |
+| **[Audacity](https://www.audacityteam.org/)** | Бесплатный аудиоредактор с пакетными сценариями. Ручная доводка после автоматики. | приложение | 🔵 open source | `CLI` | — |
 | **[AudioCraft / MusicGen](https://github.com/facebookresearch/audiocraft)** | Открытая генерация музыки и звуков от Meta. Локально, без лимитов и вопросов о правах на результат. | модель | 🔵 open source | `CLI` | — |
 | **[Auphonic](https://auphonic.com/)** | Автоматическое выравнивание громкости, шумодав и приведение к вещательным нормам. Есть API. | сервис | 🟡 freemium | `API` | нужен |
 | **[Bark](https://github.com/suno-ai/bark)** | Генерирует не только речь, но и смех, вздохи, музыкальный фон. Непредсказуем — зато живой. | модель | 🔵 open source | `CLI` | — |
+| **[BBC Sound Effects](https://sound-effects.bbcrewind.co.uk/)** | 33 тысячи звуков из архива BBC, бесплатно для личных и учебных проектов. Читай условия для коммерции. | сервис | 🟢 бесплатно | — | — |
+| **[Beatoven](https://www.beatoven.ai/)** | Фоновая музыка под заданное настроение и хронометраж, с понятными правами на использование. | сервис | 🟡 freemium | `API` | нужен |
 | **[Cartesia](https://cartesia.ai/)** | Ставка на низкую задержку синтеза. Берут, когда озвучка нужна в реальном времени, а не файлом. | сервис | 🟡 freemium | `API` | нужен |
 | **[Chatterbox TTS](https://github.com/resemble-ai/chatterbox)** ⭐ | MIT-лицензия и управление эмоцией. Локальная альтернатива, когда Kokoro звучит слишком ровно. | модель | 🔵 open source | `CLI` | — |
 | **[Coqui TTS](https://github.com/coqui-ai/TTS)** | Библиотека с десятками моделей и рецептами обучения. Компания закрылась, код остался и работает. | библиотека | 🔵 open source | `CLI` | — |
+| **[Deepgram](https://deepgram.com/)** | Быстрая транскрипция по API с низкой задержкой. Дешевле AssemblyAI на объёме. | API | 🟡 freemium | `API` | нужен |
 | **[Demucs](https://github.com/adefossez/demucs)** | Разбирает трек на голос, барабаны, бас и остальное. Вытащить чистую речь из записи с музыкой. | модель | 🔵 open source | `CLI` | — |
 | **[ElevenLabs](https://elevenlabs.io/)** ⭐ | Эталон качества синтеза речи. Дорого, но по интонации пока никто не догнал. | сервис | 🟡 freemium | `API` | нужен |
 | **[F5-TTS](https://github.com/SWivid/F5-TTS)** | Клонирование голоса по короткому сэмплу с внятной интонацией. Держится в топе открытых моделей. | модель | 🔵 open source | `CLI` | — |
 | **[faster-whisper](https://github.com/SYSTRAN/faster-whisper)** | Тот же Whisper, но в разы быстрее и экономнее по памяти. На длинных роликах разница в десятки минут. | библиотека | 🔵 open source | `CLI` | — |
 | **[Fish Speech](https://github.com/fishaudio/fish-speech)** | Открытый многоязычный TTS с клонированием. Один из лучших вариантов для русского среди локальных. | модель | 🔵 open source | `CLI` | — |
+| **[Free Music Archive](https://freemusicarchive.org/)** | Музыка под Creative Commons от живых исполнителей. Звучит человечнее генерации. | сервис | 🟢 бесплатно | — | — |
 | **[Freesound](https://freesound.org/)** | Библиотека SFX под Creative Commons. Есть API. | API | 🟢 бесплатно | `API` | нужен |
 | **[Kokoro TTS](https://huggingface.co/hexgrad/Kokoro-82M)** ⭐ | 82M параметров, Apache-2.0, крутится на CPU. Лучшее соотношение «качество / вес» для локальной озвучки. | модель | 🔵 open source | `CLI` | — |
 | **[OpenVoice](https://github.com/myshell-ai/OpenVoice)** | Переносит тембр и эмоцию на другой язык. Один диктор — и русская, и английская версия ролика. | модель | 🔵 open source | `CLI` | — |
 | **[Piper](https://github.com/OHF-Voice/piper1-gpl)** | Очень быстрый TTS, работает даже на Raspberry Pi. Голос простоватый, зато синтез почти мгновенный. | модель | 🔵 open source | `CLI` | — |
 | **[PlayAI](https://www.playht.com/)** | Большая библиотека готовых голосов и клонирование. Основной конкурент ElevenLabs по цене. | сервис | 🟡 freemium | `API` | нужен |
+| **[REAPER](https://www.reaper.fm/)** | Полноценная DAW за цену подписки на месяц облачного сервиса. Бессрочная лицензия, честный триал. | приложение | 🔴 платно | — | — |
 | **[Resemble AI](https://www.resemble.ai/)** | Клонирование голоса с упором на юридическую чистоту и водяные знаки в синтезе. | сервис | 🔴 платно | `API` | нужен |
+| **[RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI)** | Меняет тембр в готовой записи, сохраняя вашу интонацию и тайминг. Не синтез с нуля — конверсия. | модель | 🔵 open source | `CLI` | — |
+| **[Silero VAD](https://github.com/snakers4/silero-vad)** | Определяет, где в дорожке речь, а где тишина. Кирпич под автонарезку и вырезание пауз. | модель | 🔵 open source | `CLI` | — |
+| **[Soundraw](https://soundraw.io/)** | Генерация музыки с ручной правкой структуры: где куплет, где нарастание. Ложится в тайминг сцен. | сервис | 🟡 freemium | — | — |
 | **[Stable Audio](https://stableaudio.com/)** | Инструментальные треки и звуковые текстуры под заданный хронометраж — важно, когда музыка ложится в тайминг сцены. | сервис | 🟡 freemium | `API` | нужен |
 | **[Suno](https://suno.com/)** | Генерация музыки с вокалом по текстовому описанию. | сервис | 🟡 freemium | — | — |
 | **[Udio](https://www.udio.com/)** | Генерация музыки с вокалом. Главный конкурент Suno, местами чище сводит. | сервис | 🟡 freemium | — | — |
+| **[Uppbeat](https://uppbeat.io/)** | Музыка, специально расчищенная от копирайт-претензий YouTube. Бесплатный тариф с атрибуцией. | сервис | 🟡 freemium | — | — |
 | **[Voicebox](https://voicebox.sh/)** | Локальная голосовая студия: 7 TTS-движков, 23 языка, клонирование голоса с нескольких секунд записи. | приложение | 🔵 open source | — | — |
 | **[Whisper](https://github.com/openai/whisper)** ⭐ | Транскрипция и тайминги. Из него же получаются субтитры под автоматическую нарезку. | модель | 🔵 open source | `CLI` | — |
 | **[whisper.cpp](https://github.com/ggml-org/whisper.cpp)** | Whisper на C++ без Python и CUDA. На Apple Silicon летает через Metal. | библиотека | 🔵 open source | `CLI` | — |
@@ -281,19 +382,28 @@
 
 | Инструмент | Что делает | Тип | Цена | Из агента | Ключ |
 |---|---|---|---|---|---|
+| **[After Effects](https://www.adobe.com/products/aftereffects.html)** | Индустриальный стандарт моушн-графики. Отсюда экспортируется большая часть Lottie-файлов. | приложение | 🔴 платно | — | — |
+| **[ambientCG](https://ambientcg.com/)** | Тысячи PBR-текстур в CC0. Дополняет Poly Haven там, где не хватило материала. | сервис | 🟢 бесплатно | `API` | — |
 | **[Anime.js](https://animejs.com/)** | Лёгкая библиотека без привязки к фреймворку. Когда Motion избыточен, а голый CSS уже не тянет. | библиотека | 🔵 open source | — | — |
 | **[Blender](https://www.blender.org/)** | Бесплатный 3D-пакет промышленного уровня. Рендерится из командной строки, значит встраивается в конвейер. | приложение | 🔵 open source | `CLI` | — |
 | **[drei](https://github.com/pmndrs/drei)** ⭐ | Готовые хелперы к React Three Fiber: камеры, свет, окружение, текст. Экономит сотни строк. | библиотека | 🔵 open source | — | — |
 | **[GSAP](https://gsap.com/)** | Ветеран веб-анимации. Таймлайны, морфинг SVG, сложная хореография. | библиотека | 🟢 бесплатно | — | — |
+| **[Jitter](https://jitter.video/)** | Моушн-дизайн в браузере с логикой Figma. Порог входа сильно ниже After Effects. | приложение | 🟡 freemium | — | — |
+| **[Konva](https://konvajs.org/)** | Canvas со сценой из объектов вместо ручного рисования. Есть готовая обвязка под React. | библиотека | 🔵 open source | — | — |
 | **[Lordicon](https://lordicon.com/)** | Анимированные иконки в формате Lottie. Оживляют перечисления, где обычно висит статичный список. | сервис | 🟡 freemium | — | — |
 | **[Lottie](https://lottiefiles.com/)** ⭐ | Векторная анимация в JSON. Готовых файлов — сотни тысяч, вставляются в Remotion через @remotion/lottie. | формат | 🔵 open source | — | — |
 | **[Manim](https://www.manim.community/)** | Движок математических анимаций, тот самый из 3Blue1Brown. Формулы и графы, а не общая моушн-графика. | библиотека | 🔵 open source | `CLI` | — |
+| **[Matter.js](https://brm.io/matter-js/)** | Физика 2D: падение, столкновения, гравитация. Движение выглядит естественным без ручных ключей. | библиотека | 🔵 open source | — | — |
+| **[Mixamo](https://www.mixamo.com/)** | Готовые анимации персонажей с автоматическим риггингом. Бесплатно, от Adobe. | сервис | 🟢 бесплатно | — | — |
 | **[Motion](https://motion.dev/)** | Бывший Framer Motion. Анимации для React, ванильного JS и Vue — пружины, жесты, layout-переходы, скролл. | библиотека | 🔵 open source | — | — |
 | **[Motion Canvas](https://motioncanvas.io/)** | Анимация кодом с редактором для тонкой настройки таймингов. Заточен под объясняющие ролики. | библиотека | 🔵 open source | `CLI` | — |
 | **[p5.js](https://p5js.org/)** | Процедурная графика с минимумом обвязки. Быстрый способ получить уникальный анимированный фон. | библиотека | 🔵 open source | — | — |
+| **[PixiJS](https://pixijs.com/)** | 2D-рендер на WebGL. Тянет тысячи частиц там, где обычный canvas уже начинает захлёбываться. | библиотека | 🔵 open source | — | — |
+| **[Poly Haven](https://polyhaven.com/)** | HDRI, текстуры и 3D-модели в CC0 — без атрибуции и ограничений. Свет для сцены берут отсюда. | сервис | 🟢 бесплатно | `API` | — |
 | **[React Spring](https://www.react-spring.dev/)** | Анимации на физике пружин для React. Альтернатива Motion со своим взглядом на API. | библиотека | 🔵 open source | — | — |
 | **[React Three Fiber](https://github.com/pmndrs/react-three-fiber)** ⭐ | Three.js как React-компоненты. Именно через него 3D попадает в Remotion-композицию. | библиотека | 🔵 open source | — | — |
 | **[Rive](https://rive.app/)** | Интерактивная анимация с машиной состояний. Тяжелее Lottie, зато реагирует на события. | приложение | 🟡 freemium | — | — |
+| **[Rough.js](https://roughjs.com/)** | Рисует графику так, будто её набросали от руки. Схема перестаёт выглядеть корпоративным слайдом. | библиотека | 🔵 open source | — | — |
 | **[Sketchfab](https://sketchfab.com/)** | Готовые 3D-модели в .glb/.gltf, много бесплатных. | сервис | 🟡 freemium | — | — |
 | **[Spline](https://spline.design/)** | 3D-сцены в браузере без порога входа Blender. Экспортируется в React-компонент. | приложение | 🟡 freemium | — | — |
 | **[Theatre.js](https://www.theatrejs.com/)** | Настоящий таймлайн с ключевыми кадрами прямо в браузере. Анимация настраивается мышкой, а сохраняется в JSON. | библиотека | 🔵 open source | — | — |
@@ -314,13 +424,16 @@
 | **[DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve)** | Профессиональный монтаж и цветокоррекция, бесплатная версия покрывает почти всё. Есть Python-скриптинг. | приложение | 🟡 freemium | — | — |
 | **[Editly](https://github.com/mifi/editly)** | Видео описывается JSON-конфигом и собирается одной командой. Слайд-шоу и нарезки без единой строки кода. | CLI | 🔵 open source | `CLI` | — |
 | **[FFmpeg](https://ffmpeg.org/)** ⭐ | Фундамент под всем остальным: конвертация, обрезка, склейка, сведение звука, проверка файлов через ffprobe. | CLI | 🔵 open source | `CLI` | — |
+| **[ffmpeg.wasm](https://ffmpegwasm.netlify.app/)** | FFmpeg прямо в браузере. Обрезать и перекодировать без загрузки файла на сервер. | библиотека | 🔵 open source | — | — |
 | **[HandBrake](https://handbrake.fr/)** | Перекодирование с вменяемыми пресетами. Когда ffmpeg хочется, но не хочется вспоминать флаги. | приложение | 🔵 open source | `CLI` | — |
 | **[Kdenlive](https://kdenlive.org/)** | Полностью открытый нелинейный монтажёр. Без облака, аккаунта и подписки. | приложение | 🔵 open source | — | — |
 | **[MediaInfo](https://mediaarea.net/en/MediaInfo)** | Разбор контейнера и кодеков файла. Первое, что запускаешь, когда сток не встал в таймлайн. | CLI | 🔵 open source | `CLI` | — |
 | **[MoviePy](https://zulko.github.io/moviepy/)** | Монтаж на Python, когда React-сцена — избыточно, а голый ffmpeg — уже больно. | библиотека | 🔵 open source | `CLI` | — |
+| **[OpenShot](https://www.openshot.org/)** | Простой открытый монтажёр с Python-библиотекой под капотом — её можно дёргать отдельно. | приложение | 🔵 open source | `API` | — |
 | **[Playwright](https://playwright.dev/)** ⭐ | Запись HTML/Canvas-сцены в видео через headless-браузер. Мост между веб-анимацией и монтажом. | библиотека | 🔵 open source | `CLI` | — |
 | **[Remotion](https://www.remotion.dev/)** ⭐ | Видео как React-компонент. Кадр — чистая функция от номера кадра, поэтому результат детерминирован и его можно ревьюить как код. | библиотека | 🟡 freemium | `CLI` | — |
 | **[Revideo](https://re.video/)** | Форк Motion Canvas, доведённый до программного видео с параметрами. Альтернатива Remotion без его лицензии. | библиотека | 🔵 open source | `CLI` | — |
+| **[Shotcut](https://shotcut.org/)** | Открытый монтажёр на всех платформах, без установки кодеков. | приложение | 🔵 open source | — | — |
 | **[Shotstack](https://shotstack.io/)** | Рендер видео как облачный API: отправил JSON-таймлайн — получил ссылку на mp4. Своё железо не нужно. | API | 🔴 платно | `API` | нужен |
 
 → [Подробные карточки: установка, ключи, заметки](catalog/assembly.md)
@@ -336,10 +449,14 @@
 | **[auto-editor](https://github.com/WyattBlue/auto-editor)** | Вырезает тишину и паузы одной командой. Бесплатно делает то, за что подписочные сервисы берут деньги. | CLI | 🔵 open source | `CLI` | — |
 | **[Captions](https://www.captions.ai/)** | Субтитры, коррекция взгляда в камеру и дубляж в одном приложении. Заточен под говорящую голову. | сервис | 🟡 freemium | — | — |
 | **[Descript](https://www.descript.com/)** | Монтаж правкой текста расшифровки: удалил слово — исчезло из видео. Плюс вычистка «эээ» одной кнопкой. | приложение | 🟡 freemium | — | — |
+| **[Happy Scribe](https://www.happyscribe.com/)** | Транскрипция и субтитры с вычиткой живым человеком. Когда автоматике доверять нельзя. | сервис | 🔴 платно | `API` | нужен |
+| **[Kapwing](https://www.kapwing.com/)** | Онлайн-редактор с ресайзом под все площадки одним нажатием. | сервис | 🟡 freemium | — | — |
 | **[Klap](https://klap.app/)** | То же, что OpusClip, но с API — встраивается в конвейер, а не требует захода на сайт. | сервис | 🔴 платно | `API` | нужен |
 | **[OpusClip](https://www.opus.pro/)** | Режет длинное видео на вертикальные клипы и сам выбирает сильные моменты. Самый известный в категории. | сервис | 🟡 freemium | — | — |
 | **[pyannote.audio](https://github.com/pyannote/pyannote-audio)** | Определяет, кто и когда говорит. Нужно, если в кадре двое и субтитры должны различать реплики. | библиотека | 🔵 open source | `CLI` | — |
+| **[Submagic](https://www.submagic.co/)** | Динамичные субтитры и подсветка ключевых слов для вертикалок. Тот самый вид, что держит удержание. | сервис | 🔴 платно | — | — |
 | **[Subtitle Edit](https://www.nikse.dk/subtitleedit)** | Открытый редактор субтитров: синхронизация, конвертация форматов, вычитка после Whisper. | приложение | 🔵 open source | — | — |
+| **[VEED](https://www.veed.io/)** | Браузерный монтаж с субтитрами и переводом. Быстрая правка без установки чего-либо. | сервис | 🟡 freemium | — | — |
 | **[Vizard](https://vizard.ai/)** | Нарезка на клипы с уклоном в многоязычные субтитры. | сервис | 🟡 freemium | — | — |
 
 → [Подробные карточки: установка, ключи, заметки](catalog/repurpose.md)
@@ -356,11 +473,16 @@
 | **[Coolors](https://coolors.co/)** | Подбор палитры за полминуты. Помогает удержать правило «один акцентный цвет на ролик». | сервис | 🟡 freemium | — | — |
 | **[Figma](https://www.figma.com/)** | Если превью делается по жёсткой сетке, здесь она живёт как компонент — и не разъезжается от ролика к ролику. | сервис | 🟡 freemium | `MCP` | — |
 | **[GIMP](https://www.gimp.org/)** | Открытый редактор со скриптовым движком. Пакетная обработка обложек без подписки. | приложение | 🔵 open source | `CLI` | — |
+| **[Haikei](https://haikei.app/)** | Генератор SVG-фонов: волны, блобы, сетки, градиенты. Быстрая подложка под текст. | сервис | 🟢 бесплатно | — | — |
 | **[ImageMagick](https://imagemagick.org/)** ⭐ | Ресайз, кроп, наложение текста и композиция из терминала. То же, чем ffmpeg является для видео. | CLI | 🔵 open source | `CLI` | — |
+| **[Inkscape](https://inkscape.org/)** | Открытый векторный редактор с командной строкой. Пакетная конвертация SVG в PNG без сервисов. | приложение | 🔵 open source | `CLI` | — |
+| **[Krita](https://krita.org/)** | Открытый растровый редактор для рисования. Дорисовать поверх генерации то, чего модель не поняла. | приложение | 🔵 open source | — | — |
 | **[Photopea](https://www.photopea.com/)** | Photoshop в браузере, бесплатно и с поддержкой PSD. Открыть чужой макет, ничего не покупая. | приложение | 🟢 бесплатно | — | — |
 | **[Photoroom](https://www.photoroom.com/)** | Вырезать объект и посадить на новый фон — пакетно, через API. Конвейер для однотипных обложек. | сервис | 🟡 freemium | `API` | нужен |
 | **[Realtime Colors](https://www.realtimecolors.com/)** | Примеряет палитру сразу на макет, а не на голые квадратики. Сразу видно, читается ли текст. | сервис | 🟢 бесплатно | — | — |
 | **[Satori](https://github.com/vercel/satori)** | Превращает JSX в SVG и дальше в PNG. Превью описывается кодом — значит, генерится пачками из данных ролика. | библиотека | 🔵 open source | `CLI` | — |
+| **[Squoosh](https://squoosh.app/)** | Сжатие картинок с наглядным сравнением до и после. Укладывает превью в лимит площадки без потери вида. | приложение | 🔵 open source | — | — |
+| **[ThumbnailTest](https://thumbnailtest.com/)** | A/B-тест превью на реальной аудитории. Единственный способ узнать, что работает, а не что нравится. | сервис | 🔴 платно | — | — |
 
 → [Подробные карточки: установка, ключи, заметки](catalog/thumbnail.md)
 
@@ -372,6 +494,7 @@
 
 | Инструмент | Что делает | Тип | Цена | Из агента | Ключ |
 |---|---|---|---|---|---|
+| **[Blush](https://blush.design/)** | Иллюстрации, собираемые из частей: поза, одежда, фон. Персонажи получаются непохожими на чужие ролики. | сервис | 🟡 freemium | — | — |
 | **[Coverr](https://coverr.co/)** ⭐ | Только видео, только B-roll. 1080p MP4 без водяных знаков. | API | 🟢 бесплатно | `MCP` | нужен |
 | **[Europeana](https://www.europeana.eu/)** | Оцифрованные коллекции европейских музеев и библиотек. Историческая фактура с понятными лицензиями. | API | 🟢 бесплатно | `API` | нужен |
 | **[Fontshare](https://www.fontshare.com/)** | Качественные шрифты бесплатно для коммерческого использования. Выглядит дороже Google Fonts. | сервис | 🟢 бесплатно | — | — |
@@ -379,19 +502,27 @@
 | **[GDELT](https://www.gdeltproject.org/)** | Глобальный индекс новостных изображений. Ключ не нужен, но жёсткий лимит — 1 запрос в 5 секунд. | API | 🟢 бесплатно | `API` | — |
 | **[Google Fonts](https://fonts.google.com/)** ⭐ | Шрифты под любой проект. В Remotion подключаются через @remotion/google-fonts без возни с загрузкой. | сервис | 🟢 бесплатно | `API` | — |
 | **[Heroicons](https://heroicons.com/)** | Аккуратный небольшой набор иконок от авторов Tailwind. Два начертания, ничего лишнего. | библиотека | 🔵 open source | — | — |
+| **[Iconify](https://iconify.design/)** | Двести тысяч иконок из сотни наборов через один интерфейс. Не надо ставить пять библиотек. | библиотека | 🔵 open source | `API` | — |
 | **[Internet Archive](https://archive.org/)** | Архивное видео, аудио и печать, огромный пласт в public domain. Источник фактуры, которой нет на стоках. | API | 🟢 бесплатно | `API` | — |
+| **[Kaboompics](https://kaboompics.com/)** | Лайфстайл и интерьеры одного автора — отсюда единый стиль. Есть поиск по палитре. | сервис | 🟢 бесплатно | — | — |
 | **[Library of Congress](https://www.loc.gov/)** | Исторические фото, карты, газеты и киноплёнка. Большая часть — public domain. | API | 🟢 бесплатно | `API` | — |
 | **[Lucide](https://lucide.dev/)** ⭐ | Чистый набор иконок с React-компонентами из коробки. | библиотека | 🔵 open source | — | — |
+| **[Material Symbols](https://fonts.google.com/icons)** | Иконки Google с настраиваемой толщиной и заливкой. Переменные оси позволяют анимировать саму иконку. | библиотека | 🔵 open source | — | — |
 | **[Met Museum Open Access](https://www.metmuseum.org/art/collection)** | Коллекция Метрополитен в открытом доступе. API без ключа. | API | 🟢 бесплатно | `API` | — |
 | **[Mixkit](https://mixkit.co/)** | Видео, музыка и SFX бесплатно и без атрибуции. Каталог небольшой, но отобранный. | сервис | 🟢 бесплатно | — | — |
+| **[Nappy](https://nappy.co/)** | Бесплатные фото чернокожих и латиноамериканцев. Закрывает провал обычных стоков в разнообразии. | сервис | 🟢 бесплатно | — | — |
 | **[Openverse](https://openverse.org/)** ⭐ | Метапоиск по CC-контенту: Flickr, Wikimedia, rawpixel и ещё десяток источников. | API | 🟢 бесплатно | `MCP` | — |
 | **[Pexels](https://www.pexels.com/)** ⭐ | Фото и видео без атрибуции. Первый заход за generic-кадрами. | API | 🟢 бесплатно | `API` | нужен |
 | **[Phosphor Icons](https://phosphoricons.com/)** | Больше девяти тысяч иконок в шести начертаниях. Берут, когда Lucide не хватает. | библиотека | 🔵 open source | — | — |
 | **[Pixabay](https://pixabay.com/)** | Фото, видео, музыка и SFX в одном месте под свободной лицензией. Качество плавает, зато охват широкий. | API | 🟢 бесплатно | `API` | нужен |
+| **[Rawpixel](https://www.rawpixel.com/)** | Винтажные иллюстрации и public domain-графика. Источник фактуры, которой нет на обычных стоках. | сервис | 🟡 freemium | — | — |
 | **[Simple Icons](https://simpleicons.org/)** | Логотипы брендов в SVG с фирменными цветами. Бесплатная замена Brandfetch, если нужен только значок. | библиотека | 🔵 open source | `API` | — |
 | **[Smithsonian Open Access](https://www.si.edu/openaccess)** | Миллионы изображений в CC0 — предметы, экспонаты, научные съёмки. | API | 🟢 бесплатно | `API` | нужен |
 | **[Storyset](https://storyset.com/)** | Иллюстрации, у которых можно менять цвет и композицию, а часть идёт сразу анимированными. | сервис | 🟢 бесплатно | — | — |
+| **[Tabler Icons](https://tabler.io/icons)** | Пять тысяч иконок в едином штрихе, MIT. Хорошо читаются даже мелко в кадре. | библиотека | 🔵 open source | — | — |
 | **[Tenor](https://tenor.com/gifapi)** | GIF-API от Google с большим индексом. Альтернатива Klipy, если тот не нашёл. | API | 🟢 бесплатно | `API` | нужен |
+| **[The Noun Project](https://thenounproject.com/)** | Иконка почти под любое понятие, включая абстрактные. Там, где обычные наборы пасуют. | сервис | 🟡 freemium | `API` | нужен |
+| **[uiGradients](https://uigradients.com/)** | Готовые градиенты с копированием CSS. Подложка за полминуты. | сервис | 🟢 бесплатно | — | — |
 | **[unDraw](https://undraw.co/)** | Иллюстрации с настраиваемым акцентным цветом. Подгоняются под палитру ролика прямо на сайте. | сервис | 🟢 бесплатно | — | — |
 | **[Videvo](https://www.videvo.net/)** | B-roll и моушн-графика, часть бесплатно. Лицензии разные — смотри у каждого файла. | сервис | 🟡 freemium | — | — |
 | **[Wikimedia Commons](https://commons.wikimedia.org/)** ⭐ | Настоящие фотографии реальных объектов и событий. Без ключа, лицензии открытые. | API | 🟢 бесплатно | `API` | — |
@@ -411,15 +542,25 @@
 | **[Chart.js](https://www.chartjs.org/)** | Простые графики на canvas. Когда Recharts тянет за собой лишний React-слой. | библиотека | 🔵 open source | — | — |
 | **[CoinGecko API](https://www.coingecko.com/en/api)** | Курсы криптовалют. Базовые эндпоинты работают без ключа. | API | 🟡 freemium | `API` | опц. |
 | **[D3](https://d3js.org/)** ⭐ | Когда нужен график, которого нет в готовых библиотеках. | библиотека | 🔵 open source | — | — |
+| **[Datawrapper](https://www.datawrapper.de/)** | Редакционные графики со встроенной защитой от вранья: сам подскажет про обрезанную ось. | сервис | 🟡 freemium | — | — |
+| **[Flourish](https://flourish.studio/)** | Анимированные графики без кода, включая гонку столбиков. Быстрее, чем собирать её в Remotion. | сервис | 🟡 freemium | — | — |
 | **[Frankfurter](https://frankfurter.dev/)** | Курсы валют по данным ЕЦБ, включая исторические ряды. Без ключа и без лимитов. | API | 🟢 бесплатно | `API` | — |
 | **[FRED](https://fred.stlouisfed.org/)** | Экономические ряды ФРБ Сент-Луиса: инфляция, безработица, ставки. Первоисточник, а не пересказ. | API | 🟢 бесплатно | `API` | нужен |
+| **[Kaggle Datasets](https://www.kaggle.com/datasets)** | Сотни тысяч готовых датасетов почти по любой теме. Проверяй происхождение данных перед эфиром. | сервис | 🟢 бесплатно | `API` | нужен |
+| **[Nager.Date](https://date.nager.at/)** | Государственные праздники по странам на годы вперёд. Планирование сезонного контента. | API | 🟢 бесплатно | `API` | — |
+| **[Natural Earth](https://www.naturalearthdata.com/)** | Картографические данные в public domain. База под любую анимированную карту. | справочник | 🟢 бесплатно | — | — |
+| **[Nivo](https://nivo.rocks/)** | Графики на React с приличным видом по умолчанию. Меньше возни со стилями, чем у Recharts. | библиотека | 🔵 open source | — | — |
 | **[Observable Plot](https://observablehq.com/plot/)** | График описывается одной строкой вместо тридцати. Быстрая разведка данных перед сборкой сцены. | библиотека | 🔵 open source | — | — |
+| **[Open Trivia DB](https://opentdb.com/)** | Вопросы викторин по категориям и сложности. Готовое наполнение для quiz-формата. | API | 🟢 бесплатно | `API` | — |
 | **[Open-Meteo](https://open-meteo.com/)** | Погода и климатические ряды вообще без регистрации. | API | 🟢 бесплатно | `API` | — |
 | **[Our World in Data](https://ourworldindata.org/)** | Готовые выверенные датасеты почти по любой глобальной теме, со ссылками на первоисточники. | справочник | 🟢 бесплатно | `API` | — |
+| **[Plotly.js](https://plotly.com/javascript/)** | Научные графики: 3D-поверхности, тепловые карты, статистика. Там, где обычных библиотек не хватает. | библиотека | 🔵 open source | — | — |
+| **[PokéAPI](https://pokeapi.co/)** | Полная база покемонов без ключа. Классический пример данных, из которых собирают развлекательный ролик. | API | 🟢 бесплатно | `API` | — |
 | **[Public APIs](https://github.com/public-apis/public-apis)** ⭐ | Каталог тысяч открытых API. Отсюда берутся живые цифры для data-driven роликов. | справочник | 🟢 бесплатно | — | — |
 | **[Recharts](https://recharts.org/)** ⭐ | Графики на React. Внутри Remotion анимируются покадрово — числа растут вместе с кадром. | библиотека | 🔵 open source | — | — |
 | **[REST Countries](https://restcountries.com/)** | Флаги, население, площадь, валюты по всем странам. Без ключа, отвечает мгновенно. | API | 🟢 бесплатно | `API` | — |
 | **[The Guardian API](https://open-platform.theguardian.com/)** | Полные тексты статей с 1999 года. Один из немногих новостных API, отдающих текст целиком. | API | 🟢 бесплатно | `API` | нужен |
+| **[TMDB](https://www.themoviedb.org/)** | База фильмов и сериалов с постерами и кадрами. Бесплатно для некоммерческого использования. | API | 🟢 бесплатно | `API` | нужен |
 | **[visx](https://airbnb.io/visx/)** | Примитивы D3, обёрнутые в React-компоненты. Полный контроль без ручной возни с DOM. | библиотека | 🔵 open source | — | — |
 | **[Wikidata](https://www.wikidata.org/)** | Структурированные факты обо всём, с запросами на SPARQL. Даты, связи, цифры — машиночитаемо. | API | 🟢 бесплатно | `API` | — |
 | **[World Bank Data](https://data.worldbank.org/)** | Показатели по странам за десятилетия. Без ключа — годится для сравнительных графиков. | API | 🟢 бесплатно | `API` | — |
@@ -434,13 +575,16 @@
 
 | Инструмент | Что делает | Тип | Цена | Из агента | Ключ |
 |---|---|---|---|---|---|
+| **[Ahrefs](https://ahrefs.com/)** | Поисковый спрос вокруг темы. Полезно, когда ролик должен ловить трафик и из Google тоже. | сервис | 🔴 платно | `MCP` | нужен |
 | **[AnswerThePublic](https://answerthepublic.com/)** | Реальные вопросы людей вокруг темы. Прямой источник заголовков и структуры сценария. | сервис | 🟡 freemium | — | — |
 | **[Exploding Topics](https://explodingtopics.com/)** | Темы на подъёме, пока они ещё не в мейнстриме. Ловит волну раньше, чем Trends её покажет. | сервис | 🟡 freemium | — | — |
 | **[Google Trends](https://trends.google.com/)** | Сезонность и всплески интереса к теме. Проверить, не поздно ли снимать, до того как писать сценарий. | сервис | 🟢 бесплатно | — | — |
+| **[Keyword Tool](https://keywordtool.io/)** | Подсказки поиска YouTube без входа в аккаунт. Реальные формулировки запросов зрителей. | сервис | 🟡 freemium | — | — |
 | **[Nexlev](https://nexlev.io/)** ⭐ | База каналов с оценкой дохода, RPM и outlier-скором. Заточен под поиск faceless-ниш. | сервис | 🔴 платно | `MCP` | нужен |
 | **[Social Blade](https://socialblade.com/)** | Публичная история роста любого канала. Смотреть чужую динамику, не имея доступа к их аналитике. | сервис | 🟡 freemium | — | — |
 | **[TubeBuddy](https://www.tubebuddy.com/)** | Расширение к YouTube Studio: теги, A/B-тесты превью, массовые правки. Основной конкурент vidIQ. | сервис | 🟡 freemium | — | — |
 | **[vidIQ](https://vidiq.com/)** ⭐ | Ключевики, конкуренты, оценка заголовков и превью. Есть MCP — research идёт прямо из чата. | сервис | 🟡 freemium | `MCP` | нужен |
+| **[ViewStats](https://www.viewstats.com/)** | Аналитика чужих каналов с историей превью и заголовков. Видно, что они меняли и что после этого выстрелило. | сервис | 🟡 freemium | — | — |
 | **[YouTube Data API](https://developers.google.com/youtube/v3)** | Первоисточник по статистике видео и каналов. Квоты жёсткие, зато данные не оценочные. | API | 🟢 бесплатно | `API` | нужен |
 
 → [Подробные карточки: установка, ключи, заметки](catalog/research.md)

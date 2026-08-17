@@ -8,6 +8,37 @@
 
 ---
 
+## [Activepieces](https://www.activepieces.com/)
+
+Открытая замена Zapier с MCP на борту. Автоматизации живут на своём сервере.
+
+| | |
+|---|---|
+| **Тип** | приложение |
+| **Цена** | 🔵 open source |
+| **Из агента** | `API` |
+| **Исходники** | https://github.com/activepieces/activepieces |
+
+`automation` `self-hosted` `mcp`
+
+---
+
+## [Aider](https://aider.chat/)
+
+Открытый агент, работающий через git-коммиты. Каждая правка откатывается одной командой.
+
+| | |
+|---|---|
+| **Тип** | приложение |
+| **Цена** | 🔵 open source |
+| **Из агента** | `CLI` |
+| **API-ключ** | нужен |
+| **Исходники** | https://github.com/Aider-AI/aider |
+
+`cli` `git` `open-source`
+
+---
+
 ## [Claude Agent SDK](https://docs.claude.com/en/api/agent-sdk/overview)
 
 Собрать своего агента с тем же циклом инструментов, что у Claude Code.
@@ -37,6 +68,22 @@
 
 ---
 
+## [Codex CLI](https://github.com/openai/codex)
+
+Терминальный агент OpenAI. Тоже понимает MCP — те же серверы из этого каталога подключаются и к нему.
+
+| | |
+|---|---|
+| **Тип** | приложение |
+| **Цена** | 🔴 платно |
+| **Из агента** | `MCP` |
+| **API-ключ** | нужен |
+| **Исходники** | https://github.com/openai/codex |
+
+`cli` `mcp`
+
+---
+
 ## [ComfyUI API](https://docs.comfy.org/)
 
 У локального ComfyUI есть HTTP-эндпоинт: агент кидает граф в очередь и забирает готовый файл.
@@ -51,6 +98,21 @@
 
 ---
 
+## [Composio](https://composio.dev/)
+
+Сотни готовых интеграций как инструменты агента, с решённой авторизацией. Не писать свой MCP под каждый сервис.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `MCP` |
+| **API-ключ** | нужен |
+
+`mcp` `integrations` `auth`
+
+---
+
 ## [Cursor](https://cursor.com/)
 
 Редактор кода с агентом внутри. Понимает MCP, поэтому тот же Palmier или Blender цепляются и сюда.
@@ -62,6 +124,22 @@
 | **Из агента** | `MCP` |
 
 `ide` `mcp`
+
+---
+
+## [Gemini CLI](https://github.com/google-gemini/gemini-cli)
+
+Агент Google в терминале, с MCP и щедрым бесплатным лимитом.
+
+| | |
+|---|---|
+| **Тип** | приложение |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `MCP` |
+| **API-ключ** | нужен |
+| **Исходники** | https://github.com/google-gemini/gemini-cli |
+
+`cli` `mcp`
 
 ---
 
@@ -133,6 +211,21 @@
 | **Из агента** | `MCP` |
 
 `mcp` `registry`
+
+---
+
+## [Zapier MCP](https://zapier.com/mcp)
+
+Тысячи приложений Zapier открываются агенту как инструменты. Самый широкий охват из существующих.
+
+| | |
+|---|---|
+| **Тип** | MCP-сервер |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `MCP` |
+| **API-ключ** | нужен |
+
+`mcp` `integrations`
 
 ---
 

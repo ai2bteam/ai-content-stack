@@ -8,6 +8,21 @@
 
 ---
 
+## [Adobe Firefly](https://www.adobe.com/products/firefly.html)
+
+Обучена на лицензионных данных — Adobe даёт правовые гарантии на результат. Важно для коммерческих роликов.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `API` |
+| **API-ключ** | нужен |
+
+`text-to-image` `commercial-safe`
+
+---
+
 ## [AUTOMATIC1111 WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 
 Классический локальный интерфейс к Stable Diffusion. Расширений больше, чем у всех остальных вместе.
@@ -50,6 +65,21 @@ Flux Schnell и SD 1.5 по HTTP с щедрым бесплатным лимит
 | **API-ключ** | нужен — [получить](https://dash.cloudflare.com/profile/api-tokens) |
 
 `text-to-image` `image-to-image` `free-tier`
+
+---
+
+## [CodeFormer](https://github.com/sczhou/CodeFormer)
+
+Восстанавливает лица на мыльных и старых снимках. Обязателен при работе с архивными фото.
+
+| | |
+|---|---|
+| **Тип** | модель |
+| **Цена** | 🔵 open source |
+| **Из агента** | `CLI` |
+| **Исходники** | https://github.com/sczhou/CodeFormer |
+
+`face-restoration` `archival`
 
 ---
 
@@ -96,6 +126,36 @@ Flux Schnell и SD 1.5 по HTTP с щедрым бесплатным лимит
 | **Исходники** | https://github.com/lllyasviel/Fooocus |
 
 `local` `stable-diffusion`
+
+---
+
+## [Freepik](https://www.freepik.com/)
+
+Сток и AI-генерация в одной подписке, с доступом к нескольким чужим моделям через один API.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🟡 freemium |
+| **Из агента** | `API` |
+| **API-ключ** | нужен |
+
+`stock` `text-to-image` `aggregator`
+
+---
+
+## [GFPGAN](https://github.com/TencentARC/GFPGAN)
+
+Реставрация лиц от Tencent. Даёт результат мягче CodeFormer — сравнивай на своём материале.
+
+| | |
+|---|---|
+| **Тип** | модель |
+| **Цена** | 🔵 open source |
+| **Из агента** | `CLI` |
+| **Исходники** | https://github.com/TencentARC/GFPGAN |
+
+`face-restoration` `archival`
 
 ---
 
@@ -233,6 +293,20 @@ Flux Schnell и SD 1.5 по HTTP с щедрым бесплатным лимит
 
 ---
 
+## [Pixlr](https://pixlr.com/)
+
+Браузерный редактор с AI-инструментами. Быстрая правка, когда локально ставить нечего.
+
+| | |
+|---|---|
+| **Тип** | приложение |
+| **Цена** | 🟡 freemium |
+| **Из агента** | — |
+
+`editing` `browser`
+
+---
+
 ## [Pollinations](https://pollinations.ai/) ⭐
 
 Генерация картинки обычным GET-запросом, без ключа вообще. Последний рубеж фолбэка.
@@ -245,6 +319,21 @@ Flux Schnell и SD 1.5 по HTTP с щедрым бесплатным лимит
 | **Исходники** | https://github.com/pollinations/pollinations |
 
 `text-to-image` `keyless`
+
+---
+
+## [Qwen-Image](https://github.com/QwenLM/Qwen-Image)
+
+Открытая модель Alibaba, сильная в тексте внутри картинки — включая нелатиницу.
+
+| | |
+|---|---|
+| **Тип** | модель |
+| **Цена** | 🔵 open source |
+| **Из агента** | `CLI` |
+| **Исходники** | https://github.com/QwenLM/Qwen-Image |
+
+`text-to-image` `open-weights` `typography`
 
 ---
 
@@ -335,6 +424,21 @@ Stable Diffusion от первоисточника: API плюс открыты�
 | **Исходники** | https://github.com/upscayl/upscayl |
 
 `upscaling` `local`
+
+---
+
+## [Vectorizer.AI](https://vectorizer.ai/)
+
+Растр в чистый вектор. Логотип из скриншота, который не рассыплется на 4K.
+
+| | |
+|---|---|
+| **Тип** | сервис |
+| **Цена** | 🔴 платно |
+| **Из агента** | `API` |
+| **API-ключ** | нужен |
+
+`vectorization` `svg`
 
 ---
 
